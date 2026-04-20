@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Symptom Checker - Arogya Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b10f2b",
+                        "on-secondary-fixed": "#002106",
+                        "on-tertiary-container": "#ffc0bf",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327",
+                        "surface-tint": "#115cb9",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdad9",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f8f9fa",
+                        "primary": "#003f87",
+                        "secondary-fixed-dim": "#66df75",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-primary": "#acc7ff",
+                        "outline": "#727784",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen antialiased flex flex-col relative overflow-x-hidden">
+<!-- Signature Medical Glimmer (Background Effect) -->
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary-container/5 rounded-full blur-3xl pointer-events-none transform translate-x-1/3 -translate-y-1/3"></div>
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm shadow-blue-900/5">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto">
+<div class="flex items-center space-x-8">
+<!-- Brand Logo -->
+<a class="font-manrope font-extrabold text-2xl text-blue-900 dark:text-blue-100 flex items-center space-x-2" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<span>Arogya Portal</span>
+</a>
+<!-- Search Bar Placeholder -->
+<div class="hidden md:flex items-center bg-surface-container-lowest border border-outline-variant/30 rounded-full px-4 py-2 focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-outline mr-2 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-64 placeholder:text-outline/70" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-blue-900 dark:text-blue-300 font-bold border-b-2 border-blue-900 dark:border-blue-300 pb-1 font-manrope text-lg tracking-tight hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">English</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-800 dark:hover:text-blue-200 font-manrope text-lg tracking-tight hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">Hindi</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-800 dark:hover:text-blue-200 font-manrope text-lg tracking-tight hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">Marathi</a>
+</nav>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center space-x-4">
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 text-slate-500 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 text-slate-500 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-slate-100/50 dark:bg-slate-800/50 h-[1px] w-full"></div>
+</header>
+<div class="flex flex-1 overflow-hidden max-w-[1600px] w-full mx-auto relative">
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto w-full">
+<div class="max-w-4xl mx-auto px-6 py-12 md:py-20 relative z-10">
+<!-- Page Header -->
+<div class="mb-12 text-center md:text-left">
+<h1 class="font-headline font-extrabold text-4xl md:text-5xl text-on-background tracking-tight mb-4 leading-tight">
+                        AI Symptom Checker
+                    </h1>
+<p class="font-body text-on-surface-variant text-lg md:text-xl max-w-2xl leading-relaxed">
+                        Describe how you're feeling. Our AI will analyze your symptoms to provide potential conditions and suggest your next steps.
+                    </p>
+</div>
+<!-- Input Section -->
+<section class="mb-16">
+<div class="bg-surface-container-lowest rounded-xl p-8 relative isolate overflow-hidden">
+<!-- Glassmorphism underlying layer for the text area -->
+<div class="absolute inset-0 bg-surface-container-lowest z-0 shadow-[0_16px_32px_rgba(25,28,29,0.06)] rounded-xl pointer-events-none"></div>
+<div class="relative z-10">
+<label class="block font-headline font-semibold text-on-surface text-lg mb-4" for="symptoms">
+                                What symptoms are you experiencing?
+                            </label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-highest rounded-xl p-6 text-on-surface font-body text-lg border-none focus:ring-0 transition-all placeholder:text-outline resize-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_rgba(17,92,185,0.3)_inset] outline-none" id="symptoms" placeholder="E.g., I have had a severe headache on the right side of my head for two days, accompanied by nausea and sensitivity to light..." rows="6"></textarea>
+<!-- Voice Input Button -->
+<button aria-label="Use voice input" class="absolute bottom-6 right-6 p-4 rounded-full bg-surface-container-lowest text-primary hover:bg-surface-container-low transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 group">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">mic</span>
+</button>
+</div>
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+<p class="text-sm font-body text-on-surface-variant max-w-md">
+<span class="material-symbols-outlined text-[16px] align-text-bottom mr-1">info</span>
+                                    The more detail you provide, the more accurate the analysis will be.
+                                </p>
+<button class="w-full sm:w-auto bg-gradient-to-r from-primary to-primary-container text-on-primary font-body font-semibold text-lg py-4 px-10 rounded-full hover:shadow-lg transition-all min-h-[56px] flex items-center justify-center space-x-2">
+<span>Analyze Symptoms</span>
+<span class="material-symbols-outlined text-xl">auto_awesome</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Results Section (Mock State - initially hidden in real app, shown for design purposes) -->
+<section class="mb-16">
+<h2 class="font-headline font-bold text-2xl text-on-background mb-6">Analysis Results</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Main Finding Card -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden shadow-[0_8px_24px_rgba(25,28,29,0.04)]">
+<div class="flex items-start justify-between mb-6">
+<div>
+<p class="font-label text-sm text-outline uppercase tracking-wider font-semibold mb-2">Potential Condition</p>
+<h3 class="font-headline font-bold text-2xl text-primary">Migraine</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary/20">neurology</span>
+</div>
+<p class="font-body text-on-surface-variant mb-6 leading-relaxed">
+                                Your symptoms of severe unilateral headache, nausea, and light sensitivity are highly indicative of a migraine episode.
+                            </p>
+<!-- Severity Indicator -->
+<div class="bg-surface-container-low rounded-lg p-4 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-secondary">vital_signs</span>
+<span class="font-headline font-semibold text-on-surface">Severity Level</span>
+</div>
+<div class="flex items-center space-x-2">
+<!-- Medium Severity (Yellow/Orange mock using primary palette for consistency, but distinct enough) -->
+<div class="h-3 w-3 rounded-full bg-[#f59e0b]"></div>
+<span class="font-body font-medium text-on-surface">Moderate</span>
+</div>
+</div>
+</div>
+<!-- Next Steps Side Panel -->
+<div class="bg-surface-container-high rounded-xl p-8 flex flex-col">
+<p class="font-label text-sm text-outline uppercase tracking-wider font-semibold mb-4">Suggested Action</p>
+<div class="flex-1 flex flex-col justify-center items-center text-center space-y-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-primary-fixed/50 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-3xl">calendar_month</span>
+</div>
+<h4 class="font-headline font-semibold text-lg text-on-surface">Consult a Specialist</h4>
+<p class="font-body text-sm text-on-surface-variant">Discuss targeted pain management and preventative care.</p>
+</div>
+<button class="w-full bg-surface-container-lowest text-on-primary-fixed-variant font-body font-semibold py-3 px-6 rounded-full hover:bg-white transition-colors border border-outline-variant/30 text-sm">
+                                Book Consultation
+                            </button>
+</div>
+</div>
+</section>
+<!-- Disclaimer -->
+<section class="mt-12 bg-surface-container-highest rounded-xl p-6 border-l-4 border-outline-variant/50">
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-outline mt-1">warning</span>
+<div>
+<h4 class="font-headline font-semibold text-on-surface mb-2">Medical Disclaimer</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                                This AI Symptom Checker is designed for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+                            </p>
+<p class="font-body text-sm font-semibold text-tertiary mt-3">
+                                If you are experiencing a medical emergency, call emergency services immediately.
+                            </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

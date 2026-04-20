@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Appointment - Arogya Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b10f2b",
+                        "on-secondary-fixed": "#002106",
+                        "on-tertiary-container": "#ffc0bf",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327",
+                        "surface-tint": "#115cb9",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdad9",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f8f9fa",
+                        "primary": "#003f87",
+                        "secondary-fixed-dim": "#66df75",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-primary": "#acc7ff",
+                        "outline": "#727784",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .medical-glimmer {
+            background: radial-gradient(circle at top right, rgba(128, 249, 139, 0.05), transparent 60%);
+        }
+        .glass-panel {
+            background-color: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen relative overflow-x-hidden">
+<!-- Ambient Medical Glimmer -->
+<div class="absolute inset-0 pointer-events-none medical-glimmer z-0"></div>
+<!-- Top Navigation (Generated from JSON) -->
+<header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm shadow-blue-900/5">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto">
+<div class="font-manrope font-extrabold text-2xl text-blue-900 dark:text-blue-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+                Arogya Portal
+            </div>
+<!-- Desktop Nav Items -->
+<nav class="hidden md:flex items-center gap-8 font-manrope font-bold text-lg tracking-tight">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-800 dark:hover:text-blue-200" href="#">Dashboard</a>
+<a class="text-blue-900 dark:text-blue-300 font-bold border-b-2 border-blue-900 dark:border-blue-300 pb-1" href="#">Appointments</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-800 dark:hover:text-blue-200" href="#">Records</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex gap-2">
+<button class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200">English</button>
+<button class="px-3 py-1 bg-surface-container-high text-on-surface rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200">Hindi</button>
+<button class="px-3 py-1 bg-surface-container-high text-on-surface rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200">Marathi</button>
+</div>
+<button class="text-blue-900 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-blue-900 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-100/50 dark:bg-slate-800/50 h-[1px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+<!-- Header Section -->
+<div class="mb-12">
+<h1 class="font-headline text-4xl font-extrabold text-on-surface mb-2 tracking-tight">Book a Consultation</h1>
+<p class="font-body text-on-surface-variant text-lg max-w-2xl">Select a specialist, choose your preferred medium, and find a time that works for you.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Form Flow -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Step 1: Consultation Type -->
+<section class="bg-surface-container-lowest rounded-xl p-6 lg:p-8">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-6 flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed font-bold text-sm">1</span>
+                        Consultation Type
+                    </h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Option 1 -->
+<label class="cursor-pointer relative group">
+<input checked="" class="peer sr-only" name="consultation_type" type="radio" value="video"/>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:bg-opacity-30 transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="material-symbols-outlined text-primary opacity-0 peer-checked:opacity-100 transition-opacity">check_circle</span>
+</div>
+<h3 class="font-headline font-semibold text-on-surface">Video Call</h3>
+<p class="text-sm text-on-surface-variant mt-1">Detailed face-to-face consultation.</p>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="cursor-pointer relative group">
+<input class="peer sr-only" name="consultation_type" type="radio" value="audio"/>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:bg-opacity-30 transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">call</span>
+</div>
+<h3 class="font-headline font-semibold text-on-surface">Audio Call</h3>
+<p class="text-sm text-on-surface-variant mt-1">Quick voice consultation.</p>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="cursor-pointer relative group">
+<input class="peer sr-only" name="consultation_type" type="radio" value="chat"/>
+<div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:bg-opacity-30 transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chat</span>
+</div>
+<h3 class="font-headline font-semibold text-on-surface">Chat</h3>
+<p class="text-sm text-on-surface-variant mt-1">Text-based query resolution.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Step 2: Select Doctor -->
+<section class="bg-surface-container-lowest rounded-xl p-6 lg:p-8">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-6 flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-bold text-sm">2</span>
+                        Select Specialist
+                    </h2>
+<!-- Search/Filter -->
+<div class="mb-6 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-highest text-on-surface placeholder-on-surface-variant rounded-md py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-lowest transition-all border-none" placeholder="Search by name or specialty..." type="text"/>
+</div>
+<!-- Doctor List -->
+<div class="space-y-4">
+<!-- Doctor Card 1 (Selected) -->
+<div class="p-4 rounded-xl bg-primary-fixed bg-opacity-20 border-2 border-primary cursor-pointer flex flex-col sm:flex-row gap-4 items-start sm:items-center relative">
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+</div>
+<img alt="Dr. Shanti Kumar portrait" class="w-16 h-16 rounded-full object-cover border-2 border-surface-container-lowest" data-alt="Portrait of a female Indian doctor wearing a white coat and stethoscope, smiling warmly in a bright clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKOOJlCEIE9xPJxNc-7SKjWy4HcDPdmbbpn_u1wo75DHKNDk1jnGAM6RQ21c_QNMwrx_VCVYpgputg5wtrOFIMcMZcZSSs7Iw112PmSCn6zOH7S2ifyUFppQNB5oBSWVAQ5HYopj9uFKPgQ_xQYB86TnGv3P-mY-CQLHNdNAk2qaDwe7QDmieJB6L4ZJnMDwVg0PNbj3EfaXekwO0MvLxkqiK-gHBi2qTEGVLKxh88BnhCM5IXU8vdENCwQ483QsoYTiAit9HXBg"/>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Dr. Shanti Kumar</h3>
+<p class="text-sm text-primary font-medium">Cardiologist • 15 yrs exp</p>
+<div class="flex items-center gap-1 mt-1 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-yellow-500 text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>(120+ reviews)</span>
+</div>
+</div>
+<div class="mt-2 sm:mt-0 px-3 py-1 bg-surface-container-lowest text-sm font-medium rounded-md text-on-surface-variant self-start sm:self-auto">
+                                Next avail: Today, 2:00 PM
+                            </div>
+</div>
+<!-- Doctor Card 2 -->
+<div class="p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer flex flex-col sm:flex-row gap-4 items-start sm:items-center relative">
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
+</div>
+<img alt="Dr. Rajesh Patel portrait" class="w-16 h-16 rounded-full object-cover border-2 border-surface-container-lowest" data-alt="Portrait of a male Indian doctor with glasses wearing scrubs, looking professional in a hospital corridor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3dqBKM2WNBsi9Bo3jKbs9I3PbtP90fYiT8OfDSzyIVjiZDL0oCuLozEVgKKLsj5Tiks5vHKA9FhdtBS3UNAHn4V3hgftUy7DeJfeCPIsVXNt185jwUrKWoPSIFhoHwrK0kB2hCOHxhukBd5ffU62kLhKzT8xTl1vv8HqUer1pA6HRC6ojXyHpGwuQesoDMUOzX-rIgCEYZ_4ZwHFxjHOao9k0b8sG55weVsqagneYy6FTqz4Nx06MZmwlfvgVdNUTIUCE9vqSKg"/>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Dr. Rajesh Patel</h3>
+<p class="text-sm text-primary font-medium">General Physician • 8 yrs exp</p>
+<div class="flex items-center gap-1 mt-1 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-yellow-500 text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.7</span>
+<span>(85 reviews)</span>
+</div>
+</div>
+<div class="mt-2 sm:mt-0 px-3 py-1 bg-surface-container-lowest text-sm font-medium rounded-md text-on-surface-variant self-start sm:self-auto">
+                                Next avail: Tomorrow, 10:00 AM
+                            </div>
+</div>
+</div>
+<button class="mt-4 text-primary font-medium text-sm flex items-center gap-1 hover:underline">
+                        View more specialists <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</section>
+</div>
+<!-- Right Column: Date/Time & Summary Sticky -->
+<div class="lg:col-span-4 space-y-8 lg:sticky lg:top-24">
+<!-- Step 3: Date & Time -->
+<section class="bg-surface-container-lowest rounded-xl p-6">
+<h2 class="font-headline text-xl font-bold text-on-surface mb-6 flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-bold text-sm">3</span>
+                        Date &amp; Time
+                    </h2>
+<!-- Date Selection (Horizontal Scroll) -->
+<div class="mb-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-headline text-sm font-bold text-on-surface">October 2023</h3>
+<div class="flex gap-2">
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 -mx-2 px-2 snap-x">
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-primary text-on-primary flex flex-col items-center">
+<span class="text-xs uppercase font-medium opacity-80">Mon</span>
+<span class="text-lg font-bold">16</span>
+</button>
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center">
+<span class="text-xs uppercase font-medium text-on-surface-variant">Tue</span>
+<span class="text-lg font-bold">17</span>
+</button>
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center">
+<span class="text-xs uppercase font-medium text-on-surface-variant">Wed</span>
+<span class="text-lg font-bold">18</span>
+</button>
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center">
+<span class="text-xs uppercase font-medium text-on-surface-variant">Thu</span>
+<span class="text-lg font-bold">19</span>
+</button>
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center opacity-50 cursor-not-allowed">
+<span class="text-xs uppercase font-medium text-on-surface-variant">Fri</span>
+<span class="text-lg font-bold">20</span>
+</button>
+</div>
+</div>
+<!-- Time Slots -->
+<div>
+<h3 class="font-headline text-sm font-bold text-on-surface mb-3">Available Slots</h3>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">09:00 AM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">10:30 AM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">11:00 AM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-primary-fixed text-on-primary-fixed border border-primary">02:00 PM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">03:30 PM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">04:00 PM</button>
+</div>
+</div>
+</section>
+<!-- Booking Summary Action -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_16px_32px_rgba(25,28,29,0.06)]">
+<h3 class="font-headline text-lg font-bold text-on-surface mb-4">Booking Summary</h3>
+<div class="space-y-3 mb-6 text-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Consultation:</span>
+<span class="font-medium text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-sm">videocam</span> Video Call</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Doctor:</span>
+<span class="font-medium text-on-surface">Dr. Shanti Kumar</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Date &amp; Time:</span>
+<span class="font-medium text-on-surface">Oct 16, 02:00 PM</span>
+</div>
+<div class="pt-3 mt-3 border-t-0 bg-surface-container-low h-[1px] w-full"></div>
+<div class="flex justify-between font-bold text-base">
+<span class="text-on-surface">Consultation Fee</span>
+<span class="text-primary">₹ 800</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-white font-bold text-lg hover:shadow-lg hover:from-primary-container hover:to-primary transition-all flex justify-center items-center gap-2">
+                        Confirm Booking
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-xs text-center text-on-surface-variant mt-3 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">lock</span> Secure payment on next step
+                    </p>
+</section>
+</div>
+</div>
+</main>
+</body></html>

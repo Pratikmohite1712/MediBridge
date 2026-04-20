@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#bbd0ff",
+                    "surface-container-high": "#e7e8e9",
+                    "on-secondary-fixed-variant": "#00531a",
+                    "secondary-fixed": "#83fc8e",
+                    "outline-variant": "#c2c6d4",
+                    "on-primary-fixed-variant": "#004491",
+                    "surface-container-low": "#f3f4f5",
+                    "secondary-fixed-dim": "#66df75",
+                    "inverse-primary": "#acc7ff",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#d7e2ff",
+                    "on-surface": "#191c1d",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#0056b3",
+                    "on-surface-variant": "#424752",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "background": "#f8f9fa",
+                    "tertiary-container": "#b10f2b",
+                    "outline": "#727784",
+                    "on-tertiary-fixed": "#410008",
+                    "surface-container": "#edeeef",
+                    "on-secondary-container": "#007327",
+                    "primary": "#003f87",
+                    "on-primary-fixed": "#001a40",
+                    "tertiary-fixed": "#ffdad9",
+                    "surface-bright": "#f8f9fa",
+                    "secondary": "#006e25",
+                    "primary-fixed-dim": "#acc7ff",
+                    "surface-tint": "#115cb9",
+                    "secondary-container": "#80f98b",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d9dadb",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb3b2",
+                    "tertiary": "#88001c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-background": "#191c1d",
+                    "surface": "#f8f9fa",
+                    "on-tertiary-fixed-variant": "#92001f",
+                    "on-tertiary-container": "#ffc0bf",
+                    "on-secondary-fixed": "#002106",
+                    "inverse-on-surface": "#f0f1f2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+        /* Medical Glimmer */
+        .glimmer-bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle at top right, theme('colors.secondary-container'), transparent 70%);
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row">
+<div class="glimmer-bg"></div>
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-slate-100 dark:bg-slate-900 z-50">
+<div class="p-6 pb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline font-bold text-xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-[#003f87] dark:text-[#0056b3] font-headline tracking-tight">MediBridge AI</h1>
+<p class="text-xs text-on-surface-variant font-label">Admin Control Plane</p>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto py-2">
+<ul class="space-y-1 px-3">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white dark:bg-slate-800 text-[#003f87] dark:text-[#0056b3] font-bold border-r-4 border-[#003f87] shadow-sm font-label transition-all opacity-90" href="{{DATA:SCREEN:SCREEN_7}}">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-label" href="{{DATA:SCREEN:SCREEN_20}}">
+<span class="material-symbols-outlined">verified_user</span>
+                        Doctor Verification
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-label" href="{{DATA:SCREEN:SCREEN_17}}">
+<span class="material-symbols-outlined">group</span>
+                        User Management
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-label" href="{{DATA:SCREEN:SCREEN_13}}">
+<span class="material-symbols-outlined">analytics</span>
+                        Analytics
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-label" href="#">
+<span class="material-symbols-outlined">emergency</span>
+                        Emergency Monitoring
+                    </a>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-surface-dim mt-auto bg-slate-200 dark:bg-slate-800">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-label text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                        Settings
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-label text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-error hover:bg-error-container/20 transition-colors font-label text-sm" href="{{DATA:SCREEN:SCREEN_11}}">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                        Logout
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 relative z-10">
+<!-- TopAppBar -->
+<header class="hidden md:flex fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex items-center justify-between px-8 border-b-0">
+<div class="flex items-center bg-surface-container-low rounded-full px-4 py-2 w-96 border border-outline-variant/30 focus-within:bg-surface-lowest focus-within:border-surface-tint/30 transition-all">
+<span class="material-symbols-outlined text-outline mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm font-body text-on-surface placeholder:text-outline p-0" placeholder="Search patients, doctors, or ID..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-2 bg-surface-container-low p-1 rounded-full">
+<button class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-sm font-bold transition-all scale-95 duration-150">EN</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant hover:text-[#003f87] font-label text-sm font-medium transition-all scale-95 duration-150">HI</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant hover:text-[#003f87] font-label text-sm font-medium transition-all scale-95 duration-150">MR</button>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-[#003f87] transition-all relative scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30 hover:opacity-80 transition-opacity">
+<img alt="Admin Profile Avatar" class="w-full h-full object-cover" data-alt="close up professional headshot of a middle aged male executive in a blue suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgFdEOPQRCQKDmkwU50-EmZVg9JD791cSHLASsMz9d4z9WhWw0v3GtHA1gqmRzsUA9izZlvDbsOHe9wMEnt2DysvEjpcfH0AizVQlUDaGC1ZfmFoXds6ykhJ4El7A-AvhncpFLj32jlGYPKt20QysXV2_lZR3SwB48ySvE5w6JFLXI_etJKk9jucD0_65whgn2ZC0qFnMmYCc8VakzrvCgzgqLVXhoyYF4gQwdTFfFkobG36Ih5di-zS1XwlBAeyBMq_XLe2qDvQ"/>
+</button>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="pt-24 px-8 pb-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-8 flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-headline font-bold text-primary tracking-tight mb-2">Platform Overview</h2>
+<p class="text-on-surface-variant font-body">Real-time metrics and system health for MediBridge AI.</p>
+</div>
+<div class="flex gap-3">
+<p class="text-sm text-outline font-label self-center mr-4">Last updated: Just now</p>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-high text-on-primary-fixed-variant rounded-full font-label font-semibold hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        Export Report
+                    </button>
+</div>
+</div>
+<!-- Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0_8px_24px_rgba(25,28,29,0.04)] col-span-1 lg:col-span-2 relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<p class="text-on-surface-variant font-label text-sm mb-1">Total Users</p>
+<h3 class="text-4xl font-headline font-extrabold text-primary">1,240</h3>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-sm relative z-10">
+<span class="flex items-center text-secondary font-medium bg-secondary-container/30 px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                            +12%
+                        </span>
+<span class="text-outline font-body">vs last month</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0_8px_24px_rgba(25,28,29,0.04)] relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-on-surface-variant font-label text-sm mb-1">Total Patients</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">1,150</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">personal_injury</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0_8px_24px_rgba(25,28,29,0.04)] relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-on-surface-variant font-label text-sm mb-1">Total Doctors</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">90</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">stethoscope</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Actionable -->
+<div class="bg-tertiary-container/10 border border-tertiary/20 p-6 rounded-2xl relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-tertiary font-label text-sm font-semibold mb-1">Pending Verifications</p>
+<h3 class="text-3xl font-headline font-bold text-tertiary">12</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+<a class="text-sm font-label font-bold text-tertiary hover:underline flex items-center gap-1 mt-2" href="#">
+                        Review Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+<!-- Chart 1: User Growth -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-[0_8px_24px_rgba(25,28,29,0.04)]">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface">User Growth</h3>
+<p class="text-sm text-on-surface-variant font-body">Patients vs Doctors (Last 6 Months)</p>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Faux Line Chart Area -->
+<div class="h-64 w-full relative border-l border-b border-surface-variant/50 pt-4">
+<!-- Y Axis Labels -->
+<div class="absolute -left-8 bottom-0 flex flex-col justify-between h-full text-xs text-outline font-label py-1">
+<span>1.5k</span>
+<span>1.0k</span>
+<span>500</span>
+<span>0</span>
+</div>
+<!-- Grid Lines -->
+<div class="absolute top-0 left-0 w-full h-full flex flex-col justify-between py-1 z-0">
+<div class="w-full border-t border-dashed border-surface-variant/40 h-0"></div>
+<div class="w-full border-t border-dashed border-surface-variant/40 h-0"></div>
+<div class="w-full border-t border-dashed border-surface-variant/40 h-0"></div>
+<div class="w-full border-t border-transparent h-0"></div>
+</div>
+<!-- Data Lines (SVG approximation) -->
+<div class="absolute top-0 left-0 w-full h-full z-10 flex items-end px-2">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<!-- Patient Line (Primary) -->
+<path d="M0,80 C20,75 40,60 60,40 C80,20 100,10 100,10" fill="none" stroke="#003f87" stroke-linecap="round" stroke-width="3" vector-effect="non-scaling-stroke"></path>
+<!-- Doctor Line (Secondary) -->
+<path d="M0,95 C20,95 40,90 60,85 C80,80 100,75 100,75" fill="none" stroke="#006e25" stroke-dasharray="4,4" stroke-linecap="round" stroke-width="3" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+<!-- X Axis Labels -->
+<div class="absolute -bottom-8 left-0 w-full flex justify-between text-xs text-outline font-label px-2">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="mt-12 flex gap-6 justify-center">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-sm font-label text-on-surface-variant">Patients</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary border border-dashed border-white"></div>
+<span class="text-sm font-label text-on-surface-variant">Doctors</span>
+</div>
+</div>
+</div>
+<!-- Chart 2: Doctor Approvals -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-[0_8px_24px_rgba(25,28,29,0.04)]">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface">Doctor Verification Funnel</h3>
+<p class="text-sm text-on-surface-variant font-body">Current Status Breakdown</p>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Faux Bar Chart / Progress Area -->
+<div class="space-y-6 mt-4">
+<div>
+<div class="flex justify-between text-sm font-label mb-2">
+<span class="text-on-surface font-medium">Total Applications (YTD)</span>
+<span class="font-bold">145</span>
+</div>
+<div class="h-3 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-outline w-full rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm font-label mb-2">
+<span class="text-on-surface font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                    Verified &amp; Active
+                                </span>
+<span class="font-bold text-secondary">90</span>
+</div>
+<div class="h-3 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[62%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm font-label mb-2">
+<span class="text-on-surface font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                                    Pending Review
+                                </span>
+<span class="font-bold text-tertiary">12</span>
+</div>
+<div class="h-3 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[8%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm font-label mb-2">
+<span class="text-on-surface font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+                                    Rejected / Incomplete
+                                </span>
+<span class="font-bold text-outline">43</span>
+</div>
+<div class="h-3 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant w-[30%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Active Consultations & Quick Actions -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Active Consultations Widget -->
+<div class="bg-primary text-on-primary rounded-3xl p-8 relative overflow-hidden col-span-1 lg:col-span-1 shadow-lg shadow-primary/20">
+<div class="absolute inset-0 bg-gradient-to-br from-primary to-primary-container z-0"></div>
+<div class="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-primary-fixed mb-4">
+<span class="material-symbols-outlined animate-pulse">sensors</span>
+<span class="font-label font-semibold tracking-wide text-sm uppercase">Live System Status</span>
+</div>
+<h3 class="text-5xl font-headline font-extrabold mb-2">45</h3>
+<p class="font-body text-primary-fixed-dim text-lg">Active Consultations</p>
+</div>
+<div class="mt-8 p-4 bg-black/10 rounded-xl backdrop-blur-sm border border-white/10">
+<p class="text-sm font-label text-primary-fixed leading-relaxed">System load is optimal. All critical emergency monitoring channels are active and responding within 50ms.</p>
+</div>
+</div>
+</div>
+<!-- Quick Actions Panel -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 col-span-1 lg:col-span-2 shadow-[0_8px_24px_rgba(25,28,29,0.04)] flex flex-col justify-center">
+<h3 class="font-headline font-bold text-2xl text-on-surface mb-2">Quick Actions</h3>
+<p class="text-on-surface-variant font-body mb-8">Frequently used administrative tasks.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<button class="group flex items-center p-4 bg-surface rounded-2xl hover:bg-surface-container transition-colors text-left border border-transparent hover:border-outline-variant/30">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-primary flex items-center justify-center mr-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">how_to_reg</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-1">Verify Doctors</h4>
+<p class="text-xs font-body text-outline">Review 12 pending applications</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="group flex items-center p-4 bg-surface rounded-2xl hover:bg-surface-container transition-colors text-left border border-transparent hover:border-outline-variant/30">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 text-secondary flex items-center justify-center mr-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">manage_accounts</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-1">Manage Users</h4>
+<p class="text-xs font-body text-outline">Suspend, reset passwords, or edit</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

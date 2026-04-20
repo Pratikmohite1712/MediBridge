@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Emergency SOS Activated</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b10f2b",
+                        "primary-fixed-dim": "#acc7ff",
+                        "on-tertiary-container": "#ffc0bf",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-fixed": "#83fc8e",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#bbd0ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed": "#002106",
+                        "on-background": "#191c1d",
+                        "primary-container": "#0056b3",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "surface": "#f8f9fa",
+                        "inverse-primary": "#acc7ff",
+                        "tertiary": "#88001c",
+                        "surface-container": "#edeeef",
+                        "outline-variant": "#c2c6d4",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-fixed": "#d7e2ff",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-primary-fixed": "#001a40",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-tertiary-fixed": "#410008",
+                        "on-secondary-container": "#007327",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-surface-variant": "#424752",
+                        "surface-tint": "#115cb9",
+                        "secondary-fixed-dim": "#66df75",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004491",
+                        "outline": "#727784",
+                        "secondary-container": "#80f98b",
+                        "primary": "#003f87",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "secondary": "#006e25",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* surface */
+            color: #191c1d; /* on-surface */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-bottom: 80px; /* Space for BottomNavBar */
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        
+        /* Tonal background for the whole page */
+        .page-bg {
+            background: linear-gradient(135deg, #ffdad9 0%, #f8f9fa 40%, #f8f9fa 100%);
+            min-height: 100vh;
+        }
+        
+        /* Signature Texture: Medical Glimmer */
+        .medical-glimmer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(177, 15, 43, 0.08) 0%, rgba(248, 249, 250, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="page-bg">
+<div class="medical-glimmer"></div>
+<!-- TopAppBar from JSON -->
+<header class="bg-red-50/90 dark:bg-red-950/80 backdrop-blur-xl docked full-width top-0 sticky z-50 bg-red-100/50 dark:bg-red-900/30 shadow-sm shadow-[0_16px_32px_rgba(136,0,28,0.06)] flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-3 scale-95 active:opacity-80 transition-all tap-highlight-transparent">
+<span class="material-symbols-outlined text-red-700 dark:text-red-400" data-icon="medical_services" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-manrope font-extrabold text-red-900 dark:text-red-100 tracking-tighter text-xl">MediBridge AI</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-surface-container-lowest px-3 py-1.5 rounded-full shadow-sm text-sm font-label font-medium text-tertiary">
+<span class="material-symbols-outlined text-base" data-icon="language">language</span>
+<span>EN / HI</span>
+</div>
+<button class="scale-95 active:opacity-80 transition-all hover:bg-red-100 dark:hover:bg-red-900/50 transition-colors p-2 rounded-full text-red-700 dark:text-red-400">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="relative z-10 px-4 md:px-8 py-6 max-w-4xl mx-auto space-y-6">
+<!-- Emergency Status Hero (Asymmetric layout) -->
+<section class="bg-tertiary-container rounded-3xl p-6 md:p-8 text-on-tertiary-container shadow-[0_16px_32px_rgba(136,0,28,0.15)] relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-6">
+<!-- Background pattern/glow -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-tertiary rounded-full blur-3xl opacity-50 mix-blend-overlay"></div>
+<div class="flex-1 relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-4xl text-on-tertiary" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<h1 class="font-headline font-extrabold text-3xl md:text-4xl text-on-tertiary tracking-tight">Emergency SOS</h1>
+</div>
+<p class="font-body text-xl md:text-2xl font-medium text-on-tertiary-container mt-2">Help is on the way. Emergency services notified.</p>
+<div class="mt-6 inline-flex items-center gap-2 bg-on-tertiary/20 backdrop-blur-md px-4 py-2 rounded-full font-label font-semibold text-on-tertiary">
+<span class="relative flex h-3 w-3 mr-1">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+</span>
+                    Live Tracking Active
+                </div>
+</div>
+<div class="relative z-10 bg-surface-container-lowest/10 backdrop-blur-md p-5 rounded-2xl border border-white/10 md:min-w-[280px]">
+<p class="font-label text-sm uppercase tracking-wider text-on-tertiary/80 mb-1">Ambulance ETA</p>
+<div class="flex items-end gap-2">
+<span class="font-headline font-extrabold text-5xl text-on-tertiary">08</span>
+<span class="font-body text-xl font-medium text-on-tertiary-container mb-1">mins</span>
+</div>
+<div class="w-full bg-tertiary rounded-full h-1.5 mt-4 overflow-hidden">
+<div class="bg-white h-1.5 rounded-full" style="width: 70%"></div>
+</div>
+<p class="font-body text-xs mt-2 text-on-tertiary-container">Distance: 4.2 km</p>
+</div>
+</section>
+<!-- Live Tracker Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Map Card (Spans 2 cols on md) -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-[0_8px_24px_rgba(25,28,29,0.04)] flex flex-col h-[320px]">
+<div class="p-4 bg-surface-container-lowest border-b border-surface-container-high/0 shadow-sm z-10 flex justify-between items-center">
+<h2 class="font-headline font-bold text-lg text-on-surface">Live Location</h2>
+<span class="font-label text-sm text-tertiary font-medium px-3 py-1 bg-tertiary-fixed rounded-full">Ambulance Dispatched</span>
+</div>
+<div class="flex-1 relative bg-surface-container">
+<!-- Placeholder for Map Image -->
+<img alt="Live tracking map" class="w-full h-full object-cover opacity-80" data-alt="Digital map interface showing a blue pulsing dot for user location and a red ambulance icon moving along a highlighted route on city streets" data-location="Mumbai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG1PNv-GEZ49hddpZR60QLMvT2T15ObeCn2zLnQbfqrZmo9HQHkop7msvAMon72qLYrIxsbjcIWR-K9nPxrs-ec58OZEXLa58Y3J0MSN-PYfjhwSxMH8HzuO9LB9FQ0BKWr08T2Nu9M1cjtFyZ0ouV9f1La1GpMooHOcxjD9wQb4q67FaX9yhkrsBvsG3EucPiHHSwhpAc0JjADtEWxmw2A9Ybq7RziWbAci1vCmyMZxDYF8cR7x2-MeZA15x6BBJ0CGtUgTVvhw"/>
+<!-- Overlay elements -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl p-3 flex items-center gap-3 shadow-lg">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<div class="flex-1">
+<p class="font-headline font-bold text-sm text-on-surface">Vehicle MH-01-AB-1234</p>
+<p class="font-body text-xs text-on-surface-variant">Driver: Ramesh K. • On route</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Contacts Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-[0_8px_24px_rgba(25,28,29,0.04)] flex flex-col">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+<h2 class="font-headline font-bold text-lg text-on-surface">Contacts Alerted</h2>
+</div>
+<div class="space-y-4 flex-1">
+<div class="flex items-center gap-3 bg-surface p-3 rounded-xl border border-surface-container-high/50">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant overflow-hidden">
+<span class="font-headline font-bold">SM</span>
+</div>
+<div class="flex-1">
+<p class="font-headline font-semibold text-sm text-on-surface">Sonali M. (Wife)</p>
+<p class="font-body text-xs text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> SMS Delivered
+                            </p>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface p-3 rounded-xl border border-surface-container-high/50">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant overflow-hidden">
+<span class="font-headline font-bold">DR</span>
+</div>
+<div class="flex-1">
+<p class="font-headline font-semibold text-sm text-on-surface">Dr. Rajesh Patel</p>
+<p class="font-body text-xs text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Alert Acknowledged
+                            </p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 bg-surface-container-high hover:bg-surface-dim transition-colors text-on-surface font-label font-semibold py-3 rounded-full text-sm">
+                    Manage Contacts
+                </button>
+</div>
+</section>
+<!-- Nearby Hospitals Section -->
+<section class="bg-surface-container-lowest rounded-[24px] p-6 shadow-[0_8px_24px_rgba(25,28,29,0.04)]">
+<h2 class="font-headline font-bold text-xl text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">local_hospital</span>
+                Nearby Hospitals
+            </h2>
+<div class="space-y-4">
+<!-- Hospital Item 1 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-surface-container-highest/30">
+<div class="flex items-start gap-4 flex-1">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-base text-on-surface">City Care Multi-Specialty</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">Level 1 Trauma Center • Open 24/7</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs font-medium text-on-surface-variant">2.1 km away</span>
+<span class="bg-secondary-container/50 px-2 py-0.5 rounded text-xs font-medium text-on-secondary-container">Beds Available</span>
+</div>
+</div>
+</div>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary-container text-on-primary-container hover:bg-primary transition-colors font-label font-semibold py-2.5 px-5 rounded-full text-sm shrink-0">
+<span class="material-symbols-outlined text-sm">call</span>
+                        Call Now
+                    </button>
+</div>
+<!-- Hospital Item 2 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-surface-container-highest/30">
+<div class="flex items-start gap-4 flex-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_information</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-base text-on-surface">Metro General Hospital</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">General Medicine • ER Priority</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs font-medium text-on-surface-variant">3.5 km away</span>
+</div>
+</div>
+</div>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-surface-container-high text-on-surface hover:bg-surface-dim transition-colors font-label font-semibold py-2.5 px-5 rounded-full text-sm shrink-0">
+<span class="material-symbols-outlined text-sm">call</span>
+                        Call Now
+                    </button>
+</div>
+</div>
+</section>
+<!-- Emergency Stop Action -->
+<section class="flex justify-center pb-8 pt-4">
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest group-hover:bg-tertiary group-hover:text-on-tertiary text-on-surface-variant flex items-center justify-center transition-all duration-300 shadow-sm border-2 border-transparent group-hover:border-tertiary-fixed">
+<span class="material-symbols-outlined text-2xl">close</span>
+</div>
+<span class="font-label text-xs font-semibold text-on-surface-variant group-hover:text-tertiary transition-colors">Cancel SOS</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar from JSON - Active state logic applied to 'Ambulance' -->
+<!-- Note: While instructions say suppress on transactional, SOS is a core destination in this app context, but we will follow the JSON styling strictly -->
+<nav class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl fixed bottom-0 w-full rounded-t-[32px] z-50 pb-safe bg-slate-50 dark:bg-slate-800/50 shadow-[0_-8px_24px_rgba(0,0,0,0.04)] fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 md:hidden">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-inter font-semibold text-[11px] uppercase tracking-wider">Home</span>
+</a>
+<!-- Ambulance (Active - closest intent to SOS state) -->
+<a class="flex flex-col items-center justify-center bg-red-600 text-white rounded-full h-14 w-14 -mt-6 shadow-lg shadow-red-500/40 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="emergency_share" style="font-variation-settings: 'FILL' 1;">emergency_share</span>
+<!-- Hidden label to fit the active circle design from JSON -->
+<span class="sr-only">Ambulance</span>
+</a>
+<!-- Hospital (Inactive) -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="local_hospital">local_hospital</span>
+<span class="font-inter font-semibold text-[11px] uppercase tracking-wider">Hospital</span>
+</a>
+<!-- AI Triage (Inactive) -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="psychiatry">psychiatry</span>
+<span class="font-inter font-semibold text-[11px] uppercase tracking-wider">AI Triage</span>
+</a>
+</nav>
+</body></html>

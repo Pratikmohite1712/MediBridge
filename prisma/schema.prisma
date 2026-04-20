@@ -1,0 +1,210 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id              String   @id @default(uuid())
+  fullName        String
+  email           String?  @unique
+  phone           String?  @unique
+  passwordHash    String
+  role            Role     @default(PATIENT)
+  isVerified      Boolean  @default(false)
+  isActive        Boolean  @default(true)
+  preferredLang   Language @default(ENGLISH)
+  profilePhotoUrl String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  patientProfile        PatientProfile?
+  doctorProfile         DoctorProfile?
+  appointmentsAsPatient Appointment[]   @relation("PatientAppointments")
+  appointmentsAsDoctor  Appointment[]   @relation("DoctorAppointments")
+  medicalRecords        MedicalRecord[]
+  sosAlerts             SOSAlert[]
+  refreshTokens         RefreshToken[]
+  symptomLogs           SymptomLog[]
+}
+
+enum Role {
+  PATIENT
+  DOCTOR
+  ADMIN
+}
+
+enum Language {
+  ENGLISH
+  HINDI
+  MARATHI
+}
+
+model PatientProfile {
+  id                String   @id @default(uuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id])
+  age               Int?
+  gender            Gender?
+  bloodGroup        String?
+  address           String?
+  emergencyContact  String?
+  allergies         String[]
+  chronicConditions String[]
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+model DoctorProfile {
+  id                 String             @id @default(uuid())
+  userId             String             @unique
+  user               User               @relation(fields: [userId], references: [id])
+  specialization     String
+  qualification      String
+  experienceYears    Int
+  clinicName         String?
+  registrationNo     String             @unique
+  certificateUrl     String?
+  isVerified         Boolean            @default(false)
+  verificationStatus VerificationStatus @default(PENDING)
+  consultationFee    Float              @default(0)
+  availableSlots     Json // { day: string, startTime: string, endTime: string }[]
+  rating             Float              @default(0)
+  totalConsultations Int                @default(0)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+}
+
+enum VerificationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Appointment {
+  id               String            @id @default(uuid())
+  patientId        String
+  patient          User              @relation("PatientAppointments", fields: [patientId], references: [id])
+  doctorId         String
+  doctor           User              @relation("DoctorAppointments", fields: [doctorId], references: [id])
+  consultationType ConsultationType
+  scheduledAt      DateTime
+  status           AppointmentStatus @default(PENDING)
+  roomId           String? // Socket.io room for real-time consultation
+  notes            String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  prescription Prescription?
+  consultation Consultation?
+}
+
+enum ConsultationType {
+  VIDEO
+  AUDIO
+  CHAT
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  ONGOING
+  COMPLETED
+  CANCELLED
+}
+
+model Prescription {
+  id            String      @id @default(uuid())
+  appointmentId String      @unique
+  appointment   Appointment @relation(fields: [appointmentId], references: [id])
+  doctorId      String
+  patientId     String
+  medicines     Json // [{ name, dosage, frequency, durationDays, instructions }]
+  diagnosis     String?
+  followUpDate  DateTime?
+  notes         String?
+  createdAt     DateTime    @default(now())
+}
+
+model MedicalRecord {
+  id         String     @id @default(uuid())
+  patientId  String
+  patient    User       @relation(fields: [patientId], references: [id])
+  uploadedBy String // userId of uploader (patient or doctor)
+  title      String
+  recordType RecordType
+  fileUrl    String
+  fileSize   Int?
+  date       DateTime
+  tags       String[]
+  createdAt  DateTime   @default(now())
+}
+
+enum RecordType {
+  LAB_REPORT
+  PRESCRIPTION
+  XRAY
+  SCAN
+  DISCHARGE_SUMMARY
+  OTHER
+}
+
+model SOSAlert {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  latitude    Float?
+  longitude   Float?
+  address     String?
+  status      SOSStatus @default(ACTIVE)
+  respondedBy String?
+  createdAt   DateTime  @default(now())
+  resolvedAt  DateTime?
+}
+
+enum SOSStatus {
+  ACTIVE
+  RESPONDED
+  RESOLVED
+}
+
+model Consultation {
+  id            String      @id @default(uuid())
+  appointmentId String      @unique
+  appointment   Appointment @relation(fields: [appointmentId], references: [id])
+  startedAt     DateTime?
+  endedAt       DateTime?
+  duration      Int? // in minutes
+  chatHistory   Json? // [{ sender, message, timestamp }]
+  createdAt     DateTime    @default(now())
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model SymptomLog {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  symptoms  Json
+  result    Json
+  language  Language @default(ENGLISH)
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Emergency SOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b10f2b",
+                        "primary-fixed-dim": "#acc7ff",
+                        "on-tertiary-container": "#ffc0bf",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-fixed": "#83fc8e",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#bbd0ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed": "#002106",
+                        "on-background": "#191c1d",
+                        "primary-container": "#0056b3",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "surface": "#f8f9fa",
+                        "inverse-primary": "#acc7ff",
+                        "tertiary": "#88001c",
+                        "surface-container": "#edeeef",
+                        "outline-variant": "#c2c6d4",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-fixed": "#d7e2ff",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-primary-fixed": "#001a40",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-tertiary-fixed": "#410008",
+                        "on-secondary-container": "#007327",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-surface-variant": "#424752",
+                        "surface-tint": "#115cb9",
+                        "secondary-fixed-dim": "#66df75",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004491",
+                        "outline": "#727784",
+                        "secondary-container": "#80f98b",
+                        "primary": "#003f87",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "secondary": "#006e25",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 16px 32px rgba(25, 28, 29, 0.06);
+        }
+        .medical-glimmer {
+            background: radial-gradient(circle at top right, rgba(128, 249, 139, 0.05), transparent 60%);
+        }
+        .sos-pulse {
+            box-shadow: 0 0 0 0 rgba(177, 15, 43, 0.4);
+        }
+        /* No animations rule applied, keeping static for low bandwidth */
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container relative overflow-x-hidden">
+<!-- Signature Texture: Medical Glimmer -->
+<div class="fixed inset-0 pointer-events-none medical-glimmer z-0"></div>
+<!-- TopAppBar -->
+<header class="bg-red-50/90 dark:bg-red-950/80 backdrop-blur-xl text-red-700 dark:text-red-400 font-manrope font-bold text-xl docked full-width top-0 sticky z-50 bg-red-100/50 dark:bg-red-900/30 shadow-sm shadow-[0_16px_32px_rgba(136,0,28,0.06)] flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl font-variation-settings: 'FILL' 1;">medical_services</span>
+<div class="flex flex-col">
+<span class="font-manrope font-extrabold text-red-900 dark:text-red-100 tracking-tighter text-sm uppercase leading-tight">MediBridge AI</span>
+<span class="text-lg leading-none">Emergency SOS</span>
+</div>
+</div>
+<!-- Language Switcher & Account -->
+<div class="flex items-center gap-4">
+<!-- Simplified Language Switcher for Low Bandwidth -->
+<div class="hidden sm:flex bg-surface-container-high rounded-full p-1 text-sm font-label">
+<button class="px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-medium transition-colors">EN</button>
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-dim transition-colors">HI</button>
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-dim transition-colors">MR</button>
+</div>
+<button class="text-red-700 hover:bg-red-100 transition-colors p-2 rounded-full sm:hidden">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="text-red-700 hover:bg-red-100 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 py-8 md:py-12 w-full max-w-5xl mx-auto">
+<!-- Low Bandwidth Indicator -->
+<div class="w-full flex justify-end mb-8 absolute top-4 right-4 md:static md:mb-8">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="text-xs font-label text-on-surface-variant font-medium tracking-wide uppercase">Low Bandwidth Mode Active</span>
+</div>
+</div>
+<!-- Central SOS Action Area -->
+<div class="flex flex-col items-center justify-center w-full max-w-md mx-auto flex-grow gap-12">
+<!-- Massive SOS Button -->
+<div class="relative group cursor-pointer w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center">
+<!-- Static rings for depth instead of animation -->
+<div class="absolute inset-0 bg-tertiary-fixed rounded-full opacity-30 scale-110"></div>
+<div class="absolute inset-0 bg-tertiary-fixed-dim rounded-full opacity-40 scale-105"></div>
+<button class="relative z-10 w-full h-full bg-tertiary hover:bg-tertiary-container text-on-tertiary rounded-full flex flex-col items-center justify-center shadow-[0_24px_48px_rgba(136,0,28,0.25)] transition-all duration-300 active:scale-95 border-8 border-tertiary-fixed-dim">
+<span class="font-headline font-extrabold text-5xl sm:text-6xl tracking-tighter mb-2">SOS</span>
+<span class="font-label font-medium text-sm sm:text-base tracking-widest uppercase opacity-90 text-center px-6">TAP FOR EMERGENCY HELP</span>
+</button>
+</div>
+<!-- Contextual Information Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-6 ambient-shadow border border-outline-variant/15 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-3 text-3xl font-variation-settings: 'FILL' 1;">my_location</span>
+<h2 class="font-body font-semibold text-on-surface text-lg mb-1">Current Location Detected</h2>
+<p class="font-body text-on-surface-variant text-base">Ward No. 4, Satara District, Maharashtra</p>
+<p class="text-xs text-outline mt-2 font-label">Accuracy: High (GPS)</p>
+</div>
+<!-- Secondary Action: Call Ambulance -->
+<div class="w-full flex flex-col gap-4">
+<button class="w-full h-16 rounded-full bg-surface-container-high hover:bg-surface-dim text-on-primary-fixed-variant font-headline font-bold text-lg flex items-center justify-center gap-3 transition-colors">
+<span class="material-symbols-outlined font-variation-settings: 'FILL' 1;">emergency_share</span>
+                    Call Ambulance (108)
+                </button>
+<div class="flex justify-between items-center px-4">
+<span class="text-sm font-label text-on-surface-variant">Estimated arrival time: 12-15 mins</span>
+<a class="text-sm font-label text-primary font-medium hover:underline" href="#">View Map</a>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on md, visible on mobile) -->
+<nav class="md:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl text-red-700 dark:text-red-400 font-inter font-semibold text-[11px] uppercase tracking-wider fixed bottom-0 w-full rounded-t-[32px] z-50 pb-safe bg-slate-50 dark:bg-slate-800/50 shadow-[0_-8px_24px_rgba(0,0,0,0.04)] fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+            Home
+        </a>
+<!-- Ambulance (Active Intent based on emergency context) -->
+<a class="flex flex-col items-center justify-center bg-red-600 text-white rounded-full h-14 w-14 -mt-6 shadow-lg shadow-red-500/40 tap-highlight-transparent active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined font-variation-settings: 'FILL' 1;">emergency_share</span>
+<!-- Label hidden in active styling structurally, or visually distinct -->
+</a>
+<!-- Hospital -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">local_hospital</span>
+            Hospital
+        </a>
+<!-- AI Triage -->
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">psychiatry</span>
+            AI Triage
+        </a>
+</nav>
+<!-- Pad content for mobile nav -->
+<div class="h-20 md:h-0"></div>
+</body></html>

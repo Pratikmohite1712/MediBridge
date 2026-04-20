@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - MediBridge AI</title>
+<!-- Google Fonts: Manrope (Headline) & Inter (Body) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "outline": "#727784",
+                        "inverse-primary": "#acc7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008",
+                        "primary": "#003f87",
+                        "surface": "#f8f9fa",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#66df75",
+                        "surface-dim": "#d9dadb",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "tertiary-fixed": "#ffdad9",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary-fixed": "#002106",
+                        "tertiary-container": "#b10f2b",
+                        "on-tertiary-container": "#ffc0bf",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#115cb9",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for language switcher */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Signature Texture: The Medical Glimmer (Top Right) -->
+<div class="fixed top-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-secondary-container opacity-[0.05] blur-[100px] pointer-events-none z-[-1]"></div>
+<!-- Secondary soft glimmer for depth -->
+<div class="fixed bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary-container opacity-[0.03] blur-[120px] pointer-events-none z-[-1]"></div>
+<!-- Main Content Container: Asymmetrical Layout -->
+<main class="min-h-screen w-full flex flex-col md:flex-row items-center justify-center p-4 sm:p-8 lg:p-12 gap-8 lg:gap-16 max-w-7xl mx-auto">
+<!-- Left Column: Brand Story & Asymmetry Anchor -->
+<div class="w-full md:w-1/2 flex flex-col items-start space-y-6 md:space-y-8 max-w-lg">
+<!-- Brand Logo & Name -->
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-[0_8px_16px_rgba(0,63,135,0.2)]">
+<span class="material-symbols-outlined text-on-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<h1 class="text-3xl font-headline font-extrabold tracking-tight text-primary">MediBridge AI</h1>
+</div>
+<!-- Value Proposition -->
+<div class="space-y-4 pt-4">
+<h2 class="text-4xl sm:text-5xl lg:text-6xl font-headline font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                    Your health,<br/>connected.
+                </h2>
+<p class="text-lg font-body text-on-surface-variant leading-relaxed max-w-md">
+                    Securely access your medical records, connect with practitioners, and manage your health journey with confidence.
+                </p>
+</div>
+<!-- Soft Environmental Image (Visible on Desktop) -->
+<div class="hidden md:block w-full aspect-[16/9] rounded-[2rem] overflow-hidden mt-8 shadow-[0_16px_32px_rgba(25,28,29,0.04)] relative bg-surface-container-low group">
+<img alt="Clinic waiting area" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Soft, reassuring view of a modern, clean medical clinic waiting area with warm sunlight streaming through large windows, green plants, and comfortable seating, creating a calming atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqXYu5eHpdsrt4QVI0Ap2Ed3IUiu04IIPeH0A7rFzRDn3vhTAhfTt7WInHwfYOfPJFocqeWB5aN5bPa2F5_HdGZ25f4Eq7BNHz-9w80BD4VcpYim-tawiPho28_-NbrxigUKefhyznlbX-LnEGO1b37ywjjaClL_CunLcOdxCmx4VgxajIW9QM5M5PAyUdMX80TWtbA_v65h0HatQrkaqd1T5WrZ1Cr47mtL-usQNkuPPJnn-JqJ_q2fWXkBO4NVbFAStk9gNYWg"/>
+<!-- Inner soft gradient overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface/40 to-transparent pointer-events-none"></div>
+</div>
+</div>
+<!-- Right Column: The Transactional Canvas (Login Card) -->
+<div class="w-full md:w-5/12 max-w-[440px] relative z-10 flex-shrink-0">
+<!-- Tonal Card Layering -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-[0_24px_48px_rgba(25,28,29,0.06)] ring-1 ring-outline-variant/10 flex flex-col gap-8">
+<!-- Language Switcher (Dynamic width chips for accessibility) -->
+<div class="flex flex-col gap-3">
+<span class="text-xs font-label font-medium text-on-surface-variant uppercase tracking-wider">Select Language</span>
+<div class="flex gap-2 w-full overflow-x-auto pb-1 scrollbar-hide snap-x">
+<button class="snap-start px-5 py-2.5 rounded-full bg-primary-fixed text-on-primary-fixed font-body text-sm font-semibold whitespace-nowrap transition-colors flex-shrink-0" type="button">
+                            English
+                        </button>
+<button class="snap-start px-5 py-2.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body text-sm font-medium whitespace-nowrap transition-colors flex-shrink-0" type="button">
+                            हिन्दी (Hindi)
+                        </button>
+<button class="snap-start px-5 py-2.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body text-sm font-medium whitespace-nowrap transition-colors flex-shrink-0" type="button">
+                            मराठी (Marathi)
+                        </button>
+</div>
+</div>
+<!-- Header -->
+<div class="space-y-1.5">
+<h3 class="text-2xl sm:text-3xl font-headline font-bold text-on-surface tracking-tight">Welcome back</h3>
+<p class="text-on-surface-variant font-body">Please enter your details to sign in.</p>
+</div>
+<!-- Login Form -->
+<form class="flex flex-col gap-6" onsubmit="event.preventDefault(); window.location.href='{{DATA:SCREEN:SCREEN_14}}';">
+<!-- Input: Email / Mobile -->
+<div class="flex flex-col gap-2 relative group">
+<label class="text-sm font-body font-medium text-on-surface ml-1" for="identifier">Email or Mobile Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">person</span>
+<!-- Soft-well approach: bg-surface-container-highest to bg-surface-container-lowest -->
+<input class="w-full h-14 bg-surface-container-highest rounded-xl pl-12 pr-4 text-on-surface font-body outline-none placeholder:text-outline/70 border-none transition-all duration-200 focus:bg-surface-container-lowest focus:ring-2 focus:ring-surface-tint/30 focus:shadow-[0_4px_12px_rgba(17,92,185,0.08)]" id="identifier" name="identifier" placeholder="Enter your registered details" type="text"/>
+</div>
+</div>
+<!-- Input: Password -->
+<div class="flex flex-col gap-2 relative group">
+<div class="flex justify-between items-center ml-1 mb-0.5">
+<label class="text-sm font-body font-medium text-on-surface" for="password">Password</label>
+<a class="text-sm font-body font-semibold text-primary hover:text-primary-container transition-colors py-1 px-2 -mr-2 rounded-lg hover:bg-primary-fixed/50" href="#" onclick="alert('Password reset instructions have been sent to your email/mobile.'); return false;">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full h-14 bg-surface-container-highest rounded-xl pl-12 pr-12 text-on-surface font-body outline-none placeholder:text-outline/70 border-none transition-all duration-200 focus:bg-surface-container-lowest focus:ring-2 focus:ring-surface-tint/30 focus:shadow-[0_4px_12px_rgba(17,92,185,0.08)]" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors p-1 rounded-full hover:bg-surface-container-high focus:outline-none" type="button">
+<span class="material-symbols-outlined text-xl">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Primary Action Button (High-Touch Target) -->
+<div class="pt-2">
+<button class="w-full h-14 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-lg shadow-[0_8px_20px_rgba(0,63,135,0.15)] hover:shadow-[0_12px_24px_rgba(0,63,135,0.25)] transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+                            Login
+                            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Registration Prompt -->
+<div class="text-center pt-2 mt-2 border-t border-surface-container-high">
+<p class="text-on-surface-variant font-body pt-4">
+                        New user? 
+                        <a class="text-primary font-bold hover:text-primary-container transition-colors px-1 py-1 rounded-lg hover:bg-primary-fixed/50" href="{{DATA:SCREEN:SCREEN_21}}">Register here</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

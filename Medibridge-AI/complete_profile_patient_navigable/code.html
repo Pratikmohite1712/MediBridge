@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Complete Your Profile</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "outline": "#727784",
+                        "inverse-primary": "#acc7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008",
+                        "primary": "#003f87",
+                        "surface": "#f8f9fa",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#66df75",
+                        "surface-dim": "#d9dadb",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "tertiary-fixed": "#ffdad9",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary-fixed": "#002106",
+                        "tertiary-container": "#b10f2b",
+                        "on-tertiary-container": "#ffc0bf",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#115cb9",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface-container-low font-body text-on-surface antialiased relative min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- The Medical Glimmer (Signature Texture) -->
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-colors-secondary-container)_0%,_transparent_70%)] opacity-5 pointer-events-none -z-10"></div>
+<main class="w-full max-w-2xl z-10">
+<!-- Progress Indicator -->
+<div class="flex items-center gap-4 mb-8">
+<span class="text-sm font-label text-primary font-bold whitespace-nowrap">Step 1 of 2</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/2 rounded-full"></div>
+</div>
+</div>
+<!-- Header -->
+<div class="mb-10 text-center sm:text-left">
+<h1 class="font-headline text-4xl sm:text-5xl font-extrabold text-on-surface tracking-tight mb-3">Complete Your Profile</h1>
+<p class="font-body text-on-surface-variant text-lg">Let's establish your baseline to personalize your care experience.</p>
+</div>
+<!-- Form Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 sm:p-10 shadow-[0_16px_32px_rgba(25,28,29,0.06)] relative overflow-hidden">
+<form class="space-y-8 relative z-10">
+<!-- Full Name -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface-variant mb-2 ml-1">Full Name</label>
+<input class="w-full h-14 bg-surface-container-highest text-on-surface rounded-xl px-5 py-2 border-0 focus:ring-2 focus:ring-outline-variant/30 focus:bg-surface-container-lowest transition-all duration-200 font-body text-base outline-none shadow-none" type="text" value="Jane Doe"/>
+</div>
+<!-- Age & Gender Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<!-- Age -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface-variant mb-2 ml-1">Age</label>
+<input class="w-full h-14 bg-surface-container-highest text-on-surface rounded-xl px-5 py-2 border-0 focus:ring-2 focus:ring-outline-variant/30 focus:bg-surface-container-lowest transition-all duration-200 font-body text-base outline-none shadow-none" placeholder="e.g., 34" type="number"/>
+</div>
+<!-- Gender Chips -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface-variant mb-2 ml-1">Gender</label>
+<div class="flex gap-2 h-14">
+<label class="flex-1 relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="gender" type="radio"/>
+<div class="w-full h-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant rounded-xl peer-checked:bg-primary-fixed peer-checked:text-on-primary-fixed peer-checked:font-semibold font-label text-sm transition-colors duration-200 hover:bg-surface-container">Female</div>
+</label>
+<label class="flex-1 relative cursor-pointer group">
+<input class="peer sr-only" name="gender" type="radio"/>
+<div class="w-full h-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant rounded-xl peer-checked:bg-primary-fixed peer-checked:text-on-primary-fixed peer-checked:font-semibold font-label text-sm transition-colors duration-200 hover:bg-surface-container">Male</div>
+</label>
+<label class="flex-1 relative cursor-pointer group">
+<input class="peer sr-only" name="gender" type="radio"/>
+<div class="w-full h-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant rounded-xl peer-checked:bg-primary-fixed peer-checked:text-on-primary-fixed peer-checked:font-semibold font-label text-sm transition-colors duration-200 hover:bg-surface-container">Other</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Phone Number -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface-variant mb-2 ml-1">Phone Number</label>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant material-symbols-outlined transition-colors group-focus-within:text-primary">call</span>
+<input class="w-full h-14 pl-12 pr-5 bg-surface-container-highest text-on-surface rounded-xl border-0 focus:ring-2 focus:ring-outline-variant/30 focus:bg-surface-container-lowest transition-all duration-200 font-body text-base outline-none shadow-none" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<!-- Blood Group (Optional) -->
+<div>
+<label class="block font-label text-sm font-medium text-on-surface-variant mb-2 ml-1 flex items-center justify-between">
+                        Blood Group
+                        <span class="text-xs text-outline font-normal">Optional</span>
+</label>
+<div class="relative group">
+<select class="w-full h-14 appearance-none bg-surface-container-highest text-on-surface rounded-xl px-5 py-2 border-0 focus:ring-2 focus:ring-outline-variant/30 focus:bg-surface-container-lowest transition-all duration-200 font-body text-base outline-none shadow-none cursor-pointer">
+<option disabled="" selected="" value="">Select</option>
+<option value="A+">A+</option>
+<option value="A-">A-</option>
+<option value="B+">B+</option>
+<option value="B-">B-</option>
+<option value="O+">O+</option>
+<option value="O-">O-</option>
+<option value="AB+">AB+</option>
+<option value="AB-">AB-</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant material-symbols-outlined transition-colors group-focus-within:text-primary">expand_more</span>
+</div>
+</div>
+<!-- Action Area (Spacing jump instead of divider) -->
+<div class="pt-8 mt-4">
+<a class="w-full h-14 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline text-lg font-bold flex items-center justify-center gap-2 hover:opacity-95 transition-opacity shadow-[0_4px_14px_rgba(0,63,135,0.2)] active:scale-[0.98] duration-150" href="{{DATA:SCREEN:SCREEN_14}}">
+                        Save &amp; Continue
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</a>
+<p class="text-center text-xs font-label text-outline mt-4">Your information is securely encrypted and HIPAA compliant.</p>
+</div>
+</form>
+</div>
+</main>
+</body></html>

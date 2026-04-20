@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Quick Prescription</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#acc7ff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdad9",
+                    "secondary-container": "#80f98b",
+                    "primary-container": "#0056b3",
+                    "secondary-fixed": "#83fc8e",
+                    "tertiary-fixed-dim": "#ffb3b2",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed": "#d7e2ff",
+                    "outline-variant": "#c2c6d4",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#b10f2b",
+                    "on-secondary-fixed": "#002106",
+                    "on-tertiary-container": "#ffc0bf",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-container": "#edeeef",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#00531a",
+                    "on-secondary-container": "#007327",
+                    "surface-tint": "#115cb9",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-surface": "#191c1d",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-fixed-variant": "#004491",
+                    "outline": "#727784",
+                    "inverse-primary": "#acc7ff",
+                    "surface-bright": "#f8f9fa",
+                    "background": "#f8f9fa",
+                    "on-surface-variant": "#424752",
+                    "secondary": "#006e25",
+                    "on-primary-fixed": "#001a40",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary-fixed": "#410008",
+                    "surface": "#f8f9fa",
+                    "primary": "#003f87",
+                    "secondary-fixed-dim": "#66df75",
+                    "inverse-surface": "#2e3132",
+                    "surface-dim": "#d9dadb",
+                    "tertiary": "#88001c",
+                    "on-tertiary-fixed-variant": "#92001f",
+                    "on-primary-container": "#bbd0ff",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-overlay {
+            background-color: rgba(248, 249, 250, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .soft-shadow {
+            box-shadow: 0 16px 32px rgba(25, 28, 29, 0.06);
+        }
+        .gradient-btn {
+            background: linear-gradient(to right, #003f87, #0056b3);
+        }
+        .medical-glimmer {
+            background: radial-gradient(circle at top right, rgba(128, 249, 139, 0.05), transparent 60%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased h-screen w-screen overflow-hidden flex items-center justify-center">
+<!-- Mock Background Content (Consultation Screen) -->
+<div class="absolute inset-0 z-0 opacity-40 pointer-events-none p-8 flex flex-col gap-6">
+<div class="h-16 bg-surface-container-low rounded-xl w-full"></div>
+<div class="flex gap-6 h-full">
+<div class="w-1/3 bg-surface-container-low rounded-xl h-full"></div>
+<div class="w-2/3 bg-surface-container-low rounded-xl h-full"></div>
+</div>
+</div>
+<!-- Modal Overlay Backdrop -->
+<div class="fixed inset-0 z-40 glass-overlay flex items-center justify-center p-4 sm:p-6">
+<!-- Modal Container -->
+<div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-2xl soft-shadow overflow-hidden flex flex-col max-h-[921px]">
+<!-- Signature Texture Glimmer -->
+<div class="absolute inset-0 pointer-events-none medical-glimmer z-0"></div>
+<!-- Header -->
+<header class="relative z-10 px-8 py-6 bg-surface-container-low flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">prescriptions</span>
+</div>
+<div>
+<h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Quick Prescription</h2>
+<p class="text-sm text-on-surface-variant mt-1">Patient: Anjali Sharma • ID: P-8472</p>
+</div>
+</div>
+<button aria-label="Close modal" class="w-10 h-10 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Form Body -->
+<div class="relative z-10 flex-1 overflow-y-auto px-8 py-8">
+<form class="flex flex-col gap-8">
+<!-- Medicine Name -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant" for="medicine">Medicine Name</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest rounded-xl text-on-surface placeholder:text-outline border-none focus:ring-0 focus:bg-surface-lowest focus:outline-none transition-colors" id="medicine" onblur="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0)'" onfocus="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0.3)'" placeholder="Search drug database..." style="box-shadow: inset 0 0 0 2px rgba(17, 92, 185, 0); transition: box-shadow 0.2s, background-color 0.2s;" type="text"/>
+</div>
+</div>
+<!-- Dosage & Duration Row -->
+<div class="flex flex-col sm:flex-row gap-6">
+<!-- Dosage -->
+<div class="flex flex-col gap-2 flex-1">
+<label class="font-label text-sm font-semibold text-on-surface-variant" for="dosage">Dosage &amp; Frequency</label>
+<div class="relative">
+<select class="w-full px-4 py-4 bg-surface-container-highest rounded-xl text-on-surface border-none focus:ring-0 focus:bg-surface-lowest appearance-none transition-colors" id="dosage" onblur="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0)'" onfocus="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0.3)'" style="box-shadow: inset 0 0 0 2px rgba(17, 92, 185, 0); transition: box-shadow 0.2s, background-color 0.2s;">
+<option disabled="" selected="" value="">Select frequency</option>
+<option value="1">1-0-1 (Morning &amp; Evening)</option>
+<option value="2">1-1-1 (Three times a day)</option>
+<option value="3">0-0-1 (Night only)</option>
+<option value="4">SOS (As needed)</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Duration -->
+<div class="flex flex-col gap-2 w-full sm:w-1/3">
+<label class="font-label text-sm font-semibold text-on-surface-variant" for="duration">Duration</label>
+<div class="flex items-center gap-2">
+<input class="w-full px-4 py-4 bg-surface-container-highest rounded-xl text-on-surface placeholder:text-outline border-none focus:ring-0 focus:bg-surface-lowest text-center transition-colors" id="duration" min="1" onblur="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0)'" onfocus="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0.3)'" placeholder="e.g. 5" style="box-shadow: inset 0 0 0 2px rgba(17, 92, 185, 0); transition: box-shadow 0.2s, background-color 0.2s;" type="number"/>
+<span class="text-on-surface-variant font-medium">Days</span>
+</div>
+</div>
+</div>
+<!-- Special Notes -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant" for="notes">Special Notes (Optional)</label>
+<textarea class="w-full px-4 py-4 bg-surface-container-highest rounded-xl text-on-surface placeholder:text-outline border-none focus:ring-0 focus:bg-surface-lowest resize-none transition-colors" id="notes" onblur="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0)'" onfocus="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0.3)'" placeholder="e.g. Take after food. Avoid dairy." rows="3" style="box-shadow: inset 0 0 0 2px rgba(17, 92, 185, 0); transition: box-shadow 0.2s, background-color 0.2s;"></textarea>
+</div>
+</form>
+</div>
+<!-- Footer Actions -->
+<footer class="relative z-10 px-8 py-6 bg-surface-container-low flex justify-end gap-4">
+<button class="px-6 py-4 rounded-full bg-surface-container-high text-on-primary-fixed-variant font-label font-semibold hover:bg-surface-dim transition-colors h-[56px] flex items-center justify-center min-w-[120px]" type="button">
+                    Cancel
+                </button>
+<button class="px-8 py-4 rounded-full gradient-btn text-on-primary font-label font-bold shadow-md hover:opacity-90 transition-opacity h-[56px] flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">send</span>
+                    Save &amp; Send to Patient
+                </button>
+</footer>
+</div>
+</div>
+</body></html>

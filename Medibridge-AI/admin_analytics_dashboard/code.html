@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Admin Analytics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b10f2b",
+                        "on-secondary-fixed": "#002106",
+                        "on-tertiary-container": "#ffc0bf",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327",
+                        "surface-tint": "#115cb9",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdad9",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f8f9fa",
+                        "primary": "#003f87",
+                        "secondary-fixed-dim": "#66df75",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-primary": "#acc7ff",
+                        "outline": "#727784",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        .bg-medical-glimmer { background: radial-gradient(circle at top right, rgba(128, 249, 139, 0.05), transparent 40%); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased bg-medical-glimmer min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="bg-slate-50 dark:bg-slate-950 h-screen w-72 fixed left-0 top-0 border-r-0 flex flex-col py-8 space-y-2 z-40">
+<!-- User Profile Placeholder -->
+<div class="px-6 mb-8 flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline font-bold text-xl">
+                 SK
+             </div>
+<div>
+<h2 class="font-headline font-bold text-on-surface">Admin</h2>
+<p class="font-body text-sm text-on-surface-variant">System Administrator</p>
+</div>
+</div>
+<div class="flex-grow flex flex-col space-y-2">
+<!-- Active Nav Item -->
+<a class="bg-blue-50 dark:bg-blue-900/20 text-blue-900 dark:text-blue-200 rounded-r-full font-bold py-3 px-6 mr-4 flex items-center space-x-3 transition-all hover:bg-blue-50/50 dark:hover:bg-blue-900/10" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-body text-sm">Dashboard</span>
+</a>
+<!-- Inactive Nav Items -->
+<a class="text-slate-600 dark:text-slate-400 py-3 px-6 hover:text-blue-800 dark:hover:text-blue-300 flex items-center space-x-3 transition-all rounded-r-full mr-4 hover:bg-blue-50/50 dark:hover:bg-blue-900/10" href="#">
+<span class="material-symbols-outlined">manage_accounts</span>
+<span class="font-body text-sm">User Management</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 py-3 px-6 hover:text-blue-800 dark:hover:text-blue-300 flex items-center space-x-3 transition-all rounded-r-full mr-4 hover:bg-blue-50/50 dark:hover:bg-blue-900/10" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-body text-sm">Doctor Verification</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 py-3 px-6 hover:text-blue-800 dark:hover:text-blue-300 flex items-center space-x-3 transition-all rounded-r-full mr-4 hover:bg-blue-50/50 dark:hover:bg-blue-900/10" href="#">
+<span class="material-symbols-outlined">local_pharmacy</span>
+<span class="font-body text-sm">Pharmacy Data</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 py-3 px-6 hover:text-blue-800 dark:hover:text-blue-300 flex items-center space-x-3 transition-all rounded-r-full mr-4 hover:bg-blue-50/50 dark:hover:bg-blue-900/10" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body text-sm">Analytics</span>
+</a>
+</div>
+<div class="mt-auto px-6 mb-4">
+<button class="w-full bg-tertiary text-on-tertiary rounded-full py-3 px-4 font-body font-semibold text-sm flex items-center justify-center space-x-2 hover:bg-opacity-90 transition-opacity">
+<span class="material-symbols-outlined">emergency</span>
+<span>Emergency SOS</span>
+</button>
+</div>
+<div class="border-t border-slate-200/40 dark:border-slate-800/40 pt-4 flex flex-col space-y-1">
+<a class="text-slate-600 dark:text-slate-400 py-2 px-6 hover:text-blue-800 dark:hover:text-blue-300 flex items-center space-x-3 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-body text-sm">Help Center</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 py-2 px-6 hover:text-blue-800 dark:hover:text-blue-300 flex items-center space-x-3 transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body text-sm">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-72 flex-1 p-8 lg:p-12 relative overflow-y-auto">
+<!-- Header -->
+<header class="mb-10 flex justify-between items-end">
+<div>
+<h1 class="font-headline font-extrabold text-3xl text-primary mb-2">Analytics Dashboard</h1>
+<p class="font-body text-on-surface-variant text-sm">Real-time system insights for MediBridge AI</p>
+</div>
+<div class="flex items-center space-x-4">
+<button class="bg-surface-container-high hover:bg-surface-dim text-on-surface rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-surface-container-lowest py-2 px-4 rounded-full border border-surface-container-high flex items-center space-x-2 text-sm font-body text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>System Online</span>
+</div>
+</div>
+</header>
+<!-- KPI Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 relative overflow-hidden group hover:bg-surface-bright transition-colors border border-surface-container-low">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-fixed rounded-full text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<span class="text-secondary font-body text-sm font-semibold flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">arrow_upward</span> 12%
+                    </span>
+</div>
+<h3 class="font-body text-on-surface-variant text-sm font-medium mb-1">Total Users</h3>
+<p class="font-headline text-3xl font-bold text-on-surface">142,854</p>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 relative overflow-hidden group hover:bg-surface-bright transition-colors border border-surface-container-low">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container rounded-full text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stethoscope</span>
+</div>
+<span class="text-secondary font-body text-sm font-semibold flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">arrow_upward</span> 5%
+                    </span>
+</div>
+<h3 class="font-body text-on-surface-variant text-sm font-medium mb-1">Active Doctors</h3>
+<p class="font-headline text-3xl font-bold text-on-surface">3,492</p>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 relative overflow-hidden group hover:bg-surface-bright transition-colors border border-surface-container-low">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-fixed-dim rounded-full text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</div>
+<span class="text-secondary font-body text-sm font-semibold flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">arrow_upward</span> 18%
+                    </span>
+</div>
+<h3 class="font-body text-on-surface-variant text-sm font-medium mb-1">Consultations this Month</h3>
+<p class="font-headline text-3xl font-bold text-on-surface">84,520</p>
+</div>
+<!-- KPI 4 (Emergency) -->
+<div class="bg-tertiary-container rounded-xl p-6 relative overflow-hidden group border border-tertiary-container">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary rounded-full text-on-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<span class="text-on-tertiary-container font-body text-sm font-semibold flex items-center">
+                         Live
+                    </span>
+</div>
+<h3 class="font-body text-on-tertiary-container text-sm font-medium mb-1 opacity-90">Active Emergencies</h3>
+<p class="font-headline text-3xl font-bold text-on-tertiary-container">12</p>
+</div>
+</section>
+<!-- Charts Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+<!-- Line Chart Placeholder -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container-low flex flex-col h-80">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-lg font-bold text-on-surface">Disease Trends in Rural Areas</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 bg-surface-container-low/50 rounded-lg flex items-center justify-center relative overflow-hidden">
+<!-- Abstract representation of a line chart using gradients and shapes -->
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary-fixed-dim/20 to-transparent"></div>
+<svg class="w-full h-full p-4" preserveaspectratio="none" viewbox="0 0 100 50">
+<polyline class="text-primary" fill="none" points="0,40 20,30 40,35 60,15 80,20 100,5" stroke="currentColor" stroke-width="2"></polyline>
+<polyline class="text-secondary opacity-50" fill="none" points="0,45 20,40 40,42 60,30 80,35 100,25" stroke="currentColor" stroke-width="2"></polyline>
+</svg>
+</div>
+</div>
+<!-- Bar Chart Placeholder -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container-low flex flex-col h-80">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-lg font-bold text-on-surface">Most Searched Symptoms</h3>
+<div class="bg-surface-container-high rounded-full px-3 py-1 flex items-center">
+<span class="font-body text-xs text-on-surface-variant">Last 7 Days</span>
+<span class="material-symbols-outlined text-sm ml-1">expand_more</span>
+</div>
+</div>
+<div class="flex-1 flex items-end space-x-4 px-4 pb-2">
+<!-- Abstract Bars -->
+<div class="w-1/5 bg-primary-fixed rounded-t-sm h-3/4 hover:bg-primary-container transition-colors relative group">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-body text-xs text-on-surface-variant opacity-0 group-hover:opacity-100">Fever</span>
+</div>
+<div class="w-1/5 bg-primary-fixed-dim rounded-t-sm h-1/2 hover:bg-primary-container transition-colors relative group">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-body text-xs text-on-surface-variant opacity-0 group-hover:opacity-100">Cough</span>
+</div>
+<div class="w-1/5 bg-primary rounded-t-sm h-full hover:bg-primary-container transition-colors relative group">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-body text-xs text-on-surface-variant opacity-0 group-hover:opacity-100">Fatigue</span>
+</div>
+<div class="w-1/5 bg-primary-fixed rounded-t-sm h-2/5 hover:bg-primary-container transition-colors relative group">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-body text-xs text-on-surface-variant opacity-0 group-hover:opacity-100">Headache</span>
+</div>
+<div class="w-1/5 bg-secondary-container rounded-t-sm h-1/4 hover:bg-secondary transition-colors relative group">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 font-body text-xs text-on-surface-variant opacity-0 group-hover:opacity-100">Rash</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Emergency Monitoring Table -->
+<section class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-low mb-10">
+<div class="px-6 py-5 border-b border-surface-container-low flex justify-between items-center bg-surface-bright">
+<h3 class="font-headline text-lg font-bold text-on-surface">Emergency Monitoring</h3>
+<button class="text-primary font-body text-sm font-semibold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body">
+<thead class="bg-surface-container-low text-on-surface-variant text-xs uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4 font-medium">Case ID</th>
+<th class="px-6 py-4 font-medium">Location</th>
+<th class="px-6 py-4 font-medium">Reported Time</th>
+<th class="px-6 py-4 font-medium">Status</th>
+<th class="px-6 py-4 font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-container-highest transition-colors">
+<td class="px-6 py-4 text-sm text-on-surface font-medium">EMG-8492</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">Pune, Maharashtra</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">10 mins ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-tertiary-container text-on-tertiary-container">
+                                    Critical
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors">
+<td class="px-6 py-4 text-sm text-on-surface font-medium">EMG-8491</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">Nagpur, Maharashtra</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">25 mins ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary-container text-on-secondary-container">
+                                    Dispatched
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors">
+<td class="px-6 py-4 text-sm text-on-surface font-medium">EMG-8490</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">Nashik, Maharashtra</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">1 hour ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-variant text-on-surface-variant">
+                                    Resolved
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</body></html>

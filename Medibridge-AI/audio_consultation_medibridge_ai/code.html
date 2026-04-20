@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Audio Consultation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdad9",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b10f2b",
+                        "on-secondary-fixed": "#002106",
+                        "on-tertiary-container": "#ffc0bf",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327",
+                        "surface-tint": "#115cb9",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004491",
+                        "outline": "#727784",
+                        "inverse-primary": "#acc7ff",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008",
+                        "surface": "#f8f9fa",
+                        "primary": "#003f87",
+                        "secondary-fixed-dim": "#66df75",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pulse-ring {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.05); }
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #003f87 0%, #0056b3 100%);
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .medical-glimmer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(128, 249, 139, 0.05) 0%, rgba(248, 249, 250, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<div class="medical-glimmer"></div>
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-blue-900 dark:text-blue-400 font-['Manrope'] font-semibold tracking-tight docked full-width top-0 z-50 shadow-sm dark:shadow-none flex justify-between items-center w-full px-6 py-3 max-w-full bg-slate-100 dark:bg-slate-800">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-extrabold text-blue-900 dark:text-blue-400">MediBridge AI</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-blue-900 dark:text-blue-400 border-b-2 border-blue-900 dark:border-blue-400 pb-1 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors scale-95 active:scale-90 duration-200" href="#">Consultation</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors scale-95 active:scale-90 duration-200" href="#">History</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors scale-95 active:scale-90 duration-200" href="#">Schedule</a>
+</nav>
+<div class="flex items-center gap-4">
+<!-- Language Switcher -->
+<div class="flex bg-surface-container-high rounded-full p-1 mr-4">
+<button class="px-3 py-1 text-sm font-medium rounded-full bg-primary-fixed text-on-primary-fixed">EN</button>
+<button class="px-3 py-1 text-sm font-medium rounded-full text-on-surface-variant hover:bg-surface-container-highest transition-colors">HI</button>
+<button class="px-3 py-1 text-sm font-medium rounded-full text-on-surface-variant hover:bg-surface-container-highest transition-colors">MR</button>
+</div>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors p-2 rounded-full scale-95 active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors p-2 rounded-full scale-95 active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors p-2 rounded-full scale-95 active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<img alt="Provider or Patient Avatar" class="w-10 h-10 rounded-full object-cover ml-2" data-alt="close-up portrait of a professional male doctor with stethoscope around neck in a well-lit modern clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5iCNI9L69X8aPp7WPRP02HwBW--XG54rtvXjw5UqbPBvV2rNh1rYco9yBaG_9L9CUUGpPnylCyTMv0nnAtR-VFFucGnVYy7zGzJ-N6n8X6XxmWUet2tEukUd9ZbP9xymqfWUX7Fjq809BXD2VhMxvUNbtMx-18xO3uZTFm7wKc3CjpTQOaZiRIdt9N59dzLboiHvzT1T8WeTmQFnK-RBmMIg0LBOkaAVUolxFLW13ebxu4LFPmt_K06rGSxgaF3PW_NKOWnXsiA"/>
+</div>
+</header>
+<div class="flex flex-1 relative z-10">
+<!-- Main Canvas - Audio Call -->
+<main class="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 pb-32">
+<!-- Call Header Info -->
+<div class="text-center mb-12">
+<h1 class="font-headline text-3xl font-extrabold text-primary mb-2">General Consultation</h1>
+<div class="flex items-center justify-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-medium text-sm">End-to-end encrypted</span>
+</div>
+</div>
+<!-- Avatars & Timer Area -->
+<div class="flex flex-col items-center justify-center w-full max-w-3xl mb-12">
+<div class="flex items-center justify-center gap-8 md:gap-24 mb-10 w-full relative">
+<!-- Connection Line (Decorative) -->
+<div class="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-1 bg-surface-container-highest -translate-y-1/2 z-0"></div>
+<div class="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-1 bg-secondary w-1/2 -translate-y-1/2 z-0 opacity-50 pulse-ring"></div>
+<!-- Doctor Avatar -->
+<div class="flex flex-col items-center z-10">
+<div class="relative w-32 h-32 md:w-48 md:h-48 rounded-full p-2 bg-surface shadow-[0_16px_32px_rgba(25,28,29,0.06)] mb-4 pulse-ring before:content-[''] before:absolute before:-inset-2 before:rounded-full before:border-2 before:border-secondary before:opacity-20">
+<img alt="Dr. Clinical Lead" class="w-full h-full rounded-full object-cover" data-alt="professional male doctor portrait in clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8j3-ooTXYpsci-JazZG44J_nNBWn5rtIODnSrL52hES61qNp1-Dm5m2dNxf1ZlVvJxFPbV9DxUzf_ySUUSy-4QqWvMP8qNdnrdpeuPN8YwtB0hvNW2eET8iIH5OUTHXwycLeu4F5QDf9FJJxScEMRl8BZ8ncuBARtsgaBCk-iFfzYchVbqgKCddR9_YGPGNfVwAl2UEsDrKuu9FuQyxFIbJIMRoKPPT-MgYZm3f2s5holYWB5IVRtBWd12kt9tM3i6aEo8R6vdw"/>
+<div class="absolute bottom-2 right-2 w-6 h-6 bg-secondary rounded-full border-4 border-surface"></div>
+</div>
+<h2 class="font-headline text-xl font-bold text-on-surface">Dr. Clinical Lead</h2>
+<p class="text-on-surface-variant text-sm mt-1">General Practitioner</p>
+</div>
+<!-- Patient Avatar -->
+<div class="flex flex-col items-center z-10">
+<div class="relative w-28 h-28 md:w-40 md:h-40 rounded-full p-2 bg-surface shadow-[0_16px_32px_rgba(25,28,29,0.06)] mb-4">
+<img alt="Patient Profile" class="w-full h-full rounded-full object-cover" data-alt="portrait of a young woman looking at camera with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8B3ZWpwfkDrrKGWdxXTRA6j8ClFtZI47Q56GB2Y-QWlDiDd6z-dG9U4RR6HecFLBRx8ztZ19zGG9gyNMXGIuspLt24c09Le11wBTC4stlbMIeviUps3wrfEByHckvhOcUJV_-MY5p5IQKnGWDpHvvbvMWBSC4NAzpcVUe8LYWNry5uj78nlTJLTthgF8pk4l-puIB2lmq54uYW5d03nRwuRDu85BLoyq4sxkZUyDa41U7Ss6GDOBgL5dCfSiTARzr8U7nuoE2JQ"/>
+</div>
+<h2 class="font-headline text-lg font-bold text-on-surface">Aarav Sharma</h2>
+<p class="text-on-surface-variant text-sm mt-1">Patient</p>
+</div>
+</div>
+<!-- Timer -->
+<div class="bg-surface-container-lowest px-8 py-4 rounded-full shadow-[0_8px_24px_rgba(25,28,29,0.04)] flex flex-col items-center">
+<span class="text-secondary font-semibold text-sm mb-1 tracking-wide uppercase">Connected</span>
+<span class="font-headline text-4xl font-extrabold text-primary tabular-nums tracking-tight">08:20</span>
+</div>
+</div>
+</main>
+<!-- Right Sidebar - Contextual Info -->
+<aside class="hidden xl:flex flex-col w-96 bg-surface-container-low border-l-0 min-h-full p-6 pb-32">
+<h3 class="font-headline text-xl font-bold text-primary mb-6">Patient Context</h3>
+<div class="bg-surface-container-lowest rounded-xl p-5 mb-4 shadow-[0_4px_12px_rgba(25,28,29,0.02)]">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-semibold text-on-surface">Current Symptoms</h4>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-xs font-bold px-2 py-1 rounded-md">High Priority</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-3">Persistent cough, mild fever (100.2°F), and fatigue for the last 3 days. No known allergies.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-5 mb-6 shadow-[0_4px_12px_rgba(25,28,29,0.02)]">
+<h4 class="font-semibold text-on-surface mb-4">Recent Vitals</h4>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Blood Pressure</span>
+<span class="font-medium text-on-surface">120/80 mmHg</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Heart Rate</span>
+<span class="font-medium text-on-surface">78 bpm</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">SpO2</span>
+<span class="font-medium text-on-surface">98%</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-surface-container-high text-on-primary-fixed-variant font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">folder_shared</span>
+                View Full Records
+            </button>
+</aside>
+</div>
+<!-- Floating Action Button - Doctor Side -->
+<div class="fixed right-6 xl:right-104 bottom-32 z-40 hidden md:block">
+<button class="gradient-primary text-on-primary font-semibold px-6 py-4 rounded-full shadow-[0_16px_32px_rgba(0,63,135,0.2)] flex items-center gap-3 hover:-translate-y-1 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">prescriptions</span>
+            Create Prescription
+        </button>
+</div>
+<!-- Bottom Call Control Bar -->
+<div class="fixed bottom-0 left-0 w-full glass-panel border-t-0 py-6 px-4 z-50 shadow-[0_-8px_32px_rgba(25,28,29,0.08)]">
+<div class="max-w-screen-xl mx-auto flex justify-center items-center gap-4 md:gap-8">
+<button class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-2xl">mic</span>
+</button>
+<button class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-2xl">volume_up</span>
+</button>
+<button class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-[0_8px_24px_rgba(136,0,28,0.3)] hover:bg-tertiary-container transition-colors ml-4 md:ml-8">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">call_end</span>
+</button>
+</div>
+</div>
+</body></html>

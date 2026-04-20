@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prescription Detail - MediBridge AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#80f98b",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed-variant": "#004491",
+                        "on-surface": "#191c1d",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed": "#410008",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#0056b3",
+                        "on-tertiary-container": "#ffc0bf",
+                        "secondary-fixed-dim": "#66df75",
+                        "tertiary-fixed": "#ffdad9",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed": "#001a40",
+                        "surface-dim": "#d9dadb",
+                        "on-surface-variant": "#424752",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327",
+                        "tertiary": "#88001c",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "primary": "#003f87",
+                        "on-primary-container": "#bbd0ff",
+                        "outline-variant": "#c2c6d4",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "surface-tint": "#115cb9",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-fixed-dim": "#acc7ff",
+                        "primary-fixed": "#d7e2ff",
+                        "outline": "#727784",
+                        "on-secondary-fixed": "#002106",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-container": "#b10f2b",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#83fc8e",
+                        "inverse-primary": "#acc7ff",
+                        "background": "#f8f9fa",
+                        "secondary": "#006e25",
+                        "inverse-surface": "#2e3132"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex antialiased">
+<!-- Decorative Gradient -->
+<div class="fixed top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_top_right,theme(colors.secondary-container)_0%,transparent_60%)] opacity-5 pointer-events-none z-0"></div>
+<!-- Main Content Canvas - Note: Nav is suppressed because this is a transactional/detail view -->
+<main class="flex-1 w-full flex flex-col relative z-10 max-w-5xl mx-auto px-4 md:px-8 py-6">
+<!-- Header Actions -->
+<header class="flex items-center justify-between mb-8 pb-4 bg-surface/80 backdrop-blur-md sticky top-0 z-20 pt-4" style="box-shadow: 0 4px 32px 0 rgba(25, 28, 29, 0.02);">
+<div class="flex items-center gap-4">
+<button aria-label="Go Back" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-highest text-on-surface hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline font-bold text-2xl text-on-surface">Prescription - Oct 12, 2023</h1>
+<p class="font-body text-sm text-on-surface-variant mt-1">Ref: #MB-RX-9942</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Print Prescription" class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="print">print</span>
+</button>
+<button aria-label="Download Prescription" class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+</button>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Core Prescription Data -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Patient & Doctor Context Header -->
+<div class="bg-surface-container-lowest rounded-xl p-6 relative overflow-hidden" style="box-shadow: 0 16px 32px 0 rgba(25, 28, 29, 0.03);">
+<!-- Subtle Ghost Border -->
+<div class="absolute inset-0 border-2 border-outline-variant opacity-15 rounded-xl pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Patient Info -->
+<div>
+<span class="text-xs font-label font-medium text-on-surface-variant uppercase tracking-wider">Patient Details</span>
+<div class="mt-2">
+<h2 class="font-headline font-bold text-xl text-primary">Aarav Sharma</h2>
+<p class="font-body text-sm text-on-surface mt-1">32 yrs, Male</p>
+<p class="font-body text-sm text-on-surface-variant mt-1">ID: P-4492-881</p>
+</div>
+</div>
+<!-- Doctor Info -->
+<div>
+<span class="text-xs font-label font-medium text-on-surface-variant uppercase tracking-wider">Prescribing Physician</span>
+<div class="mt-2 flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline font-bold shrink-0">
+                                    SK
+                                </div>
+<div>
+<h3 class="font-headline font-bold text-lg text-on-surface">Dr. Shanti Kumar</h3>
+<p class="font-body text-sm text-secondary">Cardiologist</p>
+<p class="font-body text-xs text-on-surface-variant mt-1">Reg: MMC-10294</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Diagnosis -->
+<div class="bg-surface-container-lowest rounded-xl p-6 relative" style="box-shadow: 0 16px 32px 0 rgba(25, 28, 29, 0.03);">
+<div class="absolute inset-0 border-2 border-outline-variant opacity-15 rounded-xl pointer-events-none"></div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary shrink-0 mt-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="stethoscope">stethoscope</span>
+</div>
+<div>
+<h3 class="font-label font-semibold text-sm text-on-surface-variant uppercase tracking-wider">Primary Diagnosis</h3>
+<p class="font-headline font-bold text-lg text-on-surface mt-1">Hypertension Management</p>
+<p class="font-body text-sm text-on-surface-variant mt-2 max-w-2xl leading-relaxed">Routine check-up following recent BP spikes. Vitals stable today. Adjusting medication dosage slightly to ensure better coverage throughout the day.</p>
+</div>
+</div>
+</div>
+<!-- Medications -->
+<div class="bg-surface-container-lowest rounded-xl relative overflow-hidden" style="box-shadow: 0 16px 32px 0 rgba(25, 28, 29, 0.03);">
+<div class="absolute inset-0 border-2 border-outline-variant opacity-15 rounded-xl pointer-events-none"></div>
+<div class="p-6 border-b-2 border-surface-container-high/50 border-dashed">
+<h3 class="font-headline font-bold text-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="medication">medication</span>
+                            Prescribed Medications
+                        </h3>
+</div>
+<div class="p-0">
+<table class="w-full text-left font-body text-sm">
+<thead class="bg-surface-container-low text-on-surface-variant font-label text-xs uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4 font-medium">Medicine Name</th>
+<th class="px-6 py-4 font-medium">Dosage</th>
+<th class="px-6 py-4 font-medium">Duration</th>
+<th class="px-6 py-4 font-medium">Instructions</th>
+</tr>
+</thead>
+<tbody class="divide-y-2 divide-surface-container-low/50">
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-5">
+<div class="font-semibold text-on-surface text-base">Amlodipine 5mg</div>
+<div class="text-xs text-on-surface-variant mt-1">Tablet</div>
+</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-1.5 bg-surface-container-high px-2.5 py-1 rounded-md text-on-surface font-medium">
+                                            1-0-1
+                                        </div>
+</td>
+<td class="px-6 py-5 text-on-surface">30 Days</td>
+<td class="px-6 py-5 text-on-surface-variant">After breakfast and dinner</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-5">
+<div class="font-semibold text-on-surface text-base">Atorvastatin 10mg</div>
+<div class="text-xs text-on-surface-variant mt-1">Tablet</div>
+</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-1.5 bg-surface-container-high px-2.5 py-1 rounded-md text-on-surface font-medium">
+                                            0-0-1
+                                        </div>
+</td>
+<td class="px-6 py-5 text-on-surface">30 Days</td>
+<td class="px-6 py-5 text-on-surface-variant">After dinner</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column: Meta & Associated Context -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Vital Signs Snippet -->
+<div class="bg-surface-container-low rounded-xl p-6 relative" style="box-shadow: 0 8px 24px 0 rgba(25, 28, 29, 0.02);">
+<h4 class="font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-4">Recorded Vitals</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-3 rounded-lg flex flex-col gap-1">
+<span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="favorite">favorite</span> BP</span>
+<span class="font-headline font-bold text-on-surface text-lg">138/85</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg flex flex-col gap-1">
+<span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="monitor_heart">monitor_heart</span> Pulse</span>
+<span class="font-headline font-bold text-on-surface text-lg">72 <span class="text-xs font-normal text-on-surface-variant">bpm</span></span>
+</div>
+</div>
+</div>
+<!-- Linked Reports Preview -->
+<div class="bg-surface-container-lowest rounded-xl p-6 relative" style="box-shadow: 0 16px 32px 0 rgba(25, 28, 29, 0.03);">
+<div class="absolute inset-0 border-2 border-outline-variant opacity-15 rounded-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-headline font-bold text-base text-on-surface">Reference Reports</h4>
+<button class="text-primary text-xs font-semibold hover:underline">View All</button>
+</div>
+<div class="flex flex-col gap-3">
+<a class="group flex items-center p-3 bg-surface-container-low hover:bg-surface-container-high rounded-lg transition-colors border border-transparent hover:border-outline-variant/30" href="#">
+<div class="w-10 h-10 bg-primary-fixed-dim rounded-md flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="ml-3 flex-1 overflow-hidden">
+<div class="font-body font-medium text-sm text-on-surface truncate">ECG_Routine_Oct12.pdf</div>
+<div class="text-xs text-on-surface-variant mt-0.5">Uploaded Oct 12 • 1.2 MB</div>
+</div>
+</a>
+<a class="group flex items-center p-3 bg-surface-container-low hover:bg-surface-container-high rounded-lg transition-colors border border-transparent hover:border-outline-variant/30" href="#">
+<div class="w-10 h-10 bg-primary-fixed-dim rounded-md flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+</div>
+<div class="ml-3 flex-1 overflow-hidden">
+<div class="font-body font-medium text-sm text-on-surface truncate">Lipid_Panel_Results.pdf</div>
+<div class="text-xs text-on-surface-variant mt-0.5">Uploaded Oct 10 • 850 KB</div>
+</div>
+</a>
+</div>
+</div>
+<!-- Doctor Signature & Stamp -->
+<div class="bg-surface-container-low rounded-xl p-6 mt-auto">
+<div class="h-16 flex items-end justify-center mb-2">
+<!-- Stylized signature placeholder using text for demo, normally an image -->
+<span class="font-headline italic text-3xl text-on-surface opacity-80" style="font-family: 'Brush Script MT', cursive, sans-serif;">Dr. S. Kumar</span>
+</div>
+<div class="w-32 h-px bg-outline-variant mx-auto mb-2 opacity-50"></div>
+<div class="text-center">
+<p class="font-body font-medium text-sm text-on-surface">Electronically Signed</p>
+<p class="font-body text-xs text-on-surface-variant mt-1">Oct 12, 2023 - 14:30 IST</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

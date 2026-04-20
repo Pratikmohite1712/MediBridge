@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Video Consultation - MediBridge AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdad9",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b10f2b",
+                        "on-secondary-fixed": "#002106",
+                        "on-tertiary-container": "#ffc0bf",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327",
+                        "surface-tint": "#115cb9",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004491",
+                        "outline": "#727784",
+                        "inverse-primary": "#acc7ff",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008",
+                        "surface": "#f8f9fa",
+                        "primary": "#003f87",
+                        "secondary-fixed-dim": "#66df75",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": [
+                            "Manrope"
+                        ],
+                        "body": [
+                            "Inter"
+                        ],
+                        "label": [
+                            "Inter"
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        .glass-panel { background: rgba(248, 249, 250, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .bg-gradient-primary { background: linear-gradient(135deg, #003f87 0%, #0056b3 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen overflow-hidden flex flex-col relative">
+<!-- Ambient Glow -->
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary-container/5 rounded-full blur-3xl pointer-events-none -z-10 translate-x-1/3 -translate-y-1/3"></div>
+<!-- TopAppBar Semantic Shell -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md full-width top-0 z-50 flex justify-between items-center w-full px-6 py-3 max-w-full shadow-sm dark:shadow-none bg-slate-100 dark:bg-slate-800">
+<div class="flex items-center gap-6">
+<span class="text-2xl font-extrabold text-blue-900 dark:text-blue-400 font-['Manrope'] font-semibold tracking-tight">MediBridge AI</span>
+<nav class="hidden md:flex gap-4">
+<a class="text-blue-900 dark:text-blue-400 border-b-2 border-blue-900 dark:border-blue-400 pb-1 font-['Inter'] font-medium text-sm hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors scale-95 active:scale-90 duration-200" href="#">Consultation</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Inter'] font-medium text-sm hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors scale-95 active:scale-90 duration-200" href="#">History</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Inter'] font-medium text-sm hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors scale-95 active:scale-90 duration-200" href="#">Schedule</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<!-- Language Switcher -->
+<div class="hidden sm:flex bg-surface-container-high rounded-full p-1 gap-1">
+<button class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold">EN</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant text-xs font-medium hover:bg-surface-container-highest transition-colors">HI</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant text-xs font-medium hover:bg-surface-container-highest transition-colors">MR</button>
+</div>
+<div class="flex items-center gap-3 text-blue-900 dark:text-blue-400">
+<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full"><span class="material-symbols-outlined">signal_cellular_alt</span></button>
+<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full sm:hidden"><span class="material-symbols-outlined">language</span></button>
+<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full"><span class="material-symbols-outlined">help</span></button>
+</div>
+<img alt="Provider or Patient Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-lowest shadow-sm" data-alt="close up professional headshot of a female doctor in a white coat smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdXoIHwH-GIVeHlvXnvqRrrK2OsqToR2iVG4m6fgL7OOLVWophdSWpmQEmiMJ1mKTNaYviEGouNXusQcX17QrSQEDJ6HsnbbKU-qM87IjZRACfhmycHLcsjX5IlLGLGXpKpIDEEtJDGA5JMbdrg5K2XACFL0x7H4OeZhIjwXZPb9YE-KaasuJM7GjTo-ZyAxY5IT3HYBeZ8khd5HZAHzDBq1EnRrstvSvCfJ_TPeQpKSHmWPZv6-BA1Qpmxai2VakeqLAt1u4Fhw"/>
+</div>
+</header>
+<!-- Main Layout -->
+<main class="flex-1 flex overflow-hidden bg-surface-container-low p-4 gap-4">
+<!-- Left: SideNav / Context Panel -->
+<aside class="w-80 hidden lg:flex flex-col gap-4">
+<!-- Patient Info Card -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<h2 class="font-headline text-lg font-semibold text-on-surface mb-4">Patient Profile</h2>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant text-xl font-bold">
+                        RA
+                    </div>
+<div>
+<h3 class="font-headline font-bold text-on-surface">Rahul Agarwal</h3>
+<p class="text-sm text-on-surface-variant">Age: 32 • Gender: M</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container p-4 rounded-lg">
+<span class="text-xs text-on-surface-variant font-medium block mb-1 uppercase tracking-wider">Primary Symptom</span>
+<p class="text-on-surface font-medium">Severe lower back pain</p>
+</div>
+<div class="bg-surface-container p-4 rounded-lg">
+<span class="text-xs text-on-surface-variant font-medium block mb-1 uppercase tracking-wider">Duration</span>
+<p class="text-on-surface font-medium">4 Days</p>
+</div>
+</div>
+</div>
+<!-- Consultation Details -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex-1">
+<h2 class="font-headline text-lg font-semibold text-on-surface mb-4">Session Details</h2>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">stethoscope</span>
+<div>
+<span class="text-xs text-on-surface-variant block">Consulting Doctor</span>
+<span class="text-sm font-medium text-on-surface">Dr. Shanti Kumar</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">videocam</span>
+<div>
+<span class="text-xs text-on-surface-variant block">Type</span>
+<span class="text-sm font-medium text-on-surface">Video Consultation</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5">check_circle</span>
+<div>
+<span class="text-xs text-on-surface-variant block">Status</span>
+<span class="text-sm font-medium text-secondary">Active</span>
+</div>
+</li>
+</ul>
+<div class="mt-8">
+<div class="flex items-center justify-between bg-surface-container p-3 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">wifi</span>
+<span class="text-sm font-medium text-on-surface">Low Bandwidth Mode</span>
+</div>
+<div class="w-10 h-6 bg-secondary-container rounded-full relative cursor-pointer">
+<div class="w-4 h-4 bg-secondary absolute top-1 right-1 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right: Video Canvas -->
+<section class="flex-1 relative rounded-2xl overflow-hidden bg-black shadow-lg">
+<!-- Main Video (Doctor) -->
+<img alt="Main Video Stream" class="w-full h-full object-cover" data-alt="professional modern medical office setting with a focused male doctor looking directly at the camera through a video call interface, good natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZWOUBC6jtCDHcrWcnFuO7zcCf4SLdgTjiDgrU0Uf3_UhvmdAxzSLv58w4feoitoId4n17Lniv7rV8Nnf_Xd-72EsG0InsZcGifuZ-ICmAzi_kFIBungBvRp3qjn6Tm1RLXOAvyYSELkkbMf5fBXeVXr7Jw7q6aHLaYkcDbZ5nECgByEzmZe-o4Am_B9as_gyu410oxgGHk5aRros-CsQF_OwqJ_3y0PgUt36AS4CXALG5AFnJUxNvTdP2kc8Z8CuZlLfwhHL8lw"/>
+<!-- Video Overlay UI Top -->
+<div class="absolute top-0 left-0 w-full p-6 flex justify-between items-start pointer-events-none">
+<div class="glass-panel px-4 py-2 rounded-lg flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-error animate-pulse"></div>
+<span class="font-headline font-bold text-on-surface text-lg tracking-widest">12:45</span>
+</div>
+</div>
+<!-- Self View (Patient) -->
+<div class="absolute bottom-28 right-6 w-48 h-64 rounded-xl overflow-hidden border-2 border-white/20 shadow-2xl z-10 pointer-events-auto">
+<img alt="Self View Stream" class="w-full h-full object-cover" data-alt="young indian male sitting in a softly lit living room, looking directly at the camera as if on a webcam, looking slightly uncomfortable holding lower back" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUE7ssbr5wDc6TpQs_gae98YEFbyjCanjqDRv6jUzYjLXGHqUSKvpy8JjbOubQI9xGTQUSJ_ug4q4ugLvyJkfYrMEtJxLzQxo8NdCseFMjkAXMkJkPp6QmplduF8w_Bu6yXiVQl7PQNupAg7rb9tGQfynDLVZn1EkGCSa4DVsAQVdgc4xUSoplJPbcxYN2socSx22KJuR9uNTvHO7kijqWxq3pAyFUd7j3suryfVAEjoBDrSZztnNZR9FrJbxhABTNmWg4M76_Ng"/>
+</div>
+<!-- Bottom Control Bar -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-panel rounded-full px-8 py-4 flex items-center gap-6 shadow-[0_16px_32px_rgba(25,28,29,0.06)] pointer-events-auto border border-white/20">
+<button class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-2xl">mic</span>
+</button>
+<button class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-2xl">videocam</span>
+</button>
+<div class="w-[1px] h-8 bg-outline-variant/30 mx-2"></div>
+<button class="h-14 px-8 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary shadow-lg hover:bg-tertiary-container transition-colors gap-2">
+<span class="material-symbols-outlined icon-fill">call_end</span>
+<span class="font-headline font-bold tracking-wide">End Call</span>
+</button>
+</div>
+</section>
+</main>
+</body></html>

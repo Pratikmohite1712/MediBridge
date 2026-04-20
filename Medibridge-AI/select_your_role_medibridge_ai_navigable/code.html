@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Role Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "outline": "#727784",
+                        "inverse-primary": "#acc7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008",
+                        "primary": "#003f87",
+                        "surface": "#f8f9fa",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#66df75",
+                        "surface-dim": "#d9dadb",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "tertiary-fixed": "#ffdad9",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary-fixed": "#002106",
+                        "tertiary-container": "#b10f2b",
+                        "on-tertiary-container": "#ffc0bf",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#115cb9",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom overrides for specific design system rules not easily handled by inline classes */
+        .medical-glimmer {
+            background: radial-gradient(ellipse at top right, var(--tw-colors-secondary-container) 0%, transparent 70%);
+        }
+        .text-gradient-primary {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, var(--tw-colors-primary), var(--tw-colors-primary-container));
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen relative overflow-x-hidden">
+<!-- Signature Texture: The Medical Glimmer -->
+<div class="fixed top-0 right-0 w-[800px] h-[800px] medical-glimmer opacity-5 pointer-events-none z-0"></div>
+<!-- TopAppBar Shared Component -->
+<!-- Applying exact style_* overrides from JSON while suppressing nav elements as this is a transactional onboarding screen -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
+<!-- Separation Logic implemented as a subtle bottom border equivalent -->
+<div class="absolute bottom-0 w-full h-[1px] bg-slate-100 dark:bg-slate-800"></div>
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<!-- Brand Logo with exact JSON styling -->
+<div class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-50 font-headline">
+                MediBridge AI
+            </div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-2 text-blue-900 dark:text-blue-400">
+<button aria-label="Change Language" class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="language" style="font-variation-settings: 'FILL' 0;">language</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<!-- Suppressing BottomNavBar & FAB as this is a linear/transactional path (Onboarding/Registration Step) -->
+<main class="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 pt-24 pb-12 max-w-5xl mx-auto">
+<!-- Intentional Asymmetry & High-End Editorial Header -->
+<div class="w-full text-center md:text-left mb-12 md:mb-16">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight mb-4">
+                Choose Your Role
+            </h1>
+<p class="font-body text-on-surface-variant text-lg md:text-xl max-w-2xl leading-relaxed">
+                Select your primary account type to personalize your MediBridge AI experience.
+            </p>
+</div>
+<!-- Role Selection Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
+<!-- Patient Card -->
+<!-- Using Level 1 Surface Container Lowest, Tonal Layering, Ghost Borders -->
+<label class="group relative bg-surface-container-lowest rounded-[1.5rem] p-8 md:p-10 cursor-pointer transition-all duration-300 ring-1 ring-outline-variant/20 hover:ring-primary/30 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(25,28,29,0.06)] flex flex-col items-start overflow-hidden">
+<input class="sr-only peer" name="user_role" type="radio" value="patient"/>
+<!-- Active State Indicator Background Shift (Soft Well approach) -->
+<div class="absolute inset-0 bg-primary/0 peer-checked:bg-primary/[0.02] transition-colors duration-300 pointer-events-none"></div>
+<div class="absolute inset-0 ring-2 ring-transparent peer-checked:ring-primary rounded-[1.5rem] transition-all duration-300 pointer-events-none"></div>
+<!-- Icon Container -->
+<div class="w-16 h-16 rounded-full bg-surface-container-high text-primary flex items-center justify-center mb-8 group-hover:bg-primary-fixed transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="person" style="font-variation-settings: 'FILL' 0;">person</span>
+</div>
+<!-- Content -->
+<div class="relative z-10">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors duration-300">
+                        Patient
+                    </h2>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8">
+                        Access healthcare, schedule consultations, manage your medical history, and connect with verified practitioners.
+                    </p>
+</div>
+<!-- Interactive Visual Affordance -->
+<div class="mt-auto w-full flex justify-between items-center relative z-10">
+<span class="font-body text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-10px] group-hover:translate-x-0 transition-transform">
+                        Select Patient
+                    </span>
+<div class="w-8 h-8 rounded-full ring-1 ring-outline-variant/40 flex items-center justify-center text-outline-variant group-hover:bg-primary group-hover:text-on-primary group-hover:ring-primary peer-checked:bg-primary peer-checked:text-on-primary peer-checked:ring-primary transition-all duration-300">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</div>
+</div>
+</label>
+<!-- Doctor Card -->
+<label class="group relative bg-surface-container-lowest rounded-[1.5rem] p-8 md:p-10 cursor-pointer transition-all duration-300 ring-1 ring-outline-variant/20 hover:ring-primary/30 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(25,28,29,0.06)] flex flex-col items-start overflow-hidden">
+<input class="sr-only peer" name="user_role" type="radio" value="doctor"/>
+<div class="absolute inset-0 bg-primary/0 peer-checked:bg-primary/[0.02] transition-colors duration-300 pointer-events-none"></div>
+<div class="absolute inset-0 ring-2 ring-transparent peer-checked:ring-primary rounded-[1.5rem] transition-all duration-300 pointer-events-none"></div>
+<!-- Icon Container -->
+<div class="w-16 h-16 rounded-full bg-surface-container-high text-secondary-container-text text-secondary flex items-center justify-center mb-8 group-hover:bg-secondary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="stethoscope" style="font-variation-settings: 'FILL' 0;">stethoscope</span>
+</div>
+<!-- Content -->
+<div class="relative z-10">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors duration-300">
+                        Doctor
+                    </h2>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8">
+                        Provide care, manage your patient appointments, prescribe medications, and access clinical data securely.
+                    </p>
+</div>
+<!-- Interactive Visual Affordance -->
+<div class="mt-auto w-full flex justify-between items-center relative z-10">
+<span class="font-body text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-10px] group-hover:translate-x-0 transition-transform">
+                        Select Doctor
+                    </span>
+<div class="w-8 h-8 rounded-full ring-1 ring-outline-variant/40 flex items-center justify-center text-outline-variant group-hover:bg-primary group-hover:text-on-primary group-hover:ring-primary peer-checked:bg-primary peer-checked:text-on-primary peer-checked:ring-primary transition-all duration-300">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Primary Call to Action Button (Hidden by default, shown via JS typically when a selection is made, but represented here structurally) -->
+<div class="mt-12 w-full flex justify-end md:justify-end justify-center">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-8 py-4 font-body font-medium text-lg min-h-[56px] hover:shadow-[0_8px_16px_rgba(0,63,135,0.15)] transition-all duration-300 active:scale-95 flex items-center gap-2 w-full md:w-auto justify-center" onclick="const role = document.querySelector('input[name=\'user_role\']:checked')?.value; if(role === 'patient') window.location.href='{{DATA:SCREEN:SCREEN_25}}'; else if(role === 'doctor') window.location.href='{{DATA:SCREEN:SCREEN_6}}';">
+                Continue
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</main>
+</body></html>

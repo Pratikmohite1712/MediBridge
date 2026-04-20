@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Rural Telehealth Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d7e2ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b10f2b",
+                        "on-secondary-fixed": "#002106",
+                        "on-tertiary-container": "#ffc0bf",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "on-secondary-container": "#007327",
+                        "surface-tint": "#115cb9",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdad9",
+                        "secondary-container": "#80f98b",
+                        "primary-container": "#0056b3",
+                        "secondary-fixed": "#83fc8e",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f8f9fa",
+                        "primary": "#003f87",
+                        "secondary-fixed-dim": "#66df75",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#88001c",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "on-primary-container": "#bbd0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-primary": "#acc7ff",
+                        "outline": "#727784",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#424752",
+                        "secondary": "#006e25",
+                        "on-primary-fixed": "#001a40",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#410008"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .medical-glimmer {
+            background: radial-gradient(circle at top right, rgba(128, 249, 139, 0.05) 0%, transparent 50%);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #003f87, #0056b3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #003f87 0%, #0056b3 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased relative min-h-screen">
+<!-- Ambient Background Glimmer -->
+<div class="absolute inset-0 medical-glimmer pointer-events-none z-0"></div>
+<!-- Top Navigation (Generated from JSON) -->
+<nav class="docked full-width top-0 sticky z-50 bg-white/90 backdrop-blur-xl shadow-sm shadow-blue-900/5">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto">
+<!-- Brand -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-manrope font-extrabold text-2xl text-blue-900">Arogya Portal</span>
+</div>
+<!-- Navigation Links / Language Switcher -->
+<div class="hidden md:flex items-center gap-6">
+<!-- Active Language -->
+<button class="bg-primary-fixed text-on-primary-fixed font-bold px-4 py-2 rounded-full text-sm font-label transition-colors duration-200">
+                    English
+                </button>
+<!-- Inactive Languages -->
+<button class="bg-surface-container-high text-on-surface-variant font-medium px-4 py-2 rounded-full text-sm font-label hover:bg-surface-container-highest transition-colors duration-200">
+                    Hindi
+                </button>
+<button class="bg-surface-container-high text-on-surface-variant font-medium px-4 py-2 rounded-full text-sm font-label hover:bg-surface-container-highest transition-colors duration-200">
+                    Marathi
+                </button>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="text-blue-900 hover:bg-slate-50 p-2 rounded-full transition-colors duration-200 scale-95 active:scale-90 flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-blue-900 hover:bg-slate-50 p-2 rounded-full transition-colors duration-200 scale-95 active:scale-90 flex items-center justify-center">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-100/50 h-[1px] w-full"></div>
+</nav>
+<!-- Main Content -->
+<main class="relative z-10 px-6 py-12 md:py-24 max-w-7xl mx-auto space-y-32">
+<!-- Hero Section (Asymmetrical) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8 pr-0 lg:pr-12">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-sm font-medium text-on-surface-variant">Low-Bandwidth Optimized</span>
+</div>
+<h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface leading-tight">
+                    Bridging the Gap in <br/> <span class="text-gradient">Rural Healthcare</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    Access expert doctors, AI-driven symptom checks, and emergency medical services from your smartphone, even on slow networks. Tailored for your language and your community.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="btn-primary text-on-primary font-bold text-lg px-8 py-4 rounded-full min-h-[56px] hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                        Get Started
+                        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+<button class="bg-surface-container-high text-on-primary-fixed-variant font-bold text-lg px-8 py-4 rounded-full min-h-[56px] hover:bg-surface-container-highest transition-colors flex items-center justify-center">
+                        Login
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<!-- Tonal Offset Card for Image Replacement -->
+<div class="absolute -inset-4 bg-surface-container-low rounded-3xl -z-10 transform translate-x-4 translate-y-4"></div>
+<img alt="Doctor consulting with a patient via smartphone" class="w-full h-auto rounded-2xl shadow-sm object-cover aspect-[4/5]" data-alt="A warm, professional photo of an Indian doctor on a telehealth video call, appearing on a smartphone held by a patient in a rural setting, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq23uE3P2RwUW-JJlaFH2agIKH8-9Qx0YQ494PuowBUOyXLeeftIltCe-jLR3HG6GKwQqBKwmxXq-I5eo1XhaBxiJ6nw_ByHPtTh6JD9iP_H8Jzl5yaukKjMBe98gv482MCo08Iplw1y1JQMd1TGS8CoZpL99u2wWBThQ-wlGJwQQeHtkb9F3oaom77vKbnIWp36Joc7BxlD62QF0RRyRENx6j7K9V8_WhM15Qz89utCT3k7Thw_O56YHP8CYFN6DJgzuVDKBj8Q"/>
+<!-- Floating Trust Badge -->
+<div class="absolute -bottom-6 -left-6 bg-surface/80 backdrop-blur-xl p-4 rounded-2xl shadow-[0_16px_32px_rgba(25,28,29,0.06)] flex items-center gap-4">
+<div class="bg-secondary-container text-on-secondary-container p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<p class="font-headline font-bold text-sm">Secure &amp; Private</p>
+<p class="font-body text-xs text-on-surface-variant">Gov. Approved Platform</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section (Bento Grid) -->
+<section class="space-y-12">
+<div class="max-w-3xl">
+<h2 class="font-headline text-3xl md:text-4xl font-bold tracking-tight text-on-surface mb-4">Comprehensive Care, Simplified.</h2>
+<p class="font-body text-lg text-on-surface-variant">Powerful medical tools redesigned for simplicity and accessibility in low-resource environments.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/15 flex flex-col justify-between h-full">
+<div class="space-y-6">
+<div class="bg-primary-fixed w-16 h-16 rounded-2xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">robot_2</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">AI Symptom Checker</h3>
+<p class="font-body text-on-surface-variant">Describe how you feel in your native language. Our AI accurately suggests possible conditions and next steps.</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/15 flex flex-col justify-between h-full">
+<div class="space-y-6">
+<div class="bg-secondary-container w-16 h-16 rounded-2xl flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">video_camera_front</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">Doctor Consultation</h3>
+<p class="font-body text-on-surface-variant">Connect with certified specialists via low-bandwidth video or audio calls. Get prescriptions sent directly to your phone.</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-tertiary-container/10 rounded-2xl p-8 border border-tertiary-container/20 flex flex-col justify-between h-full">
+<div class="space-y-6">
+<div class="bg-tertiary text-on-tertiary w-16 h-16 rounded-2xl flex items-center justify-center shadow-[0_8px_16px_rgba(136,0,28,0.15)]">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2 text-tertiary">Emergency Services</h3>
+<p class="font-body text-on-surface-variant">One-tap access to local ambulances and urgent care protocols. Works instantly even offline.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim mt-24 py-12 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline font-bold text-xl text-primary">Arogya Portal</span>
+</div>
+<div class="flex gap-6 font-label text-sm font-medium text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</body></html>

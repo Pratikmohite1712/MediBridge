@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Patient History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#80f98b",
+                      "surface": "#f8f9fa",
+                      "surface-bright": "#f8f9fa",
+                      "on-primary-fixed-variant": "#004491",
+                      "on-surface": "#191c1d",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#92001f",
+                      "surface-container-highest": "#e1e3e4",
+                      "on-tertiary-fixed": "#410008",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#0056b3",
+                      "on-tertiary-container": "#ffc0bf",
+                      "secondary-fixed-dim": "#66df75",
+                      "tertiary-fixed": "#ffdad9",
+                      "surface-container": "#edeeef",
+                      "on-primary-fixed": "#001a40",
+                      "surface-dim": "#d9dadb",
+                      "on-surface-variant": "#424752",
+                      "on-secondary-fixed-variant": "#00531a",
+                      "on-secondary-container": "#007327",
+                      "tertiary": "#88001c",
+                      "surface-variant": "#e1e3e4",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#191c1d",
+                      "primary": "#003f87",
+                      "on-primary-container": "#bbd0ff",
+                      "outline-variant": "#c2c6d4",
+                      "tertiary-fixed-dim": "#ffb3b2",
+                      "surface-tint": "#115cb9",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-container-high": "#e7e8e9",
+                      "primary-fixed-dim": "#acc7ff",
+                      "primary-fixed": "#d7e2ff",
+                      "outline": "#727784",
+                      "on-secondary-fixed": "#002106",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f3f4f5",
+                      "tertiary-container": "#b10f2b",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#83fc8e",
+                      "inverse-primary": "#acc7ff",
+                      "background": "#f8f9fa",
+                      "secondary": "#006e25",
+                      "inverse-surface": "#2e3132"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Manrope"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .medical-glimmer {
+            background: radial-gradient(circle at top right, rgba(128, 249, 139, 0.05) 0%, transparent 60%);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen flex flex-col md:flex-row relative overflow-x-hidden">
+<!-- Medical Glimmer Effect -->
+<div class="fixed inset-0 pointer-events-none medical-glimmer z-0"></div>
+<!-- TopAppBar (Mobile & Hidden on md+) -->
+<header class="md:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex justify-between items-center w-full px-6 py-3 shadow-sm dark:shadow-none docked full-width top-0 z-40 sticky">
+<div class="text-2xl font-['Manrope'] font-extrabold text-[#003f87] dark:text-blue-400 tracking-tight">
+            MediBridge AI
+        </div>
+<div class="flex items-center gap-4 text-[#003f87] dark:text-blue-400">
+<button class="scale-95 active:scale-90 transition-transform hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Close up professional headshot of a mature female doctor with a gentle smile, wearing a white coat and stethoscope, soft clinic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSXVC_VPoOucjvT-1SSOParoUaXgN-B24I_evaujeX2Bw-P6Kn6FrQg-RDaguBabIj0I_QL0CLiSq9lm0jstHGdNnLvC9p-J6IVlLwuNwCzEHxFgNONJ3rAhU_3b5t3X4g5bTR0RLnp2fncvZLk6WrVCs0OuDsEz7aMwUAKmjBJxeS6CjNdmXSUBw8QgMwB957JJouxLrcE87jF6ToYAbgvE5_3ol9_PtK6qjlzxSjZDbSzvgrNwDo2tDlcwmyuLud2YpaGwCSug"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop & Hidden on md-) -->
+<aside class="hidden md:flex flex-col h-full py-8 space-y-2 bg-slate-50 dark:bg-slate-950 h-screen w-64 fixed left-0 top-0 overflow-y-auto flat no-border tonal-layering z-30 shadow-[4px_0_24px_rgba(25,28,29,0.02)] border-r border-surface-dim/20">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined font-bold">medical_services</span>
+</div>
+<div>
+<h1 class="text-xl font-['Manrope'] font-black text-[#003f87] dark:text-blue-400 leading-tight">MediBridge AI</h1>
+<p class="font-['Inter'] text-xs text-on-surface-variant/70">Clinical Portal</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 mx-2 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-all group" href="#">
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] font-semibold text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-blue-100 dark:bg-blue-900/40 text-[#003f87] dark:text-blue-200 rounded-full mx-2 px-4 py-3 font-bold group Active: translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<span class="font-['Inter'] font-semibold text-sm">Medical Records</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 mx-2 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-all group" href="#">
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:text-primary transition-colors" data-icon="event">event</span>
+<span class="font-['Inter'] font-semibold text-sm">Appointments</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 mx-2 px-4 py-3 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-all group" href="#">
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+<span class="font-['Inter'] font-semibold text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<div class="bg-surface-container-high rounded-2xl p-4 flex flex-col items-center text-center">
+<img alt="Healthcare Provider Avatar" class="w-16 h-16 rounded-full object-cover mb-3 shadow-sm border-2 border-surface-container-lowest" data-alt="Professional headshot of a male doctor in his 40s wearing scrubs, looking directly at camera with a reassuring expression, clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOEwEls5io4ddNdyDQtz_9y5TqjaqILw9Lq5gQZ7-HKFbsZmcFpCnwYShfdseuwzI3SOj0xFwE_WpX8M7C0rJl_4y74F_FbBYjZf0K9BXcMOm-bWWiqs7riBaKVLL5tDgk7M2yHHLDd8vU07_riT1w9zQiFwXKEzCGW65OB8CZxyZbyFxzhmS9dYmd6bUa8DEHGVH8tYPir5luiXdYex9K1Si7IV5m5VspkS_F4kP7gNt-Fanze9m90DI8F26VtIty69vNw0YzMQ"/>
+<p class="font-headline font-bold text-sm text-on-surface">Dr. Rahul Mehta</p>
+<p class="font-label text-xs text-on-surface-variant mb-4">Internal Medicine</p>
+<button class="w-full bg-tertiary text-on-tertiary font-label font-medium text-sm py-2 px-4 rounded-full hover:bg-tertiary-container transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">emergency</span>
+                    Emergency Call
+                 </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-4 md:p-8 lg:p-12 relative z-10 flex flex-col lg:flex-row gap-8 items-start">
+<!-- Left Column: Patient Context & Quick Access (Asymmetrical Layout) -->
+<div class="w-full lg:w-1/3 space-y-6 flex-shrink-0">
+<!-- Patient Profile Card (Level 1 Elevation) -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] p-6 shadow-[0_4px_24px_rgba(25,28,29,0.04)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110 duration-500"></div>
+<div class="flex items-center gap-5 relative z-10">
+<img alt="Aarav Sharma" class="w-20 h-20 rounded-full object-cover shadow-sm border-4 border-surface" data-alt="Headshot portrait of a 32-year-old South Asian male with short dark hair and a slight beard, looking calm, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5BE8L-NfPW2zi-awhBKIzXZVyEJrgVZ3RtoFI5Vb-pPHt4nsuMgqKK7yLK6UIodnxg5F-JiYs4_VVXzJfUba2S40CMDXvGMMa8xwvyLY_Nyamz3HQLyXvWgSZyX9vMJVZeCfXJBdXxEYP3N_0M6itGdcu3muKdapPw2bi5xw6H9N__6np-mP7NBgJfwETAQt-GxLLV7PLyaczPbedBfAiRYZnJYC5gpFFwY53Xjnm8Acldh91fQ1mNI_xnBW9MdGIWzlhp2XDrQ"/>
+<div>
+<h2 class="font-headline font-bold text-2xl text-on-surface tracking-tight mb-1">Aarav Sharma</h2>
+<div class="flex items-center gap-2 font-label text-sm text-on-surface-variant mb-3">
+<span>Male, 32 yrs</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>ID: P-88291</span>
+</div>
+<!-- Chronic Conditions Tag -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container/10 text-tertiary font-label font-medium text-xs">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                            Diabetic (Type II)
+                        </span>
+</div>
+</div>
+<!-- Vitals Summary Grid -->
+<div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-surface-container-high/50 relative z-10">
+<div class="bg-surface px-4 py-3 rounded-xl flex flex-col gap-1">
+<span class="font-label text-xs text-on-surface-variant">Last BP</span>
+<span class="font-headline font-bold text-on-surface">135/85 <span class="text-xs font-normal text-on-surface-variant">mmHg</span></span>
+</div>
+<div class="bg-surface px-4 py-3 rounded-xl flex flex-col gap-1">
+<span class="font-label text-xs text-on-surface-variant">Last HbA1c</span>
+<span class="font-headline font-bold text-tertiary">7.2 <span class="text-xs font-normal text-on-surface-variant">%</span></span>
+</div>
+<div class="bg-surface px-4 py-3 rounded-xl flex flex-col gap-1">
+<span class="font-label text-xs text-on-surface-variant">Weight</span>
+<span class="font-headline font-bold text-on-surface">82 <span class="text-xs font-normal text-on-surface-variant">kg</span></span>
+</div>
+<div class="bg-surface px-4 py-3 rounded-xl flex flex-col gap-1">
+<span class="font-label text-xs text-on-surface-variant">Blood Group</span>
+<span class="font-headline font-bold text-on-surface">O+</span>
+</div>
+</div>
+</div>
+<!-- Quick Access Resources (Bento style) -->
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-surface-container-lowest rounded-2xl p-4 flex flex-col items-start gap-3 shadow-[0_2px_12px_rgba(25,28,29,0.03)] hover:bg-surface transition-colors text-left group">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">prescriptions</span>
+</div>
+<div>
+<span class="block font-headline font-semibold text-sm text-on-surface">Past Prescriptions</span>
+<span class="block font-label text-xs text-on-surface-variant mt-0.5">12 Documents</span>
+</div>
+</button>
+<button class="bg-surface-container-lowest rounded-2xl p-4 flex flex-col items-start gap-3 shadow-[0_2px_12px_rgba(25,28,29,0.03)] hover:bg-surface transition-colors text-left group">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">science</span>
+</div>
+<div>
+<span class="block font-headline font-semibold text-sm text-on-surface">Lab Reports</span>
+<span class="block font-label text-xs text-on-surface-variant mt-0.5">8 Uploaded</span>
+</div>
+</button>
+<button class="col-span-2 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full py-4 px-6 flex items-center justify-center gap-2 font-label font-semibold text-sm shadow-sm hover:opacity-90 transition-opacity min-h-[56px]">
+<span class="material-symbols-outlined">add_notes</span>
+                    New Clinical Note
+                </button>
+</div>
+</div>
+<!-- Right Column: Vertical Timeline Canvas -->
+<div class="w-full lg:w-2/3 max-w-3xl">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline font-extrabold text-2xl text-on-surface tracking-tight">Patient History</h3>
+<!-- Filter Soft-well -->
+<div class="bg-surface-container-highest rounded-full p-1 flex items-center text-sm font-label">
+<button class="px-4 py-1.5 rounded-full bg-surface-lowest shadow-sm text-on-surface font-medium transition-all">All</button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors">Consults</button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors">Labs</button>
+</div>
+</div>
+<!-- Timeline Structure -->
+<div class="relative pl-6 md:pl-8 space-y-12 before:absolute before:inset-y-0 before:left-[27px] md:before:left-[35px] before:w-[2px] before:bg-surface-dim/40 before:rounded-full">
+<!-- Timeline Item: Oct 12 -->
+<div class="relative group">
+<!-- Node -->
+<div class="absolute -left-6 md:-left-8 top-1 w-6 h-6 bg-surface-container-lowest rounded-full border-[3px] border-primary z-10 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<div class="pl-6">
+<span class="font-label text-xs font-semibold tracking-wider uppercase text-on-surface-variant/80 mb-2 block">Oct 12, 2023</span>
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-[0_4px_24px_rgba(25,28,29,0.02)] hover:shadow-[0_8px_32px_rgba(25,28,29,0.04)] transition-shadow">
+<div class="flex items-start justify-between gap-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-weight="fill">videocam</span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-lg text-on-surface leading-tight">Video Consultation</h4>
+<p class="font-body text-sm text-on-surface-variant mt-0.5">Primary concern: Hypertension management</p>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface px-2.5 py-1 rounded-md font-label text-xs">Dr. Mehta</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 font-body text-sm text-on-surface-variant leading-relaxed">
+                                Patient reported occasional mild headaches in the morning. Blood pressure logs indicate slight elevation above target range (avg 138/88). Advised to reduce sodium intake and maintain current Telmisartan dosage.
+                            </div>
+<div class="mt-4 flex flex-wrap gap-2">
+<button class="bg-surface px-3 py-1.5 rounded-full border border-outline-variant/30 text-primary font-label text-xs font-medium hover:bg-primary-fixed/20 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">prescriptions</span>
+                                    View Prescription
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item: Aug 05 -->
+<div class="relative group">
+<!-- Node -->
+<div class="absolute -left-6 md:-left-8 top-1 w-6 h-6 bg-surface-container-lowest rounded-full border-[3px] border-secondary z-10 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+</div>
+<div class="pl-6">
+<span class="font-label text-xs font-semibold tracking-wider uppercase text-on-surface-variant/80 mb-2 block">Aug 05, 2023</span>
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-[0_4px_24px_rgba(25,28,29,0.02)] hover:shadow-[0_8px_32px_rgba(25,28,29,0.04)] transition-shadow relative overflow-hidden">
+<!-- Subtle status indicator border -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex items-start justify-between gap-4 mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-weight="fill">description</span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-lg text-on-surface leading-tight">Lab Report Uploaded</h4>
+<p class="font-body text-sm text-on-surface-variant mt-0.5">Comprehensive Metabolic Panel &amp; Lipid Profile</p>
+</div>
+</div>
+</div>
+<div class="mt-4 flex gap-3 overflow-x-auto pb-2">
+<!-- Glassmorphism Document Card -->
+<button class="flex-shrink-0 w-48 bg-surface-container-high/50 backdrop-blur-sm border border-outline-variant/20 rounded-xl p-3 flex items-center gap-3 hover:bg-surface-container-high transition-colors text-left group/doc">
+<div class="w-8 h-8 rounded bg-surface-lowest flex items-center justify-center text-primary-fixed-dim group-hover/doc:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</div>
+<div class="overflow-hidden">
+<span class="block font-label text-xs font-semibold text-on-surface truncate">Blood_Test_Aug23.pdf</span>
+<span class="block font-label text-[10px] text-on-surface-variant mt-0.5">1.2 MB</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item: June 20 -->
+<div class="relative group">
+<!-- Node -->
+<div class="absolute -left-6 md:-left-8 top-1 w-6 h-6 bg-surface-container-lowest rounded-full border-[3px] border-surface-variant z-10 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+</div>
+<div class="pl-6">
+<span class="font-label text-xs font-semibold tracking-wider uppercase text-on-surface-variant/80 mb-2 block">June 20, 2023</span>
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-[0_4px_24px_rgba(25,28,29,0.02)] hover:shadow-[0_8px_32px_rgba(25,28,29,0.04)] transition-shadow">
+<div class="flex items-start justify-between gap-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-weight="fill">chat</span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-lg text-on-surface leading-tight">Chat Consultation</h4>
+<p class="font-body text-sm text-on-surface-variant mt-0.5">Symptom check: Fever &amp; body ache</p>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface px-2.5 py-1 rounded-md font-label text-xs">AI Assistant / Triage</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 font-body text-sm text-on-surface-variant leading-relaxed border-l-2 border-outline-variant/30">
+                                Patient reported low-grade fever (99.8°F) for 2 days accompanied by mild body aches. Denied cough or sore throat. Advised rest, hydration, and Paracetamol SOS. Flagged for follow-up if symptoms persist beyond 48 hours.
+                            </div>
+</div>
+</div>
+</div>
+<!-- End of Timeline marker -->
+<div class="relative flex items-center justify-center pt-8 pb-12">
+<div class="bg-surface-container-highest text-on-surface-variant px-4 py-1.5 rounded-full font-label text-xs flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">history</span>
+                        End of recent history (6 Months)
+                    </div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

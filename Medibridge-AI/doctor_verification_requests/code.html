@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Doctor Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#bbd0ff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-secondary-fixed-variant": "#00531a",
+                        "secondary-fixed": "#83fc8e",
+                        "outline-variant": "#c2c6d4",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-fixed-dim": "#66df75",
+                        "inverse-primary": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#d7e2ff",
+                        "on-surface": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#0056b3",
+                        "on-surface-variant": "#424752",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "background": "#f8f9fa",
+                        "tertiary-container": "#b10f2b",
+                        "outline": "#727784",
+                        "on-tertiary-fixed": "#410008",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#007327",
+                        "primary": "#003f87",
+                        "on-primary-fixed": "#001a40",
+                        "tertiary-fixed": "#ffdad9",
+                        "surface-bright": "#f8f9fa",
+                        "secondary": "#006e25",
+                        "primary-fixed-dim": "#acc7ff",
+                        "surface-tint": "#115cb9",
+                        "secondary-container": "#80f98b",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3b2",
+                        "tertiary": "#88001c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#92001f",
+                        "on-tertiary-container": "#ffc0bf",
+                        "on-secondary-fixed": "#002106",
+                        "inverse-on-surface": "#f0f1f2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        
+        /* Ambient shadow for floating elements based on design system */
+        .ambient-shadow {
+            box-shadow: 0 16px 32px rgba(25, 28, 29, 0.06);
+        }
+        
+        /* Multi-language line-height support (generalized for the page) */
+        .multi-lang-text {
+            line-height: 1.65;
+        }
+
+        /* Subtle Light Leak Effect */
+        .light-leak {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(128, 249, 139, 0.05) 0%, rgba(248, 249, 250, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden min-h-screen">
+<div class="light-leak"></div>
+<!-- SideNavBar (from JSON) -->
+<nav class="bg-slate-100 dark:bg-slate-900 text-[#003f87] dark:text-[#0056b3] h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-6 z-50">
+<!-- Header -->
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" data-weight="fill" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-[#003f87] dark:text-[#0056b3] font-headline tracking-tight">MediBridge AI</h1>
+<p class="text-xs text-on-surface-variant">Admin Control Plane</p>
+</div>
+</div>
+<!-- Main Tabs -->
+<div class="flex-1 px-4 space-y-2">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Doctor Verification (Active) -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#003f87] dark:text-[#0056b3] font-bold border-r-4 border-[#003f87] bg-white dark:bg-slate-800 opacity-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>Doctor Verification</span>
+</a>
+<!-- User Management (Inactive) -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>User Management</span>
+</a>
+<!-- Analytics (Inactive) -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Analytics</span>
+</a>
+<!-- Emergency Monitoring (Inactive) -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">emergency</span>
+<span>Emergency Monitoring</span>
+</a>
+</div>
+<!-- Footer Tabs -->
+<div class="px-4 mt-auto space-y-2 border-t-0 bg-slate-200 dark:bg-slate-800 pt-4 rounded-t-xl mx-2">
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:text-[#003f87] hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-sm">Support</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar (from JSON) -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-[#003f87] dark:text-[#0056b3] fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 shadow-sm dark:shadow-none flex items-center justify-between px-8 bg-slate-100 dark:bg-slate-800">
+<!-- Search Bar (Left as per JSON) -->
+<div class="relative w-64 bg-surface-container-highest rounded-md transition-colors focus-within:bg-surface-lowest focus-within:ring-2 focus-within:ring-surface-tint/30">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none bg-transparent text-sm placeholder-outline focus:ring-0 text-on-surface" placeholder="Search doctors..." type="text"/>
+</div>
+<!-- Right Side Actions -->
+<div class="flex items-center gap-6">
+<!-- Navigation Links (Languages) -->
+<div class="flex items-center gap-3">
+<span class="text-[#003f87] font-bold underline-offset-8 decoration-2 text-sm cursor-pointer scale-95 duration-150">EN</span>
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm cursor-pointer hover:text-[#003f87] dark:hover:text-[#0056b3] transition-all scale-95 duration-150">HI</span>
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm cursor-pointer hover:text-[#003f87] dark:hover:text-[#0056b3] transition-all scale-95 duration-150">MR</span>
+</div>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center gap-4 border-l border-outline-variant/30 pl-6">
+<button class="text-slate-500 hover:text-[#003f87] transition-all relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full"></span>
+</button>
+<button class="text-slate-500 hover:text-[#003f87] transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<img alt="Admin Profile Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="professional corporate headshot of middle-aged man in dark suit against neutral background, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYJa7n3fqOTXy6nsFpk_rdunabMU-ubYGNHvD12oWMqIOrX_L2Vx7V_aE-6NTiGHRNRYAmrNLjNKZDqkyieqyj91l6oZbycJT8XMCAxpDYFjCSM0Ky_B8kdid7JixOiqiJEH-FiYgLFhD74dM6x9wNrKJ5UEvgOkILZ8_5p6UopypMA26d6skvI_ZrYtQEWvuhMiTsW7oKXWB1nCqx2h9PctTu7kmTnx2BxYn8EgWU-K6cqU3eRqEzhQQNmaKnlqPnEJmmeP3XQw"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas Area -->
+<main class="ml-64 pt-16 min-h-screen p-8 relative z-10">
+<!-- Editorial Header -->
+<div class="mb-10 max-w-7xl mx-auto flex items-end justify-between">
+<div>
+<h2 class="text-4xl font-headline font-extrabold text-primary tracking-tight mb-2">Pending Verifications</h2>
+<p class="text-on-surface-variant font-body text-lg multi-lang-text max-w-2xl">Review and authenticate incoming practitioner credentials to maintain network integrity.</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-4 py-3 rounded-xl flex items-center gap-3">
+<div class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></div>
+<span class="text-sm font-medium text-on-surface">12 Awaiting</span>
+</div>
+<div class="bg-surface-container-low px-4 py-3 rounded-xl flex items-center gap-3">
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+<span class="text-sm font-medium text-on-surface">45 Approved Today</span>
+</div>
+</div>
+</div>
+<!-- Asymmetrical Layout Canvas -->
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Left Column: Highly Styled Tabular List (Cols 8) -->
+<div class="col-span-12 lg:col-span-7 xl:col-span-8 flex flex-col gap-4">
+<!-- Table Header Replica (No borders, just tonal hints) -->
+<div class="grid grid-cols-12 gap-4 px-6 py-2 text-xs font-semibold text-outline tracking-wider uppercase mb-2">
+<div class="col-span-4">Practitioner</div>
+<div class="col-span-3">Specialization</div>
+<div class="col-span-2 text-center">Experience</div>
+<div class="col-span-3 text-right">Actions</div>
+</div>
+<!-- List Item 1 (Active/Selected state mock) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 ambient-shadow relative overflow-hidden transition-all duration-200 cursor-pointer border-l-4 border-primary">
+<div class="grid grid-cols-12 gap-4 items-center">
+<div class="col-span-4 flex items-center gap-4">
+<img alt="Dr. Priya Sharma" class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="portrait of female doctor in white coat with stethoscope in bright modern hospital corridor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2KJ7aA_NKS5bVVVFKY39iILPRlkugNSY-LOC_QgkIo5Rng2UWKLgxGL56QvPyiuPD924URf2u9rB12yeOQIXdAxS-aWY41BYa1z2Z0Od78CIzppV-_hrYoMMtvwO-yCcdAlkzlT-R12TwslsZNTNwlE-Nc7obJxDQIv1RtjJ2fQ7Ur8mO5IzDye2uf13wtJwBOuX-QetzvOPeWla5JRQp-uxESIi-PXu9Xd4lbKnbWuwg8dvjCbT7GhNzyNMzvqIztjONGum6Uw"/>
+<div>
+<h3 class="font-bold text-on-surface font-headline text-base">Dr. Priya Sharma</h3>
+<p class="text-xs text-on-surface-variant">Reg: 2023-MH-8891</p>
+</div>
+</div>
+<div class="col-span-3">
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-xs font-semibold px-3 py-1 rounded-md inline-block">Cardiology</span>
+</div>
+<div class="col-span-2 text-center">
+<span class="text-sm font-medium text-on-surface-variant">8 Years</span>
+</div>
+<div class="col-span-3 flex justify-end gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-error-container text-on-surface hover:text-on-error-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-secondary-container text-on-surface hover:text-on-secondary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+</div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-container-low hover:bg-surface-container-lowest rounded-xl p-4 transition-all duration-200 cursor-pointer">
+<div class="grid grid-cols-12 gap-4 items-center">
+<div class="col-span-4 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center text-primary font-bold">
+                                AK
+                            </div>
+<div>
+<h3 class="font-bold text-on-surface font-headline text-base">Dr. Amit Kumar</h3>
+<p class="text-xs text-on-surface-variant">Reg: 2021-DL-4432</p>
+</div>
+</div>
+<div class="col-span-3">
+<span class="bg-surface-variant text-on-surface-variant text-xs font-semibold px-3 py-1 rounded-md inline-block">General Medicine</span>
+</div>
+<div class="col-span-2 text-center">
+<span class="text-sm font-medium text-on-surface-variant">12 Years</span>
+</div>
+<div class="col-span-3 flex justify-end gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-error-container text-on-surface hover:text-on-error-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-secondary-container text-on-surface hover:text-on-secondary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+</div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bg-surface-container-low hover:bg-surface-container-lowest rounded-xl p-4 transition-all duration-200 cursor-pointer">
+<div class="grid grid-cols-12 gap-4 items-center">
+<div class="col-span-4 flex items-center gap-4">
+<img alt="Dr. Rakesh Patil" class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="portrait of male physician with glasses and stethoscope looking professional in clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATOpjfpR9FLt9RJMbFPRNFaD5RSdxvOEiis2HgBOhV7YGQJQIX5hqCZ2IVaJU5v94hoeNM9VUVXIxrq4hCbgqSeZPEBZjMzzk4pHwONRVKIWqIWe04xerOUyOWShNaM3Tx0jKZIlTn9Dq6MB_D-869utm_UljjNYNDHbIldWoZhvm1Qcoud8MWFfukWAXRyvCx8lAYgJxCj_7uoNYNBvQazOtoYrEu2xq0bJvCmZcMMCZ0V83W9CcTPRpOpBsikaRMA3B-PxkkbQ"/>
+<div>
+<h3 class="font-bold text-on-surface font-headline text-base">Dr. Rakesh Patil</h3>
+<p class="text-xs text-on-surface-variant">Reg: 2019-KA-1109</p>
+</div>
+</div>
+<div class="col-span-3">
+<span class="bg-surface-variant text-on-surface-variant text-xs font-semibold px-3 py-1 rounded-md inline-block">Orthopedics</span>
+</div>
+<div class="col-span-2 text-center">
+<span class="text-sm font-medium text-on-surface-variant">5 Years</span>
+</div>
+<div class="col-span-3 flex justify-end gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-error-container text-on-surface hover:text-on-error-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-secondary-container text-on-surface hover:text-on-secondary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination Hint -->
+<div class="mt-6 flex justify-center">
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-primary font-medium hover:bg-surface-container-high transition-colors text-sm">Load More Requests</button>
+</div>
+</div>
+<!-- Right Column: Doctor Detail View Side Panel (Cols 4) -->
+<div class="col-span-12 lg:col-span-5 xl:col-span-4">
+<div class="bg-surface-container-lowest rounded-[24px] p-8 ambient-shadow sticky top-24">
+<!-- Profile Header -->
+<div class="flex flex-col items-center text-center mb-8">
+<div class="relative mb-4">
+<img alt="Dr. Priya Sharma" class="w-24 h-24 rounded-full object-cover border-4 border-surface" data-alt="portrait of female doctor in white coat with stethoscope in bright modern hospital corridor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-TrixToTtEF9s50-p2MK1xq9Dn1c2qxLKx5qc0BnMtwdugEYU90eYhZg7joIjDcgkPoKshl-ogle3B0HoqYZFJoxcCC4zqKDTdW7B9Cab-NmB63gtDdFDCrqRif8ikzebxKZeYlVVhhhtLb6WATehrkikU-ud-4vtmZE27nl9eUYE919sfx-81W28dU-_yLiEG9SiX2JuhV32Kb1YXE02LJbtlQeyav2UweWw2m1cM2L0sevRPDN6lVgdfgnI3qgHgiygxdPsAA"/>
+<div class="absolute bottom-0 right-0 w-6 h-6 bg-secondary-container rounded-full flex items-center justify-center border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[14px] text-on-secondary-container">shield</span>
+</div>
+</div>
+<h2 class="text-2xl font-headline font-bold text-primary mb-1">Dr. Priya Sharma</h2>
+<p class="text-on-surface-variant font-medium">Cardiology Specialist</p>
+<p class="text-xs text-outline mt-1">Submitted: 12 Oct 2023, 09:41 AM</p>
+</div>
+<!-- Details Sections -->
+<div class="space-y-6">
+<!-- Qualification Card inside Side Panel -->
+<div class="bg-surface p-4 rounded-xl">
+<h4 class="text-xs font-bold text-outline uppercase tracking-wider mb-3">Qualifications</h4>
+<div class="space-y-3">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-outline mt-0.5 text-[18px]">school</span>
+<div>
+<p class="text-sm font-semibold text-on-surface">MBBS, MD (Medicine)</p>
+<p class="text-xs text-on-surface-variant">All India Institute of Medical Sciences (2010)</p>
+</div>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-outline mt-0.5 text-[18px]">workspace_premium</span>
+<div>
+<p class="text-sm font-semibold text-on-surface">DM in Cardiology</p>
+<p class="text-xs text-on-surface-variant">Post Graduate Institute of Medical Education (2015)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Registration Card -->
+<div class="bg-surface p-4 rounded-xl">
+<h4 class="text-xs font-bold text-outline uppercase tracking-wider mb-3">Registration Identity</h4>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm text-on-surface-variant">Medical Council Reg.</span>
+<span class="text-sm font-mono font-semibold text-on-surface">2023-MH-8891</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">State Council</span>
+<span class="text-sm font-medium text-on-surface">Maharashtra Medical Council</span>
+</div>
+<!-- Document Attachment Preview -->
+<div class="mt-4 flex items-center justify-between p-3 border border-outline-variant/30 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+<span class="text-xs font-medium text-primary">Reg_Certificate.pdf</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">download</span>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Action Bar (Glassmorphism inside panel) -->
+<div class="mt-8 pt-4 border-t border-surface-variant flex gap-3">
+<button class="flex-1 bg-surface-container-high text-on-surface hover:bg-error-container hover:text-on-error-container font-semibold py-4 rounded-full transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">close</span>
+                            Reject
+                        </button>
+<button class="flex-1 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold py-4 rounded-full transition-all hover:opacity-90 ambient-shadow flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">verified</span>
+                            Approve
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

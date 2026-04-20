@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediBridge AI - Chat Consultation</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#acc7ff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdad9",
+                    "secondary-container": "#80f98b",
+                    "primary-container": "#0056b3",
+                    "secondary-fixed": "#83fc8e",
+                    "tertiary-fixed-dim": "#ffb3b2",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed": "#d7e2ff",
+                    "outline-variant": "#c2c6d4",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#b10f2b",
+                    "on-secondary-fixed": "#002106",
+                    "on-tertiary-container": "#ffc0bf",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-container": "#edeeef",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#00531a",
+                    "on-secondary-container": "#007327",
+                    "surface-tint": "#115cb9",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-surface": "#191c1d",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-fixed-variant": "#004491",
+                    "outline": "#727784",
+                    "inverse-primary": "#acc7ff",
+                    "surface-bright": "#f8f9fa",
+                    "background": "#f8f9fa",
+                    "on-surface-variant": "#424752",
+                    "secondary": "#006e25",
+                    "on-primary-fixed": "#001a40",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary-fixed": "#410008",
+                    "surface": "#f8f9fa",
+                    "primary": "#003f87",
+                    "secondary-fixed-dim": "#66df75",
+                    "inverse-surface": "#2e3132",
+                    "surface-dim": "#d9dadb",
+                    "tertiary": "#88001c",
+                    "on-tertiary-fixed-variant": "#92001f",
+                    "on-primary-container": "#bbd0ff",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for chat area to keep it clean */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--tw-colors-surface-dim);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen w-screen overflow-hidden flex font-body">
+<!-- Signature Texture: Medical Glimmer -->
+<div class="absolute top-0 right-0 w-3/4 h-3/4 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-colors-secondary-container)_0%,_transparent_60%)] opacity-5 pointer-events-none z-0"></div>
+<!-- Main Chat Layout -->
+<div class="flex-1 flex flex-col relative z-10 h-full">
+<!-- Header (Task-Focused) -->
+<header class="bg-surface-container-lowest shrink-0 px-4 py-3 flex items-center justify-between shadow-[0_4px_32px_rgba(25,28,29,0.03)] z-20">
+<div class="flex items-center gap-3">
+<button aria-label="Go Back" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="headshot of professional male doctor in clinical setting with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcf4hAKQhWpZYrUTIDMw2rKL0ovGGe0EOODylf41vV1OO7FE0JhyQIk80wz2lWVEgAAjq-09mCzqNfjAXoZ2hd-a1uUmojNRfVlQbFVE7nrymFwVwBx_---1OGpmdsoxW3jMOUK1YJu72l7UP7Bp6B-Yb8I7vi8IMq3ZZkaBVPyQV4XJzu3E1-qNUFq1my3-pwI5tOHkf4zo6SP7y2rJ4UPkMqkCV8S1RmpZBrxPpimX66xqHYv69OPCrz8jLlzJnWsFzr-FSjZg"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary-fixed rounded-full border-2 border-surface-container-lowest"></div>
+</div>
+<div>
+<h1 class="font-headline font-bold text-lg text-on-surface tracking-tight leading-tight">Dr. Kumar</h1>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label text-xs font-medium text-secondary">Active Chat Consultation</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 md:gap-6">
+<!-- Language Switcher -->
+<div class="hidden md:flex items-center bg-surface-container-high rounded-full p-1">
+<button class="px-4 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-sm font-semibold transition-colors">English</button>
+<button class="px-4 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label text-sm font-medium transition-colors">Hindi</button>
+<button class="px-4 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label text-sm font-medium transition-colors">Marathi</button>
+</div>
+<button class="h-14 px-6 rounded-full bg-tertiary text-on-tertiary font-label font-bold tracking-wide shadow-[0_8px_16px_rgba(136,0,28,0.15)] hover:bg-tertiary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call_end</span>
+<span class="hidden sm:inline">End Session</span>
+</button>
+</div>
+</header>
+<!-- Chat Canvas -->
+<main class="flex-1 overflow-y-auto px-4 py-6 md:px-8 lg:px-12 flex flex-col gap-6 bg-surface">
+<!-- Connection Status -->
+<div class="flex justify-center mb-4">
+<div class="bg-surface-container-high px-4 py-2 rounded-2xl flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">wifi_tethering</span>
+<span class="font-label text-xs font-medium text-on-surface-variant">Low-bandwidth mode active. High readability enabled.</span>
+</div>
+</div>
+<!-- Chat Bubble: Doctor (Receiver in this context, assuming user is Patient based on 'Dr. Kumar is typing') -->
+<div class="flex gap-3 max-w-[90%] md:max-w-[75%]">
+<img class="w-10 h-10 rounded-full mt-auto shrink-0 shadow-sm" data-alt="headshot of professional male doctor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe5cyTlzujauomOZKfGjW1E-GdbriHSHY3jqJXLdWZVVgUPe8jMv7-dr8SxdnddRK39pPuVNKONt5QowaBze5BYK_qB6xID_klUKhfFBkpt8sB5q4N8rWW0nuvqND-oEcmL3I-nx4uGCnEDNqnBTanoQwp3YM_hUINb79zM3d_PFGQZJHnE1ryn9tzSFGpIHTdfntlxDVo7Ik6LftFv0ulI5NzfQZBggeGLRLolld_X18YA3JKFtFGa_DCJt9XVD4gvz0lAavYjA"/>
+<div class="flex flex-col gap-1.5">
+<span class="font-label text-xs font-medium text-on-surface-variant ml-3">Dr. Kumar • 09:42 AM</span>
+<div class="bg-surface-container-lowest p-5 rounded-[24px] rounded-bl-sm shadow-[0_2px_12px_rgba(25,28,29,0.04)]">
+<p class="font-body text-body-lg text-on-surface leading-[1.65]">
+                            Namaste. I have reviewed your initial symptoms regarding the persistent cough and mild fever. Could you please let me know when these symptoms started and if you are experiencing any shortness of breath?
+                        </p>
+</div>
+</div>
+</div>
+<!-- Chat Bubble: Patient (Sender/User in this context) -->
+<div class="flex gap-3 max-w-[90%] md:max-w-[75%] self-end flex-row-reverse">
+<img class="w-10 h-10 rounded-full mt-auto shrink-0 shadow-sm" data-alt="headshot of young woman looking calm in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbKISRIr-2-jSfEz3PPrPRXGUfgCFNzzEdIPuLsdg15hJkExmEC69bmh9CYy8-AdXSwT-9R2DIZn5Yf1E9rhjImziIyyJJCAeP_8us4vkhYezt0niYn9uixBU1knQo163_i3qMkps13xT5XhY8webGb9-5ae1JpN-YAZwqjWNIaIILB9XsSKwYVTNfKLD1GoIhZ__P5lmShDp08FKrT3umZQHJrKRXpx9eW_iQHZQOjPyMpSUIbNPTJCKsQA3Sd7pKU5snnHFoXQ"/>
+<div class="flex flex-col gap-1.5 items-end">
+<span class="font-label text-xs font-medium text-on-surface-variant mr-3">You • 09:45 AM</span>
+<div class="bg-gradient-to-br from-primary to-primary-container p-5 rounded-[24px] rounded-br-sm shadow-[0_4px_16px_rgba(0,86,179,0.15)]">
+<p class="font-body text-body-lg text-on-primary leading-[1.65]">
+                            The cough started yesterday evening. No shortness of breath, but my throat feels very dry. I haven't taken any medication yet.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex gap-3 max-w-[90%] md:max-w-[75%] mt-2">
+<div class="w-10 h-10 rounded-full mt-auto shrink-0 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">more_horiz</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="bg-surface-container-lowest px-5 py-4 rounded-[24px] rounded-bl-sm shadow-[0_2px_12px_rgba(25,28,29,0.04)] flex items-center gap-2">
+<span class="font-body text-sm font-medium text-on-surface-variant italic">Dr. Kumar is typing...</span>
+</div>
+</div>
+</div>
+<!-- Spacer for scrolling -->
+<div class="h-4"></div>
+</main>
+<!-- Input Area (Bottom) -->
+<div class="bg-surface-container-lowest p-3 md:p-4 shadow-[0_-4px_32px_rgba(25,28,29,0.04)] z-20 flex gap-2 items-end">
+<button aria-label="Attach file" class="w-14 h-14 shrink-0 flex items-center justify-center rounded-full text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[28px]">add_circle</span>
+</button>
+<div class="flex-1 bg-surface-container-highest rounded-3xl flex items-center min-h-[56px] pl-4 pr-1 py-1 transition-colors focus-within:bg-surface-lowest focus-within:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)]">
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 resize-none max-h-32 py-3 font-body text-on-surface placeholder:text-on-surface-variant leading-[1.65]" placeholder="Type your message..." rows="1" style="min-height: 24px; outline: none;"></textarea>
+<button aria-label="Voice input" class="w-12 h-12 shrink-0 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+<button aria-label="Send message" class="w-14 h-14 shrink-0 flex items-center justify-center rounded-full bg-gradient-to-b from-primary to-primary-container text-on-primary shadow-[0_4px_12px_rgba(0,86,179,0.2)] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<!-- Contextual Sidebar (Right) - Visible on lg screens -->
+<aside class="hidden lg:flex w-[380px] bg-surface-container-low flex-col z-20 relative">
+<!-- Subtle separator using background shift, no borders -->
+<div class="absolute left-0 top-0 bottom-0 w-[1px] bg-surface-container-highest"></div>
+<div class="p-6 overflow-y-auto h-full flex flex-col gap-6">
+<h2 class="font-headline text-2xl font-extrabold text-on-surface tracking-tight pt-2">Clinical Context</h2>
+<!-- Symptoms Summary Card -->
+<div class="bg-surface-container-lowest rounded-[24px] p-5 shadow-[0_4px_24px_rgba(25,28,29,0.03)] flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">medical_information</span>
+<h3 class="font-headline font-bold text-lg text-on-surface">Symptoms Summary</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-lg font-label text-sm font-semibold">Continuous Cough</span>
+<span class="px-3 py-1.5 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-lg font-label text-sm font-semibold">Mild Fever</span>
+<span class="px-3 py-1.5 bg-surface-container-high text-on-surface-variant rounded-lg font-label text-sm font-medium">Dry Throat</span>
+</div>
+<div class="pt-4 mt-2 relative">
+<!-- Ghost border fallback for inner sectioning -->
+<div class="absolute top-0 left-0 right-0 h-[1px] bg-outline-variant opacity-15"></div>
+<p class="font-label text-xs text-on-surface-variant mb-1 font-medium">Reported Onset</p>
+<p class="font-body text-sm text-on-surface font-semibold">Yesterday evening (~18 hours ago)</p>
+</div>
+</div>
+<!-- Add Notes Space -->
+<div class="bg-surface-container-lowest rounded-[24px] p-5 shadow-[0_4px_24px_rgba(25,28,29,0.03)] flex flex-col flex-1 min-h-[300px]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_document</span>
+<h3 class="font-headline font-bold text-lg text-on-surface">Add Notes</h3>
+</div>
+<button class="text-primary font-label text-sm font-bold hover:text-primary-container transition-colors">Save</button>
+</div>
+<div class="flex-1 bg-surface-container-highest rounded-xl p-1 focus-within:bg-surface-lowest focus-within:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all">
+<textarea class="w-full h-full bg-transparent border-none focus:ring-0 resize-none font-body text-sm text-on-surface placeholder:text-on-surface-variant leading-[1.65] p-3" placeholder="Add private observations or consultation notes here. These are not visible to the patient."></textarea>
+</div>
+</div>
+</div>
+</aside>
+</body></html>
