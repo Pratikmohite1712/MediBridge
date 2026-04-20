@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MediBridge AI - Chat Consultation</title>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <!-- Tailwind Config -->
 <script id="tailwind-config">
       tailwind.config = {
@@ -113,7 +111,7 @@
 </button>
 <div class="flex items-center gap-3">
 <div class="relative">
-<img class="w-12 h-12 rounded-full object-cover" data-alt="headshot of professional male doctor in clinical setting with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcf4hAKQhWpZYrUTIDMw2rKL0ovGGe0EOODylf41vV1OO7FE0JhyQIk80wz2lWVEgAAjq-09mCzqNfjAXoZ2hd-a1uUmojNRfVlQbFVE7nrymFwVwBx_---1OGpmdsoxW3jMOUK1YJu72l7UP7Bp6B-Yb8I7vi8IMq3ZZkaBVPyQV4XJzu3E1-qNUFq1my3-pwI5tOHkf4zo6SP7y2rJ4UPkMqkCV8S1RmpZBrxPpimX66xqHYv69OPCrz8jLlzJnWsFzr-FSjZg"/>
+<img class="w-12 h-12 rounded-full object-cover" data-alt="headshot of professional male doctor in clinical setting with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcf4hAKQhWpZYrUTIDMw2rKL0ovGGe0EOODylf41vV1OO7FE0JhyQIk80wz2lWVEgAAjq-09mCzqNfjAXoZ2hd-a1uUmojNRfVlQbFVE7nrymFwVwBx_---1OGpmdsoxW3jMOUK1YJu72l7UP7Bp6B-Yb8I7vi8IMq3ZZkaBVPyQV4XJzu3E1-qNUFq1my3-pwI5tOHkf4zo6SP7y2rJ4UPkMqkCV8S1RmpZBrxPpimX66xqHYv69OPCrz8jLlzJnWsFzr-FSjZg" alt="Image description not provided">
 <div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary-fixed rounded-full border-2 border-surface-container-lowest"></div>
 </div>
 <div>
@@ -128,11 +126,12 @@
 <div class="flex items-center gap-3 md:gap-6">
 <!-- Language Switcher -->
 <div class="hidden md:flex items-center bg-surface-container-high rounded-full p-1">
-<button class="px-4 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-sm font-semibold transition-colors">English</button>
-<button class="px-4 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label text-sm font-medium transition-colors">Hindi</button>
-<button class="px-4 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label text-sm font-medium transition-colors">Marathi</button>
+<button class="px-4 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-sm font-semibold transition-colors" aria-label="English">English</button>
+<button class="px-4 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label text-sm font-medium transition-colors" aria-label="Hindi">Hindi</button>
+<button class="px-4 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label text-sm font-medium transition-colors" aria-label="Marathi">Marathi</button>
 </div>
-<button class="h-14 px-6 rounded-full bg-tertiary text-on-tertiary font-label font-bold tracking-wide shadow-[0_8px_16px_rgba(136,0,28,0.15)] hover:bg-tertiary-container transition-colors flex items-center gap-2">
+<button class="h-14 px-6 rounded-full bg-tertiary text-on-tertiary font-label font-bold tracking-wide shadow-[0_8px_16px_rgba(136,0,28,0.15)] hover:bg-tertiary-container transition-colors flex items-center gap-2" aria-label="call_end
+End Session">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call_end</span>
 <span class="hidden sm:inline">End Session</span>
 </button>
@@ -149,7 +148,7 @@
 </div>
 <!-- Chat Bubble: Doctor (Receiver in this context, assuming user is Patient based on 'Dr. Kumar is typing') -->
 <div class="flex gap-3 max-w-[90%] md:max-w-[75%]">
-<img class="w-10 h-10 rounded-full mt-auto shrink-0 shadow-sm" data-alt="headshot of professional male doctor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe5cyTlzujauomOZKfGjW1E-GdbriHSHY3jqJXLdWZVVgUPe8jMv7-dr8SxdnddRK39pPuVNKONt5QowaBze5BYK_qB6xID_klUKhfFBkpt8sB5q4N8rWW0nuvqND-oEcmL3I-nx4uGCnEDNqnBTanoQwp3YM_hUINb79zM3d_PFGQZJHnE1ryn9tzSFGpIHTdfntlxDVo7Ik6LftFv0ulI5NzfQZBggeGLRLolld_X18YA3JKFtFGa_DCJt9XVD4gvz0lAavYjA"/>
+<img class="w-10 h-10 rounded-full mt-auto shrink-0 shadow-sm" data-alt="headshot of professional male doctor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe5cyTlzujauomOZKfGjW1E-GdbriHSHY3jqJXLdWZVVgUPe8jMv7-dr8SxdnddRK39pPuVNKONt5QowaBze5BYK_qB6xID_klUKhfFBkpt8sB5q4N8rWW0nuvqND-oEcmL3I-nx4uGCnEDNqnBTanoQwp3YM_hUINb79zM3d_PFGQZJHnE1ryn9tzSFGpIHTdfntlxDVo7Ik6LftFv0ulI5NzfQZBggeGLRLolld_X18YA3JKFtFGa_DCJt9XVD4gvz0lAavYjA" alt="Image description not provided">
 <div class="flex flex-col gap-1.5">
 <span class="font-label text-xs font-medium text-on-surface-variant ml-3">Dr. Kumar • 09:42 AM</span>
 <div class="bg-surface-container-lowest p-5 rounded-[24px] rounded-bl-sm shadow-[0_2px_12px_rgba(25,28,29,0.04)]">
@@ -161,7 +160,7 @@
 </div>
 <!-- Chat Bubble: Patient (Sender/User in this context) -->
 <div class="flex gap-3 max-w-[90%] md:max-w-[75%] self-end flex-row-reverse">
-<img class="w-10 h-10 rounded-full mt-auto shrink-0 shadow-sm" data-alt="headshot of young woman looking calm in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbKISRIr-2-jSfEz3PPrPRXGUfgCFNzzEdIPuLsdg15hJkExmEC69bmh9CYy8-AdXSwT-9R2DIZn5Yf1E9rhjImziIyyJJCAeP_8us4vkhYezt0niYn9uixBU1knQo163_i3qMkps13xT5XhY8webGb9-5ae1JpN-YAZwqjWNIaIILB9XsSKwYVTNfKLD1GoIhZ__P5lmShDp08FKrT3umZQHJrKRXpx9eW_iQHZQOjPyMpSUIbNPTJCKsQA3Sd7pKU5snnHFoXQ"/>
+<img class="w-10 h-10 rounded-full mt-auto shrink-0 shadow-sm" data-alt="headshot of young woman looking calm in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbKISRIr-2-jSfEz3PPrPRXGUfgCFNzzEdIPuLsdg15hJkExmEC69bmh9CYy8-AdXSwT-9R2DIZn5Yf1E9rhjImziIyyJJCAeP_8us4vkhYezt0niYn9uixBU1knQo163_i3qMkps13xT5XhY8webGb9-5ae1JpN-YAZwqjWNIaIILB9XsSKwYVTNfKLD1GoIhZ__P5lmShDp08FKrT3umZQHJrKRXpx9eW_iQHZQOjPyMpSUIbNPTJCKsQA3Sd7pKU5snnHFoXQ" alt="Image description not provided">
 <div class="flex flex-col gap-1.5 items-end">
 <span class="font-label text-xs font-medium text-on-surface-variant mr-3">You • 09:45 AM</span>
 <div class="bg-gradient-to-br from-primary to-primary-container p-5 rounded-[24px] rounded-br-sm shadow-[0_4px_16px_rgba(0,86,179,0.15)]">
@@ -232,7 +231,7 @@
 <span class="material-symbols-outlined text-primary">edit_document</span>
 <h3 class="font-headline font-bold text-lg text-on-surface">Add Notes</h3>
 </div>
-<button class="text-primary font-label text-sm font-bold hover:text-primary-container transition-colors">Save</button>
+<button class="text-primary font-label text-sm font-bold hover:text-primary-container transition-colors" aria-label="Save">Save</button>
 </div>
 <div class="flex-1 bg-surface-container-highest rounded-xl p-1 focus-within:bg-surface-lowest focus-within:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all">
 <textarea class="w-full h-full bg-transparent border-none focus:ring-0 resize-none font-body text-sm text-on-surface placeholder:text-on-surface-variant leading-[1.65] p-3" placeholder="Add private observations or consultation notes here. These are not visible to the patient."></textarea>

@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MediBridge AI - Emergency First Aid Guidance</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -115,10 +113,10 @@
 </div>
 </div>
 <div class="flex items-center gap-4">
-<button class="hover:bg-red-100 dark:hover:bg-red-900/50 transition-colors scale-95 active:opacity-80 transition-all rounded-full p-2 flex items-center justify-center">
+<button class="hover:bg-red-100 dark:hover:bg-red-900/50 transition-colors scale-95 active:opacity-80 transition-all rounded-full p-2 flex items-center justify-center" aria-label="language">
 <span class="material-symbols-outlined">language</span>
 </button>
-<button class="hover:bg-red-100 dark:hover:bg-red-900/50 transition-colors scale-95 active:opacity-80 transition-all rounded-full p-2 flex items-center justify-center">
+<button class="hover:bg-red-100 dark:hover:bg-red-900/50 transition-colors scale-95 active:opacity-80 transition-all rounded-full p-2 flex items-center justify-center" aria-label="account_circle">
 <span class="material-symbols-outlined">account_circle</span>
 </button>
 </div>
@@ -127,9 +125,9 @@
 <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
 <!-- Language Switcher -->
 <div class="flex gap-2 mb-8 overflow-x-auto pb-2 scrollbar-hide">
-<button class="bg-primary-fixed text-on-primary-fixed font-label font-semibold text-sm px-4 py-2 rounded-full whitespace-nowrap">English</button>
-<button class="bg-surface-container-high text-on-surface-variant font-label font-medium text-sm px-4 py-2 rounded-full whitespace-nowrap">हिंदी</button>
-<button class="bg-surface-container-high text-on-surface-variant font-label font-medium text-sm px-4 py-2 rounded-full whitespace-nowrap">मराठी</button>
+<button class="bg-primary-fixed text-on-primary-fixed font-label font-semibold text-sm px-4 py-2 rounded-full whitespace-nowrap" aria-label="English">English</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label font-medium text-sm px-4 py-2 rounded-full whitespace-nowrap" aria-label="हिंदी">हिंदी</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label font-medium text-sm px-4 py-2 rounded-full whitespace-nowrap" aria-label="मराठी">मराठी</button>
 </div>
 <!-- Page Header -->
 <div class="mb-10 text-center sm:text-left">
@@ -227,7 +225,8 @@
 <!-- Persistent Call Action (Floating below content, above bottom nav) -->
 <div class="fixed bottom-24 left-0 right-0 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto z-40 pointer-events-none">
 <div class="flex justify-center pointer-events-auto">
-<button class="bg-tertiary hover:bg-tertiary-container text-on-tertiary rounded-full px-8 py-4 shadow-[0_16px_32px_rgba(136,0,28,0.2)] flex items-center gap-3 transition-transform active:scale-95 font-label font-bold text-lg min-h-[56px]">
+<button class="bg-tertiary hover:bg-tertiary-container text-on-tertiary rounded-full px-8 py-4 shadow-[0_16px_32px_rgba(136,0,28,0.2)] flex items-center gap-3 transition-transform active:scale-95 font-label font-bold text-lg min-h-[56px]" aria-label="call
+                    Call Ambulance Now">
 <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">call</span>
                     Call Ambulance Now
                 </button>
@@ -236,19 +235,23 @@
 </main>
 <!-- BottomNavBar -->
 <nav class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl text-red-700 dark:text-red-400 fixed bottom-0 w-full rounded-t-[32px] z-50 pb-safe bg-slate-50 dark:bg-slate-800/50 shadow-[0_-8px_24px_rgba(0,0,0,0.04)] fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 md:hidden">
-<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200">
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" aria-label="home
+Home">
 <span class="material-symbols-outlined mb-1">home</span>
 <span class="font-inter font-semibold text-[11px] uppercase tracking-wider">Home</span>
 </button>
-<button class="flex flex-col items-center justify-center bg-red-600 text-white rounded-full h-14 w-14 -mt-6 shadow-lg shadow-red-500/40 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200">
+<button class="flex flex-col items-center justify-center bg-red-600 text-white rounded-full h-14 w-14 -mt-6 shadow-lg shadow-red-500/40 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" aria-label="emergency_share
+Ambulance">
 <span class="material-symbols-outlined">emergency_share</span>
 <span class="sr-only">Ambulance</span>
 </button>
-<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200">
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" aria-label="local_hospital
+Hospital">
 <span class="material-symbols-outlined mb-1">local_hospital</span>
 <span class="font-inter font-semibold text-[11px] uppercase tracking-wider">Hospital</span>
 </button>
-<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200">
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all tap-highlight-transparent active:scale-90 transition-transform duration-200" aria-label="psychiatry
+AI Triage">
 <span class="material-symbols-outlined mb-1">psychiatry</span>
 <span class="font-inter font-semibold text-[11px] uppercase tracking-wider">AI Triage</span>
 </button>

@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MediBridge AI Admin Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -179,21 +177,21 @@
 <header class="hidden md:flex fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex items-center justify-between px-8 border-b-0">
 <div class="flex items-center bg-surface-container-low rounded-full px-4 py-2 w-96 border border-outline-variant/30 focus-within:bg-surface-lowest focus-within:border-surface-tint/30 transition-all">
 <span class="material-symbols-outlined text-outline mr-2">search</span>
-<input class="bg-transparent border-none focus:ring-0 w-full text-sm font-body text-on-surface placeholder:text-outline p-0" placeholder="Search patients, doctors, or ID..." type="text"/>
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm font-body text-on-surface placeholder:text-outline p-0" placeholder="Search patients, doctors, or ID..." type="text">
 </div>
 <div class="flex items-center gap-6">
 <div class="flex gap-2 bg-surface-container-low p-1 rounded-full">
-<button class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-sm font-bold transition-all scale-95 duration-150">EN</button>
-<button class="px-3 py-1 rounded-full text-on-surface-variant hover:text-[#003f87] font-label text-sm font-medium transition-all scale-95 duration-150">HI</button>
-<button class="px-3 py-1 rounded-full text-on-surface-variant hover:text-[#003f87] font-label text-sm font-medium transition-all scale-95 duration-150">MR</button>
+<button class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-sm font-bold transition-all scale-95 duration-150" aria-label="EN">EN</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant hover:text-[#003f87] font-label text-sm font-medium transition-all scale-95 duration-150" aria-label="HI">HI</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant hover:text-[#003f87] font-label text-sm font-medium transition-all scale-95 duration-150" aria-label="MR">MR</button>
 </div>
 <div class="flex items-center gap-4">
-<button class="text-slate-500 hover:text-[#003f87] transition-all relative scale-95 duration-150">
+<button class="text-slate-500 hover:text-[#003f87] transition-all relative scale-95 duration-150" aria-label="notifications">
 <span class="material-symbols-outlined">notifications</span>
 <span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
 </button>
-<button class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30 hover:opacity-80 transition-opacity">
-<img alt="Admin Profile Avatar" class="w-full h-full object-cover" data-alt="close up professional headshot of a middle aged male executive in a blue suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgFdEOPQRCQKDmkwU50-EmZVg9JD791cSHLASsMz9d4z9WhWw0v3GtHA1gqmRzsUA9izZlvDbsOHe9wMEnt2DysvEjpcfH0AizVQlUDaGC1ZfmFoXds6ykhJ4El7A-AvhncpFLj32jlGYPKt20QysXV2_lZR3SwB48ySvE5w6JFLXI_etJKk9jucD0_65whgn2ZC0qFnMmYCc8VakzrvCgzgqLVXhoyYF4gQwdTFfFkobG36Ih5di-zS1XwlBAeyBMq_XLe2qDvQ"/>
+<button class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30 hover:opacity-80 transition-opacity" aria-label="Button">
+<img alt="Admin Profile Avatar" class="w-full h-full object-cover" data-alt="close up professional headshot of a middle aged male executive in a blue suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgFdEOPQRCQKDmkwU50-EmZVg9JD791cSHLASsMz9d4z9WhWw0v3GtHA1gqmRzsUA9izZlvDbsOHe9wMEnt2DysvEjpcfH0AizVQlUDaGC1ZfmFoXds6ykhJ4El7A-AvhncpFLj32jlGYPKt20QysXV2_lZR3SwB48ySvE5w6JFLXI_etJKk9jucD0_65whgn2ZC0qFnMmYCc8VakzrvCgzgqLVXhoyYF4gQwdTFfFkobG36Ih5di-zS1XwlBAeyBMq_XLe2qDvQ">
 </button>
 </div>
 </div>
@@ -208,7 +206,8 @@
 </div>
 <div class="flex gap-3">
 <p class="text-sm text-outline font-label self-center mr-4">Last updated: Just now</p>
-<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-high text-on-primary-fixed-variant rounded-full font-label font-semibold hover:bg-surface-variant transition-colors">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-high text-on-primary-fixed-variant rounded-full font-label font-semibold hover:bg-surface-variant transition-colors" aria-label="download
+                        Export Report">
 <span class="material-symbols-outlined text-[20px]">download</span>
                         Export Report
                     </button>
@@ -285,7 +284,7 @@
 <h3 class="font-headline font-bold text-xl text-on-surface">User Growth</h3>
 <p class="text-sm text-on-surface-variant font-body">Patients vs Doctors (Last 6 Months)</p>
 </div>
-<button class="text-outline hover:text-primary transition-colors">
+<button class="text-outline hover:text-primary transition-colors" aria-label="more_vert">
 <span class="material-symbols-outlined">more_vert</span>
 </button>
 </div>
@@ -307,7 +306,7 @@
 </div>
 <!-- Data Lines (SVG approximation) -->
 <div class="absolute top-0 left-0 w-full h-full z-10 flex items-end px-2">
-<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
 <!-- Patient Line (Primary) -->
 <path d="M0,80 C20,75 40,60 60,40 C80,20 100,10 100,10" fill="none" stroke="#003f87" stroke-linecap="round" stroke-width="3" vector-effect="non-scaling-stroke"></path>
 <!-- Doctor Line (Secondary) -->
@@ -343,7 +342,7 @@
 <h3 class="font-headline font-bold text-xl text-on-surface">Doctor Verification Funnel</h3>
 <p class="text-sm text-on-surface-variant font-body">Current Status Breakdown</p>
 </div>
-<button class="text-outline hover:text-primary transition-colors">
+<button class="text-outline hover:text-primary transition-colors" aria-label="more_vert">
 <span class="material-symbols-outlined">more_vert</span>
 </button>
 </div>
@@ -422,7 +421,13 @@
 <h3 class="font-headline font-bold text-2xl text-on-surface mb-2">Quick Actions</h3>
 <p class="text-on-surface-variant font-body mb-8">Frequently used administrative tasks.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<button class="group flex items-center p-4 bg-surface rounded-2xl hover:bg-surface-container transition-colors text-left border border-transparent hover:border-outline-variant/30">
+<button class="group flex items-center p-4 bg-surface rounded-2xl hover:bg-surface-container transition-colors text-left border border-transparent hover:border-outline-variant/30" aria-label="how_to_reg
+
+
+Verify Doctors
+Review 12 pending applications
+
+chevron_right">
 <div class="w-12 h-12 rounded-full bg-primary-fixed text-primary flex items-center justify-center mr-4 group-hover:scale-105 transition-transform">
 <span class="material-symbols-outlined">how_to_reg</span>
 </div>
@@ -432,7 +437,13 @@
 </div>
 <span class="material-symbols-outlined ml-auto text-outline group-hover:text-primary transition-colors">chevron_right</span>
 </button>
-<button class="group flex items-center p-4 bg-surface rounded-2xl hover:bg-surface-container transition-colors text-left border border-transparent hover:border-outline-variant/30">
+<button class="group flex items-center p-4 bg-surface rounded-2xl hover:bg-surface-container transition-colors text-left border border-transparent hover:border-outline-variant/30" aria-label="manage_accounts
+
+
+Manage Users
+Suspend, reset passwords, or edit
+
+chevron_right">
 <div class="w-12 h-12 rounded-full bg-secondary-container/50 text-secondary flex items-center justify-center mr-4 group-hover:scale-105 transition-transform">
 <span class="material-symbols-outlined">manage_accounts</span>
 </div>

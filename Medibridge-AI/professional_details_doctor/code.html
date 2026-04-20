@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MediBridge AI - Doctor Profile Onboarding</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -93,7 +91,7 @@
 <span class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-50 font-headline">MediBridge AI</span>
 </div>
 <div class="flex items-center gap-4">
-<button class="text-blue-900 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors p-2 rounded-full">
+<button class="text-blue-900 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors p-2 rounded-full" aria-label="language">
 <span class="material-symbols-outlined">language</span>
 </button>
 </div>
@@ -127,7 +125,7 @@
 <label class="block font-label text-sm font-medium text-on-surface mb-2" for="fullName">Full Name</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">person</span>
-<input class="w-full bg-surface-container-highest rounded-xl border-none pl-12 pr-4 py-4 font-body text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all placeholder-on-surface-variant/50" id="fullName" placeholder="Dr. Jane Doe" type="text"/>
+<input class="w-full bg-surface-container-highest rounded-xl border-none pl-12 pr-4 py-4 font-body text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all placeholder-on-surface-variant/50" id="fullName" placeholder="Dr. Jane Doe" type="text">
 </div>
 </div>
 <!-- Specialization Dropdown -->
@@ -151,7 +149,7 @@
 <label class="block font-label text-sm font-medium text-on-surface mb-2" for="qualification">Primary Qualification</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">school</span>
-<input class="w-full bg-surface-container-highest rounded-xl border-none pl-12 pr-4 py-4 font-body text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all placeholder-on-surface-variant/50" id="qualification" placeholder="e.g., MD, MBBS" type="text"/>
+<input class="w-full bg-surface-container-highest rounded-xl border-none pl-12 pr-4 py-4 font-body text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all placeholder-on-surface-variant/50" id="qualification" placeholder="e.g., MD, MBBS" type="text">
 </div>
 </div>
 <!-- Years of Experience -->
@@ -159,7 +157,7 @@
 <label class="block font-label text-sm font-medium text-on-surface mb-2" for="experience">Years of Experience</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">history</span>
-<input class="w-full bg-surface-container-highest rounded-xl border-none pl-12 pr-4 py-4 font-body text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all placeholder-on-surface-variant/50" id="experience" min="0" placeholder="0" type="number"/>
+<input class="w-full bg-surface-container-highest rounded-xl border-none pl-12 pr-4 py-4 font-body text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all placeholder-on-surface-variant/50" id="experience" min="0" placeholder="0" type="number">
 </div>
 </div>
 <!-- Clinic/Hospital Name -->
@@ -167,12 +165,12 @@
 <label class="block font-label text-sm font-medium text-on-surface mb-2" for="clinic">Primary Clinic / Hospital</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">local_hospital</span>
-<input class="w-full bg-surface-container-highest rounded-xl border-none pl-12 pr-4 py-4 font-body text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all placeholder-on-surface-variant/50" id="clinic" placeholder="Name of primary practice location" type="text"/>
+<input class="w-full bg-surface-container-highest rounded-xl border-none pl-12 pr-4 py-4 font-body text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:shadow-[inset_0_0_0_2px_rgba(17,92,185,0.3)] transition-all placeholder-on-surface-variant/50" id="clinic" placeholder="Name of primary practice location" type="text">
 </div>
 </div>
 <!-- Action Section -->
 <div class="col-span-1 md:col-span-2 mt-8 flex flex-col items-center">
-<button class="w-full md:w-auto px-10 py-4 min-h-[56px] rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label font-semibold text-lg hover:shadow-[0_8px_24px_rgba(0,63,135,0.2)] transition-shadow" type="submit">
+<button class="w-full md:w-auto px-10 py-4 min-h-[56px] rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label font-semibold text-lg hover:shadow-[0_8px_24px_rgba(0,63,135,0.2)] transition-shadow" type="submit" aria-label="Submit for Verification">
                         Submit for Verification
                     </button>
 <!-- Information Note -->

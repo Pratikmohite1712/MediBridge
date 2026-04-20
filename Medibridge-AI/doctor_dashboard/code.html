@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MediBridge AI - Doctor Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -93,10 +91,10 @@
 <nav class="md:hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl docked full-width top-0 sticky z-50 flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto shadow-sm shadow-blue-900/5 border-b-[1px] border-surface-dim">
 <div class="font-manrope font-extrabold text-2xl text-primary">MediBridge AI</div>
 <div class="flex items-center space-x-4">
-<button class="text-primary hover:bg-slate-50 transition-colors duration-200 p-2 rounded-full">
+<button class="text-primary hover:bg-slate-50 transition-colors duration-200 p-2 rounded-full" aria-label="notifications">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<button class="text-primary hover:bg-slate-50 transition-colors duration-200 p-2 rounded-full">
+<button class="text-primary hover:bg-slate-50 transition-colors duration-200 p-2 rounded-full" aria-label="account_circle">
 <span class="material-symbols-outlined">account_circle</span>
 </button>
 </div>
@@ -108,7 +106,7 @@
 <h1 class="font-headline font-extrabold text-2xl text-primary tracking-tight">MediBridge AI</h1>
 </div>
 <div class="px-8 mb-8 flex items-center space-x-4">
-<img alt="Dr. Shanti Kumar, professional headshot in medical setting" class="w-12 h-12 rounded-full object-cover" data-alt="professional headshot of a female doctor in a clean, modern medical office with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEDLpsaDj9ma38zcQfnpG1NHAiBj75Q4EAgdiuxPn-s_GmSgKASLa6r3j1j4nVBm-CciHxUcITIuesN_uKsJZBbqF6PYs73s4885hAQQIdYj9-BucsSKQjaU2OfyfF7w2LqNhaWlZ22fLvQ52IvcP26immyNDpR7enicwQre5vxRItYKO-CCUz0JfUmefGNSDB9cR2YOdv1Fc18SBkfyRt1Uh2BQmZhfnnXCWPQFiVzYKj5SLWgUlwuNnOsFa0UqswIb3XwDZCUQ"/>
+<img alt="Dr. Shanti Kumar, professional headshot in medical setting" class="w-12 h-12 rounded-full object-cover" data-alt="professional headshot of a female doctor in a clean, modern medical office with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEDLpsaDj9ma38zcQfnpG1NHAiBj75Q4EAgdiuxPn-s_GmSgKASLa6r3j1j4nVBm-CciHxUcITIuesN_uKsJZBbqF6PYs73s4885hAQQIdYj9-BucsSKQjaU2OfyfF7w2LqNhaWlZ22fLvQ52IvcP26immyNDpR7enicwQre5vxRItYKO-CCUz0JfUmefGNSDB9cR2YOdv1Fc18SBkfyRt1Uh2BQmZhfnnXCWPQFiVzYKj5SLWgUlwuNnOsFa0UqswIb3XwDZCUQ">
 <div>
 <h2 class="font-headline font-bold text-sm text-on-surface">Dr. Shanti Kumar</h2>
 <p class="font-body text-xs text-on-surface-variant">Primary Care Physician</p>
@@ -137,7 +135,7 @@
 </a>
 </nav>
 <div class="px-4 mt-auto space-y-4">
-<button class="w-full bg-tertiary text-on-tertiary rounded-full py-3 px-6 font-label text-sm font-medium hover:bg-tertiary/90 transition-colors">
+<button class="w-full bg-tertiary text-on-tertiary rounded-full py-3 px-6 font-label text-sm font-medium hover:bg-tertiary/90 transition-colors" aria-label="Emergency SOS">
                 Emergency SOS
             </button>
 <div class="space-y-1">
@@ -162,7 +160,8 @@
 <p class="font-body text-on-surface-variant text-sm md:text-base">Here is your clinical overview for today.</p>
 </div>
 <div class="hidden md:flex space-x-4">
-<button class="bg-surface-container-high text-on-surface rounded-full py-2 px-6 font-label text-sm font-medium hover:bg-surface-dim transition-colors flex items-center space-x-2">
+<button class="bg-surface-container-high text-on-surface rounded-full py-2 px-6 font-label text-sm font-medium hover:bg-surface-dim transition-colors flex items-center space-x-2" aria-label="search
+Patient Search">
 <span class="material-symbols-outlined text-sm">search</span>
 <span>Patient Search</span>
 </button>
@@ -210,7 +209,7 @@
 <section class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-6">
 <div class="flex justify-between items-center mb-6">
 <h3 class="font-headline text-xl font-bold text-on-surface">Today's Schedule</h3>
-<button class="text-primary font-label text-sm font-medium hover:underline">View Full Calendar</button>
+<button class="text-primary font-label text-sm font-medium hover:underline" aria-label="View Full Calendar">View Full Calendar</button>
 </div>
 <div class="space-y-4">
 <!-- Appointment Item 1 -->
@@ -234,7 +233,7 @@
 <span class="material-symbols-outlined text-[14px]">videocam</span>
 <span>Video</span>
 </span>
-<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-4 py-2 text-xs font-medium hover:opacity-90 transition-opacity">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-4 py-2 text-xs font-medium hover:opacity-90 transition-opacity" aria-label="Join Call">
                                         Join Call
                                     </button>
 </div>
@@ -261,7 +260,7 @@
 <span class="material-symbols-outlined text-[14px]">person</span>
 <span>In-Person</span>
 </span>
-<button class="bg-surface-container-high text-on-primary-fixed-variant rounded-full px-4 py-2 text-xs font-medium hover:bg-surface-dim transition-colors">
+<button class="bg-surface-container-high text-on-primary-fixed-variant rounded-full px-4 py-2 text-xs font-medium hover:bg-surface-dim transition-colors" aria-label="View Chart">
                                         View Chart
                                     </button>
 </div>
@@ -289,7 +288,7 @@
 <span class="material-symbols-outlined text-[14px]">call</span>
 <span>Audio</span>
 </span>
-<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-4 py-2 text-xs font-medium hover:opacity-90 transition-opacity">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-4 py-2 text-xs font-medium hover:opacity-90 transition-opacity" aria-label="Start Call">
                                         Start Call
                                     </button>
 </div>
@@ -317,10 +316,10 @@
                                 "Severe lower back pain starting this morning, radiating down right leg. Cannot stand straight."
                             </p>
 <div class="flex space-x-2">
-<button class="flex-1 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full py-2 text-xs font-medium hover:opacity-90 transition-opacity">
+<button class="flex-1 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full py-2 text-xs font-medium hover:opacity-90 transition-opacity" aria-label="Accept">
                                     Accept
                                 </button>
-<button class="flex-1 bg-surface-container-high text-on-primary-fixed-variant rounded-full py-2 text-xs font-medium hover:bg-surface-dim transition-colors">
+<button class="flex-1 bg-surface-container-high text-on-primary-fixed-variant rounded-full py-2 text-xs font-medium hover:bg-surface-dim transition-colors" aria-label="Review">
                                     Review
                                 </button>
 </div>
@@ -337,16 +336,16 @@
                                 "Need to refill prescription for Atorvastatin. Also have questions about recent lab results."
                             </p>
 <div class="flex space-x-2">
-<button class="flex-1 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full py-2 text-xs font-medium hover:opacity-90 transition-opacity">
+<button class="flex-1 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full py-2 text-xs font-medium hover:opacity-90 transition-opacity" aria-label="Accept">
                                     Accept
                                 </button>
-<button class="flex-1 bg-surface-container-high text-on-primary-fixed-variant rounded-full py-2 text-xs font-medium hover:bg-surface-dim transition-colors">
+<button class="flex-1 bg-surface-container-high text-on-primary-fixed-variant rounded-full py-2 text-xs font-medium hover:bg-surface-dim transition-colors" aria-label="Review">
                                     Review
                                 </button>
 </div>
 </div>
 </div>
-<button class="w-full mt-4 text-primary font-label text-sm font-medium hover:underline py-2">
+<button class="w-full mt-4 text-primary font-label text-sm font-medium hover:underline py-2" aria-label="View All Requests">
                         View All Requests
                     </button>
 </section>

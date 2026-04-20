@@ -37,6 +37,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // We use a simple middleware to sanitize all string fields in body, query, params using the xss package
 const sanitizeMiddleware = (req, res, next) => {
   const sanitizeObj = (obj) => {
+    if (!obj) return;
     Object.keys(obj).forEach((key) => {
       if (typeof obj[key] === 'string') {
         obj[key] = xss(obj[key]);
@@ -77,6 +78,9 @@ app.use('/api/sos', sosRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/admin', adminRoutes);
 
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ success: true, message: 'MediBridge API is running normally.' });
+});
 // Global Error Handling Middleware (must be registered last)
 app.use(globalErrorHandler);
 

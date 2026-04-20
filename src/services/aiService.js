@@ -1,3 +1,5 @@
+const { GoogleGenerativeAI } = require('@google/generative-ai');
+
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const isMock = !GEMINI_API_KEY || GEMINI_API_KEY === 'mock_gemini_key';
 
@@ -22,6 +24,13 @@ const mockResponse = {
   suggestedSpecialty: "General Physician"
 };
 
+let genAI;
+let model;
+if (!isMock) {
+  genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+  model = genAI.getGenerativeModel({ model: "gemini-1.5-flash", generationConfig: { responseMimeType: "application/json" } });
+}
+
 exports.checkSymptoms = async (symptoms, language = 'en') => {
   if (isMock) {
     console.warn('[Mock AI] Proceeding with mock symptom check response');
@@ -29,31 +38,11 @@ exports.checkSymptoms = async (symptoms, language = 'en') => {
   }
 
   try {
-    // Basic REST payload for Gemini API
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
-    
     const prompt = `${getSystemPrompt(language)}\nUser Symptoms: ${symptoms.join(', ')}`;
     
-    // Since Node 18, global fetch is available natively
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{
-          parts: [{ text: prompt }]
-        }],
-        generationConfig: {
-          responseMimeType: "application/json"
-        }
-      })
-    });
-    
-    if (!response.ok) {
-      throw new Error(`Gemini API Error: ${response.status} ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    const resultText = data.candidates[0].content.parts[0].text;
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const resultText = response.text();
     
     return JSON.parse(resultText);
 

@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Video Consultation - MediBridge AI</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -109,16 +107,16 @@
 <div class="flex items-center gap-4">
 <!-- Language Switcher -->
 <div class="hidden sm:flex bg-surface-container-high rounded-full p-1 gap-1">
-<button class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold">EN</button>
-<button class="px-3 py-1 rounded-full text-on-surface-variant text-xs font-medium hover:bg-surface-container-highest transition-colors">HI</button>
-<button class="px-3 py-1 rounded-full text-on-surface-variant text-xs font-medium hover:bg-surface-container-highest transition-colors">MR</button>
+<button class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold" aria-label="EN">EN</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant text-xs font-medium hover:bg-surface-container-highest transition-colors" aria-label="HI">HI</button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant text-xs font-medium hover:bg-surface-container-highest transition-colors" aria-label="MR">MR</button>
 </div>
 <div class="flex items-center gap-3 text-blue-900 dark:text-blue-400">
-<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full"><span class="material-symbols-outlined">signal_cellular_alt</span></button>
-<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full sm:hidden"><span class="material-symbols-outlined">language</span></button>
-<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full"><span class="material-symbols-outlined">help</span></button>
+<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full" aria-label="signal_cellular_alt"><span class="material-symbols-outlined">signal_cellular_alt</span></button>
+<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full sm:hidden" aria-label="language"><span class="material-symbols-outlined">language</span></button>
+<button class="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors rounded-full" aria-label="help"><span class="material-symbols-outlined">help</span></button>
 </div>
-<img alt="Provider or Patient Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-lowest shadow-sm" data-alt="close up professional headshot of a female doctor in a white coat smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdXoIHwH-GIVeHlvXnvqRrrK2OsqToR2iVG4m6fgL7OOLVWophdSWpmQEmiMJ1mKTNaYviEGouNXusQcX17QrSQEDJ6HsnbbKU-qM87IjZRACfhmycHLcsjX5IlLGLGXpKpIDEEtJDGA5JMbdrg5K2XACFL0x7H4OeZhIjwXZPb9YE-KaasuJM7GjTo-ZyAxY5IT3HYBeZ8khd5HZAHzDBq1EnRrstvSvCfJ_TPeQpKSHmWPZv6-BA1Qpmxai2VakeqLAt1u4Fhw"/>
+<img alt="Provider or Patient Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-lowest shadow-sm" data-alt="close up professional headshot of a female doctor in a white coat smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdXoIHwH-GIVeHlvXnvqRrrK2OsqToR2iVG4m6fgL7OOLVWophdSWpmQEmiMJ1mKTNaYviEGouNXusQcX17QrSQEDJ6HsnbbKU-qM87IjZRACfhmycHLcsjX5IlLGLGXpKpIDEEtJDGA5JMbdrg5K2XACFL0x7H4OeZhIjwXZPb9YE-KaasuJM7GjTo-ZyAxY5IT3HYBeZ8khd5HZAHzDBq1EnRrstvSvCfJ_TPeQpKSHmWPZv6-BA1Qpmxai2VakeqLAt1u4Fhw">
 </div>
 </header>
 <!-- Main Layout -->
@@ -190,7 +188,7 @@
 <!-- Right: Video Canvas -->
 <section class="flex-1 relative rounded-2xl overflow-hidden bg-black shadow-lg">
 <!-- Main Video (Doctor) -->
-<img alt="Main Video Stream" class="w-full h-full object-cover" data-alt="professional modern medical office setting with a focused male doctor looking directly at the camera through a video call interface, good natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZWOUBC6jtCDHcrWcnFuO7zcCf4SLdgTjiDgrU0Uf3_UhvmdAxzSLv58w4feoitoId4n17Lniv7rV8Nnf_Xd-72EsG0InsZcGifuZ-ICmAzi_kFIBungBvRp3qjn6Tm1RLXOAvyYSELkkbMf5fBXeVXr7Jw7q6aHLaYkcDbZ5nECgByEzmZe-o4Am_B9as_gyu410oxgGHk5aRros-CsQF_OwqJ_3y0PgUt36AS4CXALG5AFnJUxNvTdP2kc8Z8CuZlLfwhHL8lw"/>
+<img alt="Main Video Stream" class="w-full h-full object-cover" data-alt="professional modern medical office setting with a focused male doctor looking directly at the camera through a video call interface, good natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZWOUBC6jtCDHcrWcnFuO7zcCf4SLdgTjiDgrU0Uf3_UhvmdAxzSLv58w4feoitoId4n17Lniv7rV8Nnf_Xd-72EsG0InsZcGifuZ-ICmAzi_kFIBungBvRp3qjn6Tm1RLXOAvyYSELkkbMf5fBXeVXr7Jw7q6aHLaYkcDbZ5nECgByEzmZe-o4Am_B9as_gyu410oxgGHk5aRros-CsQF_OwqJ_3y0PgUt36AS4CXALG5AFnJUxNvTdP2kc8Z8CuZlLfwhHL8lw">
 <!-- Video Overlay UI Top -->
 <div class="absolute top-0 left-0 w-full p-6 flex justify-between items-start pointer-events-none">
 <div class="glass-panel px-4 py-2 rounded-lg flex items-center gap-3">
@@ -200,18 +198,19 @@
 </div>
 <!-- Self View (Patient) -->
 <div class="absolute bottom-28 right-6 w-48 h-64 rounded-xl overflow-hidden border-2 border-white/20 shadow-2xl z-10 pointer-events-auto">
-<img alt="Self View Stream" class="w-full h-full object-cover" data-alt="young indian male sitting in a softly lit living room, looking directly at the camera as if on a webcam, looking slightly uncomfortable holding lower back" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUE7ssbr5wDc6TpQs_gae98YEFbyjCanjqDRv6jUzYjLXGHqUSKvpy8JjbOubQI9xGTQUSJ_ug4q4ugLvyJkfYrMEtJxLzQxo8NdCseFMjkAXMkJkPp6QmplduF8w_Bu6yXiVQl7PQNupAg7rb9tGQfynDLVZn1EkGCSa4DVsAQVdgc4xUSoplJPbcxYN2socSx22KJuR9uNTvHO7kijqWxq3pAyFUd7j3suryfVAEjoBDrSZztnNZR9FrJbxhABTNmWg4M76_Ng"/>
+<img alt="Self View Stream" class="w-full h-full object-cover" data-alt="young indian male sitting in a softly lit living room, looking directly at the camera as if on a webcam, looking slightly uncomfortable holding lower back" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUE7ssbr5wDc6TpQs_gae98YEFbyjCanjqDRv6jUzYjLXGHqUSKvpy8JjbOubQI9xGTQUSJ_ug4q4ugLvyJkfYrMEtJxLzQxo8NdCseFMjkAXMkJkPp6QmplduF8w_Bu6yXiVQl7PQNupAg7rb9tGQfynDLVZn1EkGCSa4DVsAQVdgc4xUSoplJPbcxYN2socSx22KJuR9uNTvHO7kijqWxq3pAyFUd7j3suryfVAEjoBDrSZztnNZR9FrJbxhABTNmWg4M76_Ng">
 </div>
 <!-- Bottom Control Bar -->
 <div class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-panel rounded-full px-8 py-4 flex items-center gap-6 shadow-[0_16px_32px_rgba(25,28,29,0.06)] pointer-events-auto border border-white/20">
-<button class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors">
+<button class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors" aria-label="mic">
 <span class="material-symbols-outlined text-2xl">mic</span>
 </button>
-<button class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors">
+<button class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors" aria-label="videocam">
 <span class="material-symbols-outlined text-2xl">videocam</span>
 </button>
 <div class="w-[1px] h-8 bg-outline-variant/30 mx-2"></div>
-<button class="h-14 px-8 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary shadow-lg hover:bg-tertiary-container transition-colors gap-2">
+<button class="h-14 px-8 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary shadow-lg hover:bg-tertiary-container transition-colors gap-2" aria-label="call_end
+End Call">
 <span class="material-symbols-outlined icon-fill">call_end</span>
 <span class="font-headline font-bold tracking-wide">End Call</span>
 </button>

@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MediBridge AI - Quick Prescription</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -131,7 +129,7 @@
 <label class="font-label text-sm font-semibold text-on-surface-variant" for="medicine">Medicine Name</label>
 <div class="relative">
 <span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
-<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest rounded-xl text-on-surface placeholder:text-outline border-none focus:ring-0 focus:bg-surface-lowest focus:outline-none transition-colors" id="medicine" onblur="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0)'" onfocus="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0.3)'" placeholder="Search drug database..." style="box-shadow: inset 0 0 0 2px rgba(17, 92, 185, 0); transition: box-shadow 0.2s, background-color 0.2s;" type="text"/>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest rounded-xl text-on-surface placeholder:text-outline border-none focus:ring-0 focus:bg-surface-lowest focus:outline-none transition-colors" id="medicine" onblur="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0)'" onfocus="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0.3)'" placeholder="Search drug database..." style="box-shadow: inset 0 0 0 2px rgba(17, 92, 185, 0); transition: box-shadow 0.2s, background-color 0.2s;" type="text">
 </div>
 </div>
 <!-- Dosage & Duration Row -->
@@ -154,7 +152,7 @@
 <div class="flex flex-col gap-2 w-full sm:w-1/3">
 <label class="font-label text-sm font-semibold text-on-surface-variant" for="duration">Duration</label>
 <div class="flex items-center gap-2">
-<input class="w-full px-4 py-4 bg-surface-container-highest rounded-xl text-on-surface placeholder:text-outline border-none focus:ring-0 focus:bg-surface-lowest text-center transition-colors" id="duration" min="1" onblur="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0)'" onfocus="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0.3)'" placeholder="e.g. 5" style="box-shadow: inset 0 0 0 2px rgba(17, 92, 185, 0); transition: box-shadow 0.2s, background-color 0.2s;" type="number"/>
+<input class="w-full px-4 py-4 bg-surface-container-highest rounded-xl text-on-surface placeholder:text-outline border-none focus:ring-0 focus:bg-surface-lowest text-center transition-colors" id="duration" min="1" onblur="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0)'" onfocus="this.style.boxShadow='inset 0 0 0 2px rgba(17, 92, 185, 0.3)'" placeholder="e.g. 5" style="box-shadow: inset 0 0 0 2px rgba(17, 92, 185, 0); transition: box-shadow 0.2s, background-color 0.2s;" type="number">
 <span class="text-on-surface-variant font-medium">Days</span>
 </div>
 </div>
@@ -168,10 +166,11 @@
 </div>
 <!-- Footer Actions -->
 <footer class="relative z-10 px-8 py-6 bg-surface-container-low flex justify-end gap-4">
-<button class="px-6 py-4 rounded-full bg-surface-container-high text-on-primary-fixed-variant font-label font-semibold hover:bg-surface-dim transition-colors h-[56px] flex items-center justify-center min-w-[120px]" type="button">
+<button class="px-6 py-4 rounded-full bg-surface-container-high text-on-primary-fixed-variant font-label font-semibold hover:bg-surface-dim transition-colors h-[56px] flex items-center justify-center min-w-[120px]" type="button" aria-label="Cancel">
                     Cancel
                 </button>
-<button class="px-8 py-4 rounded-full gradient-btn text-on-primary font-label font-bold shadow-md hover:opacity-90 transition-opacity h-[56px] flex items-center justify-center gap-2" type="button">
+<button class="px-8 py-4 rounded-full gradient-btn text-on-primary font-label font-bold shadow-md hover:opacity-90 transition-opacity h-[56px] flex items-center justify-center gap-2" type="button" aria-label="send
+                    Save &amp; Send to Patient">
 <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">send</span>
                     Save &amp; Send to Patient
                 </button>

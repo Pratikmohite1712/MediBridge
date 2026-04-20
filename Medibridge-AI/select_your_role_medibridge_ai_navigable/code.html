@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MediBridge AI - Role Selection</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -128,7 +126,7 @@
 <!-- Patient Card -->
 <!-- Using Level 1 Surface Container Lowest, Tonal Layering, Ghost Borders -->
 <label class="group relative bg-surface-container-lowest rounded-[1.5rem] p-8 md:p-10 cursor-pointer transition-all duration-300 ring-1 ring-outline-variant/20 hover:ring-primary/30 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(25,28,29,0.06)] flex flex-col items-start overflow-hidden">
-<input class="sr-only peer" name="user_role" type="radio" value="patient"/>
+<input class="sr-only peer" name="user_role" type="radio" value="patient">
 <!-- Active State Indicator Background Shift (Soft Well approach) -->
 <div class="absolute inset-0 bg-primary/0 peer-checked:bg-primary/[0.02] transition-colors duration-300 pointer-events-none"></div>
 <div class="absolute inset-0 ring-2 ring-transparent peer-checked:ring-primary rounded-[1.5rem] transition-all duration-300 pointer-events-none"></div>
@@ -157,7 +155,7 @@
 </label>
 <!-- Doctor Card -->
 <label class="group relative bg-surface-container-lowest rounded-[1.5rem] p-8 md:p-10 cursor-pointer transition-all duration-300 ring-1 ring-outline-variant/20 hover:ring-primary/30 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(25,28,29,0.06)] flex flex-col items-start overflow-hidden">
-<input class="sr-only peer" name="user_role" type="radio" value="doctor"/>
+<input class="sr-only peer" name="user_role" type="radio" value="doctor">
 <div class="absolute inset-0 bg-primary/0 peer-checked:bg-primary/[0.02] transition-colors duration-300 pointer-events-none"></div>
 <div class="absolute inset-0 ring-2 ring-transparent peer-checked:ring-primary rounded-[1.5rem] transition-all duration-300 pointer-events-none"></div>
 <!-- Icon Container -->
@@ -186,7 +184,8 @@
 </div>
 <!-- Primary Call to Action Button (Hidden by default, shown via JS typically when a selection is made, but represented here structurally) -->
 <div class="mt-12 w-full flex justify-end md:justify-end justify-center">
-<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-8 py-4 font-body font-medium text-lg min-h-[56px] hover:shadow-[0_8px_16px_rgba(0,63,135,0.15)] transition-all duration-300 active:scale-95 flex items-center gap-2 w-full md:w-auto justify-center" onclick="const role = document.querySelector('input[name=\'user_role\']:checked')?.value; if(role === 'patient') window.location.href='{{DATA:SCREEN:SCREEN_25}}'; else if(role === 'doctor') window.location.href='{{DATA:SCREEN:SCREEN_6}}';">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-8 py-4 font-body font-medium text-lg min-h-[56px] hover:shadow-[0_8px_16px_rgba(0,63,135,0.15)] transition-all duration-300 active:scale-95 flex items-center gap-2 w-full md:w-auto justify-center" onclick="const role = document.querySelector('input[name=\'user_role\']:checked')?.value; if(role === 'patient') window.location.href='{{DATA:SCREEN:SCREEN_25}}'; else if(role === 'doctor') window.location.href='{{DATA:SCREEN:SCREEN_6}}';" aria-label="Continue
+                arrow_forward">
                 Continue
                 <span class="material-symbols-outlined text-sm" data-icon="arrow_forward" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
 </button>

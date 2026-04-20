@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Book Appointment - Arogya Portal</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -106,14 +104,14 @@
 </nav>
 <div class="flex items-center gap-4">
 <div class="hidden sm:flex gap-2">
-<button class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200">English</button>
-<button class="px-3 py-1 bg-surface-container-high text-on-surface rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200">Hindi</button>
-<button class="px-3 py-1 bg-surface-container-high text-on-surface rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200">Marathi</button>
+<button class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200" aria-label="English">English</button>
+<button class="px-3 py-1 bg-surface-container-high text-on-surface rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200" aria-label="Hindi">Hindi</button>
+<button class="px-3 py-1 bg-surface-container-high text-on-surface rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200" aria-label="Marathi">Marathi</button>
 </div>
-<button class="text-blue-900 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<button class="text-blue-900 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full scale-95 active:scale-90 transition-transform" aria-label="notifications">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<button class="text-blue-900 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<button class="text-blue-900 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full scale-95 active:scale-90 transition-transform" aria-label="account_circle">
 <span class="material-symbols-outlined">account_circle</span>
 </button>
 </div>
@@ -138,7 +136,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
 <!-- Option 1 -->
 <label class="cursor-pointer relative group">
-<input checked="" class="peer sr-only" name="consultation_type" type="radio" value="video"/>
+<input checked="" class="peer sr-only" name="consultation_type" type="radio" value="video">
 <div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:bg-opacity-30 transition-all">
 <div class="flex justify-between items-start mb-2">
 <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">videocam</span>
@@ -150,7 +148,7 @@
 </label>
 <!-- Option 2 -->
 <label class="cursor-pointer relative group">
-<input class="peer sr-only" name="consultation_type" type="radio" value="audio"/>
+<input class="peer sr-only" name="consultation_type" type="radio" value="audio">
 <div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:bg-opacity-30 transition-all">
 <div class="flex justify-between items-start mb-2">
 <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">call</span>
@@ -161,7 +159,7 @@
 </label>
 <!-- Option 3 -->
 <label class="cursor-pointer relative group">
-<input class="peer sr-only" name="consultation_type" type="radio" value="chat"/>
+<input class="peer sr-only" name="consultation_type" type="radio" value="chat">
 <div class="p-4 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:bg-opacity-30 transition-all">
 <div class="flex justify-between items-start mb-2">
 <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chat</span>
@@ -181,7 +179,7 @@
 <!-- Search/Filter -->
 <div class="mb-6 relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full bg-surface-container-highest text-on-surface placeholder-on-surface-variant rounded-md py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-lowest transition-all border-none" placeholder="Search by name or specialty..." type="text"/>
+<input class="w-full bg-surface-container-highest text-on-surface placeholder-on-surface-variant rounded-md py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-lowest transition-all border-none" placeholder="Search by name or specialty..." type="text">
 </div>
 <!-- Doctor List -->
 <div class="space-y-4">
@@ -190,7 +188,7 @@
 <div class="absolute top-4 right-4">
 <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
 </div>
-<img alt="Dr. Shanti Kumar portrait" class="w-16 h-16 rounded-full object-cover border-2 border-surface-container-lowest" data-alt="Portrait of a female Indian doctor wearing a white coat and stethoscope, smiling warmly in a bright clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKOOJlCEIE9xPJxNc-7SKjWy4HcDPdmbbpn_u1wo75DHKNDk1jnGAM6RQ21c_QNMwrx_VCVYpgputg5wtrOFIMcMZcZSSs7Iw112PmSCn6zOH7S2ifyUFppQNB5oBSWVAQ5HYopj9uFKPgQ_xQYB86TnGv3P-mY-CQLHNdNAk2qaDwe7QDmieJB6L4ZJnMDwVg0PNbj3EfaXekwO0MvLxkqiK-gHBi2qTEGVLKxh88BnhCM5IXU8vdENCwQ483QsoYTiAit9HXBg"/>
+<img alt="Dr. Shanti Kumar portrait" class="w-16 h-16 rounded-full object-cover border-2 border-surface-container-lowest" data-alt="Portrait of a female Indian doctor wearing a white coat and stethoscope, smiling warmly in a bright clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKOOJlCEIE9xPJxNc-7SKjWy4HcDPdmbbpn_u1wo75DHKNDk1jnGAM6RQ21c_QNMwrx_VCVYpgputg5wtrOFIMcMZcZSSs7Iw112PmSCn6zOH7S2ifyUFppQNB5oBSWVAQ5HYopj9uFKPgQ_xQYB86TnGv3P-mY-CQLHNdNAk2qaDwe7QDmieJB6L4ZJnMDwVg0PNbj3EfaXekwO0MvLxkqiK-gHBi2qTEGVLKxh88BnhCM5IXU8vdENCwQ483QsoYTiAit9HXBg">
 <div class="flex-1">
 <h3 class="font-headline font-bold text-lg text-on-surface">Dr. Shanti Kumar</h3>
 <p class="text-sm text-primary font-medium">Cardiologist • 15 yrs exp</p>
@@ -209,7 +207,7 @@
 <div class="absolute top-4 right-4">
 <span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
 </div>
-<img alt="Dr. Rajesh Patel portrait" class="w-16 h-16 rounded-full object-cover border-2 border-surface-container-lowest" data-alt="Portrait of a male Indian doctor with glasses wearing scrubs, looking professional in a hospital corridor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3dqBKM2WNBsi9Bo3jKbs9I3PbtP90fYiT8OfDSzyIVjiZDL0oCuLozEVgKKLsj5Tiks5vHKA9FhdtBS3UNAHn4V3hgftUy7DeJfeCPIsVXNt185jwUrKWoPSIFhoHwrK0kB2hCOHxhukBd5ffU62kLhKzT8xTl1vv8HqUer1pA6HRC6ojXyHpGwuQesoDMUOzX-rIgCEYZ_4ZwHFxjHOao9k0b8sG55weVsqagneYy6FTqz4Nx06MZmwlfvgVdNUTIUCE9vqSKg"/>
+<img alt="Dr. Rajesh Patel portrait" class="w-16 h-16 rounded-full object-cover border-2 border-surface-container-lowest" data-alt="Portrait of a male Indian doctor with glasses wearing scrubs, looking professional in a hospital corridor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3dqBKM2WNBsi9Bo3jKbs9I3PbtP90fYiT8OfDSzyIVjiZDL0oCuLozEVgKKLsj5Tiks5vHKA9FhdtBS3UNAHn4V3hgftUy7DeJfeCPIsVXNt185jwUrKWoPSIFhoHwrK0kB2hCOHxhukBd5ffU62kLhKzT8xTl1vv8HqUer1pA6HRC6ojXyHpGwuQesoDMUOzX-rIgCEYZ_4ZwHFxjHOao9k0b8sG55weVsqagneYy6FTqz4Nx06MZmwlfvgVdNUTIUCE9vqSKg">
 <div class="flex-1">
 <h3 class="font-headline font-bold text-lg text-on-surface">Dr. Rajesh Patel</h3>
 <p class="text-sm text-primary font-medium">General Physician • 8 yrs exp</p>
@@ -224,7 +222,7 @@
                             </div>
 </div>
 </div>
-<button class="mt-4 text-primary font-medium text-sm flex items-center gap-1 hover:underline">
+<button class="mt-4 text-primary font-medium text-sm flex items-center gap-1 hover:underline" aria-label="View more specialists expand_more">
                         View more specialists <span class="material-symbols-outlined text-sm">expand_more</span>
 </button>
 </section>
@@ -242,28 +240,33 @@
 <div class="flex justify-between items-center mb-3">
 <h3 class="font-headline text-sm font-bold text-on-surface">October 2023</h3>
 <div class="flex gap-2">
-<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
-<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high" aria-label="chevron_left"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high" aria-label="chevron_right"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
 </div>
 </div>
 <div class="flex gap-2 overflow-x-auto pb-2 -mx-2 px-2 snap-x">
-<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-primary text-on-primary flex flex-col items-center">
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-primary text-on-primary flex flex-col items-center" aria-label="Mon
+16">
 <span class="text-xs uppercase font-medium opacity-80">Mon</span>
 <span class="text-lg font-bold">16</span>
 </button>
-<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center">
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center" aria-label="Tue
+17">
 <span class="text-xs uppercase font-medium text-on-surface-variant">Tue</span>
 <span class="text-lg font-bold">17</span>
 </button>
-<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center">
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center" aria-label="Wed
+18">
 <span class="text-xs uppercase font-medium text-on-surface-variant">Wed</span>
 <span class="text-lg font-bold">18</span>
 </button>
-<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center">
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center" aria-label="Thu
+19">
 <span class="text-xs uppercase font-medium text-on-surface-variant">Thu</span>
 <span class="text-lg font-bold">19</span>
 </button>
-<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center opacity-50 cursor-not-allowed">
+<button class="snap-start flex-shrink-0 w-14 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center opacity-50 cursor-not-allowed" aria-label="Fri
+20">
 <span class="text-xs uppercase font-medium text-on-surface-variant">Fri</span>
 <span class="text-lg font-bold">20</span>
 </button>
@@ -273,12 +276,12 @@
 <div>
 <h3 class="font-headline text-sm font-bold text-on-surface mb-3">Available Slots</h3>
 <div class="grid grid-cols-2 gap-2">
-<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">09:00 AM</button>
-<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">10:30 AM</button>
-<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">11:00 AM</button>
-<button class="py-2 text-sm font-medium rounded-md bg-primary-fixed text-on-primary-fixed border border-primary">02:00 PM</button>
-<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">03:30 PM</button>
-<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface">04:00 PM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface" aria-label="09:00 AM">09:00 AM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface" aria-label="10:30 AM">10:30 AM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface" aria-label="11:00 AM">11:00 AM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-primary-fixed text-on-primary-fixed border border-primary" aria-label="02:00 PM">02:00 PM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface" aria-label="03:30 PM">03:30 PM</button>
+<button class="py-2 text-sm font-medium rounded-md bg-surface-container-low hover:bg-surface-container text-on-surface" aria-label="04:00 PM">04:00 PM</button>
 </div>
 </div>
 </section>
@@ -304,7 +307,8 @@
 <span class="text-primary">₹ 800</span>
 </div>
 </div>
-<button class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-white font-bold text-lg hover:shadow-lg hover:from-primary-container hover:to-primary transition-all flex justify-center items-center gap-2">
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-white font-bold text-lg hover:shadow-lg hover:from-primary-container hover:to-primary transition-all flex justify-center items-center gap-2" aria-label="Confirm Booking
+                        arrow_forward">
                         Confirm Booking
                         <span class="material-symbols-outlined">arrow_forward</span>
 </button>

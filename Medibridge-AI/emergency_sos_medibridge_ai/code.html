@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MediBridge AI - Emergency SOS</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -111,14 +109,14 @@
 <div class="flex items-center gap-4">
 <!-- Simplified Language Switcher for Low Bandwidth -->
 <div class="hidden sm:flex bg-surface-container-high rounded-full p-1 text-sm font-label">
-<button class="px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-medium transition-colors">EN</button>
-<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-dim transition-colors">HI</button>
-<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-dim transition-colors">MR</button>
+<button class="px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-medium transition-colors" aria-label="EN">EN</button>
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-dim transition-colors" aria-label="HI">HI</button>
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-dim transition-colors" aria-label="MR">MR</button>
 </div>
-<button class="text-red-700 hover:bg-red-100 transition-colors p-2 rounded-full sm:hidden">
+<button class="text-red-700 hover:bg-red-100 transition-colors p-2 rounded-full sm:hidden" aria-label="language">
 <span class="material-symbols-outlined">language</span>
 </button>
-<button class="text-red-700 hover:bg-red-100 transition-colors p-2 rounded-full">
+<button class="text-red-700 hover:bg-red-100 transition-colors p-2 rounded-full" aria-label="account_circle">
 <span class="material-symbols-outlined">account_circle</span>
 </button>
 </div>
@@ -139,7 +137,8 @@
 <!-- Static rings for depth instead of animation -->
 <div class="absolute inset-0 bg-tertiary-fixed rounded-full opacity-30 scale-110"></div>
 <div class="absolute inset-0 bg-tertiary-fixed-dim rounded-full opacity-40 scale-105"></div>
-<button class="relative z-10 w-full h-full bg-tertiary hover:bg-tertiary-container text-on-tertiary rounded-full flex flex-col items-center justify-center shadow-[0_24px_48px_rgba(136,0,28,0.25)] transition-all duration-300 active:scale-95 border-8 border-tertiary-fixed-dim">
+<button class="relative z-10 w-full h-full bg-tertiary hover:bg-tertiary-container text-on-tertiary rounded-full flex flex-col items-center justify-center shadow-[0_24px_48px_rgba(136,0,28,0.25)] transition-all duration-300 active:scale-95 border-8 border-tertiary-fixed-dim" aria-label="SOS
+TAP FOR EMERGENCY HELP">
 <span class="font-headline font-extrabold text-5xl sm:text-6xl tracking-tighter mb-2">SOS</span>
 <span class="font-label font-medium text-sm sm:text-base tracking-widest uppercase opacity-90 text-center px-6">TAP FOR EMERGENCY HELP</span>
 </button>
@@ -153,7 +152,8 @@
 </div>
 <!-- Secondary Action: Call Ambulance -->
 <div class="w-full flex flex-col gap-4">
-<button class="w-full h-16 rounded-full bg-surface-container-high hover:bg-surface-dim text-on-primary-fixed-variant font-headline font-bold text-lg flex items-center justify-center gap-3 transition-colors">
+<button class="w-full h-16 rounded-full bg-surface-container-high hover:bg-surface-dim text-on-primary-fixed-variant font-headline font-bold text-lg flex items-center justify-center gap-3 transition-colors" aria-label="emergency_share
+                    Call Ambulance (108)">
 <span class="material-symbols-outlined font-variation-settings: 'FILL' 1;">emergency_share</span>
                     Call Ambulance (108)
                 </button>
